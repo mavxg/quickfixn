@@ -1,0 +1,105 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Advertisement">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="AdvId" type="xs:string"/>
+        <xs:element name="AdvTransType">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="N"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="R"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="AdvRefID" minOccurs="0" type="xs:string"/>
+        <xs:element name="Symbol" type="xs:string"/>
+        <xs:element name="SymbolSfx" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecurityID" minOccurs="0" type="xs:string"/>
+        <xs:element name="IDSource" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SecurityType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="BA"/>
+              <xs:enumeration value="CD"/>
+              <xs:enumeration value="CMO"/>
+              <xs:enumeration value="CORP"/>
+              <xs:enumeration value="CP"/>
+              <xs:enumeration value="CPP"/>
+              <xs:enumeration value="CS"/>
+              <xs:enumeration value="FHA"/>
+              <xs:enumeration value="FHL"/>
+              <xs:enumeration value="FN"/>
+              <xs:enumeration value="FOR"/>
+              <xs:enumeration value="FUT"/>
+              <xs:enumeration value="GN"/>
+              <xs:enumeration value="GOVT"/>
+              <xs:enumeration value="MF"/>
+              <xs:enumeration value="MIO"/>
+              <xs:enumeration value="MPO"/>
+              <xs:enumeration value="MPP"/>
+              <xs:enumeration value="MPT"/>
+              <xs:enumeration value="MUNI"/>
+              <xs:enumeration value="NONE"/>
+              <xs:enumeration value="OPT"/>
+              <xs:enumeration value="PS"/>
+              <xs:enumeration value="RP"/>
+              <xs:enumeration value="RVRP"/>
+              <xs:enumeration value="SL"/>
+              <xs:enumeration value="TD"/>
+              <xs:enumeration value="USTB"/>
+              <xs:enumeration value="WAR"/>
+              <xs:enumeration value="ZOO"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MaturityMonthYear" minOccurs="0" type="xs:string"/>
+        <xs:element name="MaturityDay" minOccurs="0" type="xs:string"/>
+        <xs:element name="PutOrCall" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
+        <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
+        <xs:element name="AdvSide">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="B"/>
+              <xs:enumeration value="S"/>
+              <xs:enumeration value="X"/>
+              <xs:enumeration value="T"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Shares" type="xs:integer"/>
+        <xs:element name="Price" minOccurs="0" type="xs:float"/>
+        <xs:element name="Currency" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradeDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="URLLink" minOccurs="0" type="xs:string"/>
+        <xs:element name="LastMkt" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

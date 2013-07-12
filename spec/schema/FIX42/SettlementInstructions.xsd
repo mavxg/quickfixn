@@ -1,0 +1,140 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SettlementInstructions">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="SettlInstID" type="xs:string"/>
+        <xs:element name="SettlInstTransType">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="N"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="R"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SettlInstRefID" type="xs:string"/>
+        <xs:element name="SettlInstMode">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SettlInstSource">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="AllocAccount" type="xs:string"/>
+        <xs:element name="SettlLocation" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="CED"/>
+              <xs:enumeration value="DTC"/>
+              <xs:enumeration value="EUR"/>
+              <xs:enumeration value="FED"/>
+              <xs:enumeration value="PNY"/>
+              <xs:enumeration value="PTC"/>
+              <xs:enumeration value="ISO"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="TradeDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="AllocID" minOccurs="0" type="xs:string"/>
+        <xs:element name="LastMkt" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
+        <xs:element name="Side" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+              <xs:enumeration value="8"/>
+              <xs:enumeration value="9"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SecurityType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="BA"/>
+              <xs:enumeration value="CB"/>
+              <xs:enumeration value="CD"/>
+              <xs:enumeration value="CMO"/>
+              <xs:enumeration value="CORP"/>
+              <xs:enumeration value="CP"/>
+              <xs:enumeration value="CPP"/>
+              <xs:enumeration value="CS"/>
+              <xs:enumeration value="FHA"/>
+              <xs:enumeration value="FHL"/>
+              <xs:enumeration value="FN"/>
+              <xs:enumeration value="FOR"/>
+              <xs:enumeration value="FUT"/>
+              <xs:enumeration value="GN"/>
+              <xs:enumeration value="GOVT"/>
+              <xs:enumeration value="MF"/>
+              <xs:enumeration value="MIO"/>
+              <xs:enumeration value="MPO"/>
+              <xs:enumeration value="MPP"/>
+              <xs:enumeration value="MPT"/>
+              <xs:enumeration value="MUNI"/>
+              <xs:enumeration value="NONE"/>
+              <xs:enumeration value="OPT"/>
+              <xs:enumeration value="PS"/>
+              <xs:enumeration value="RP"/>
+              <xs:enumeration value="RVRP"/>
+              <xs:enumeration value="SL"/>
+              <xs:enumeration value="TD"/>
+              <xs:enumeration value="USTB"/>
+              <xs:enumeration value="WAR"/>
+              <xs:enumeration value="ZOO"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="EffectiveTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="TransactTime" type="xs:string"/>
+        <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
+        <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
+        <xs:element name="StandInstDbType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="StandInstDbName" minOccurs="0" type="xs:string"/>
+        <xs:element name="StandInstDbID" minOccurs="0" type="xs:string"/>
+        <xs:element name="SettlDeliveryType" minOccurs="0" type="xs:integer"/>
+        <xs:element name="SettlDepositoryCode" minOccurs="0" type="xs:string"/>
+        <xs:element name="SettlBrkrCode" minOccurs="0" type="xs:string"/>
+        <xs:element name="SettlInstCode" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecuritySettlAgentName" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecuritySettlAgentCode" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecuritySettlAgentAcctNum" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecuritySettlAgentAcctName" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecuritySettlAgentContactName" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecuritySettlAgentContactPhone" minOccurs="0" type="xs:string"/>
+        <xs:element name="CashSettlAgentName" minOccurs="0" type="xs:string"/>
+        <xs:element name="CashSettlAgentCode" minOccurs="0" type="xs:string"/>
+        <xs:element name="CashSettlAgentAcctNum" minOccurs="0" type="xs:string"/>
+        <xs:element name="CashSettlAgentAcctName" minOccurs="0" type="xs:string"/>
+        <xs:element name="CashSettlAgentContactName" minOccurs="0" type="xs:string"/>
+        <xs:element name="CashSettlAgentContactPhone" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

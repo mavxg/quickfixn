@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="NetworkCounterpartySystemStatusRequest">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="NetworkRequestType">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="8"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="NetworkRequestID" type="xs:string"/>
+        <xs:element name="NoCompIDs" minOccurs="0" type="NoCompIDs"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoCompIDs">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="RefCompID" minOccurs="0" type="xs:string"/>
+      <xs:element name="RefSubID" minOccurs="0" type="xs:string"/>
+      <xs:element name="LocationID" minOccurs="0" type="xs:string"/>
+      <xs:element name="DeskID" minOccurs="0" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

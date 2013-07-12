@@ -1,0 +1,99 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BidResponse">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="BidID" minOccurs="0" type="xs:string"/>
+        <xs:element name="ClientBidID" minOccurs="0" type="xs:string"/>
+        <xs:element name="NoBidComponents" type="NoBidComponents"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoBidComponents">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+      <xs:element name="CommType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CommCurrency" minOccurs="0" type="xs:string"/>
+      <xs:element name="FundRenewWaiv" minOccurs="0" type="xs:string"/>
+      <xs:element name="ListID" minOccurs="0" type="xs:string"/>
+      <xs:element name="Country" minOccurs="0" type="xs:string"/>
+      <xs:element name="Side" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="9"/>
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="B"/>
+            <xs:enumeration value="C"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Price" minOccurs="0" type="xs:float"/>
+      <xs:element name="PriceType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FairValue" minOccurs="0" type="xs:float"/>
+      <xs:element name="NetGrossInd" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SettlmntTyp" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="9"/>
+            <xs:enumeration value="A"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FutSettDate" minOccurs="0" type="xs:string"/>
+      <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
+      <xs:element name="TradingSessionSubID" minOccurs="0" type="xs:string"/>
+      <xs:element name="Text" minOccurs="0" type="xs:string"/>
+      <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+      <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

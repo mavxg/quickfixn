@@ -1,0 +1,39 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AllocationACK">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
+        <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
+        <xs:element name="AllocID" type="xs:string"/>
+        <xs:element name="TradeDate" type="xs:string"/>
+        <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="AllocStatus">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="AllocRejCode" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

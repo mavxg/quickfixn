@@ -1,0 +1,219 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BidRequest">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="BidID" minOccurs="0" type="xs:string"/>
+        <xs:element name="ClientBidID" type="xs:string"/>
+        <xs:element name="BidRequestTransType">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="N"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ListName" minOccurs="0" type="xs:string"/>
+        <xs:element name="TotNoRelatedSym" type="xs:integer"/>
+        <xs:element name="BidType">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="NumTickets" minOccurs="0" type="xs:integer"/>
+        <xs:element name="Currency" minOccurs="0" type="xs:string"/>
+        <xs:element name="SideValue1" minOccurs="0" type="xs:float"/>
+        <xs:element name="SideValue2" minOccurs="0" type="xs:float"/>
+        <xs:element name="NoBidDescriptors" minOccurs="0" type="NoBidDescriptors"/>
+        <xs:element name="NoBidComponents" minOccurs="0" type="NoBidComponents"/>
+        <xs:element name="LiquidityIndType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="WtAverageLiquidity" minOccurs="0" type="xs:float"/>
+        <xs:element name="ExchangeForPhysical" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="N"/>
+              <xs:enumeration value="Y"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="OutMainCntryUIndex" minOccurs="0" type="xs:float"/>
+        <xs:element name="CrossPercent" minOccurs="0" type="xs:float"/>
+        <xs:element name="ProgRptReqs" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ProgPeriodInterval" minOccurs="0" type="xs:integer"/>
+        <xs:element name="IncTaxInd" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ForexReq" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="N"/>
+              <xs:enumeration value="Y"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="NumBidders" minOccurs="0" type="xs:integer"/>
+        <xs:element name="TradeDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="BidTradeType">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="G"/>
+              <xs:enumeration value="J"/>
+              <xs:enumeration value="R"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="BasisPxType">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+              <xs:enumeration value="8"/>
+              <xs:enumeration value="9"/>
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="B"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="D"/>
+              <xs:enumeration value="Z"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrikeTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoBidDescriptors">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="BidDescriptorType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BidDescriptor" minOccurs="0" type="xs:string"/>
+      <xs:element name="SideValueInd" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LiquidityValue" minOccurs="0" type="xs:float"/>
+      <xs:element name="LiquidityNumSecurities" minOccurs="0" type="xs:integer"/>
+      <xs:element name="LiquidityPctLow" minOccurs="0" type="xs:float"/>
+      <xs:element name="LiquidityPctHigh" minOccurs="0" type="xs:float"/>
+      <xs:element name="EFPTrackingError" minOccurs="0" type="xs:float"/>
+      <xs:element name="FairValue" minOccurs="0" type="xs:float"/>
+      <xs:element name="OutsideIndexPct" minOccurs="0" type="xs:float"/>
+      <xs:element name="ValueOfFutures" minOccurs="0" type="xs:float"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="NoBidComponents">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ListID" minOccurs="0" type="xs:string"/>
+      <xs:element name="Side" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="9"/>
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="B"/>
+            <xs:enumeration value="C"/>
+            <xs:enumeration value="D"/>
+            <xs:enumeration value="E"/>
+            <xs:enumeration value="F"/>
+            <xs:enumeration value="G"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
+      <xs:element name="TradingSessionSubID" minOccurs="0" type="xs:string"/>
+      <xs:element name="NetGrossInd" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SettlType" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="7"/>
+            <xs:enumeration value="8"/>
+            <xs:enumeration value="9"/>
+            <xs:enumeration value="C"/>
+            <xs:enumeration value="B"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SettlDate" minOccurs="0" type="xs:string"/>
+      <xs:element name="Account" minOccurs="0" type="xs:string"/>
+      <xs:element name="AcctIDSource" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

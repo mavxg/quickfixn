@@ -1,0 +1,57 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TradingSessionStatus">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="TradSesReqID" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradingSessionID" type="xs:string"/>
+        <xs:element name="TradSesMethod" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="TradSesMode" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="UnsolicitedIndicator" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Y"/>
+              <xs:enumeration value="N"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="TradSesStatus">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="TradSesStartTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradSesOpenTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradSesPreCloseTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradSesCloseTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradSesEndTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="TotalVolumeTraded" minOccurs="0" type="xs:float"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedTextLen" minOccurs="0" type="xs:integer"/>
+        <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

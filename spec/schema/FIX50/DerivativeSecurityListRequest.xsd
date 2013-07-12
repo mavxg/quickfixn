@@ -1,0 +1,147 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DerivativeSecurityListRequest">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="SecurityReqID" type="xs:string"/>
+        <xs:element name="SecurityListRequestType">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="UnderlyingSymbol" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingSymbolSfx" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingSecurityID" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingSecurityIDSource" minOccurs="0" type="xs:string"/>
+        <xs:element name="NoUnderlyingSecurityAltID" minOccurs="0" type="NoUnderlyingSecurityAltID"/>
+        <xs:element name="UnderlyingProduct" minOccurs="0" type="xs:integer"/>
+        <xs:element name="UnderlyingCFICode" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingSecurityType" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingSecuritySubType" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingMaturityMonthYear" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingMaturityDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingCouponPaymentDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingIssueDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
+        <xs:element name="UnderlyingRepurchaseTerm" minOccurs="0" type="xs:integer"/>
+        <xs:element name="UnderlyingRepurchaseRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingFactor" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingCreditRating" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingInstrRegistry" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingCountryOfIssue" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingLocaleOfIssue" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingRedemptionDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingStrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingStrikeCurrency" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingOptAttribute" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingContractMultiplier" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingCouponRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingSecurityExchange" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingIssuer" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedUnderlyingIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedUnderlyingIssuer" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedUnderlyingSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedUnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingCPProgram" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingCPRegType" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingCurrency" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingDirtyPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingEndPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingStartValue" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingCurrentValue" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingEndValue" minOccurs="0" type="xs:float"/>
+        <xs:element name="NoUnderlyingStips" minOccurs="0" type="NoUnderlyingStips"/>
+        <xs:element name="UnderlyingAllocationPercent" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingSettlementType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="UnderlyingCashAmount" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingCashType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="FIXED"/>
+              <xs:enumeration value="DIFF"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="UnderlyingUnitOfMeasure" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingTimeUnit" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingCapValue" minOccurs="0" type="xs:float"/>
+        <xs:element name="NoUndlyInstrumentParties" minOccurs="0" type="NoUndlyInstrumentParties"/>
+        <xs:element name="UnderlyingSettlMethod" minOccurs="0" type="xs:string"/>
+        <xs:element name="UnderlyingAdjustedQuantity" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingFXRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="UnderlyingFXRateCalc" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="M"/>
+              <xs:enumeration value="D"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SecuritySubType" minOccurs="0" type="xs:string"/>
+        <xs:element name="Currency" minOccurs="0" type="xs:string"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
+        <xs:element name="TradingSessionSubID" minOccurs="0" type="xs:string"/>
+        <xs:element name="SubscriptionRequestType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoUnderlyingSecurityAltID">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
+      <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="NoUnderlyingStips">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
+      <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="NoUndlyInstrumentParties">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="UndlyInstrumentPartyID" minOccurs="0" type="xs:string"/>
+      <xs:element name="UndlyInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+      <xs:element name="UndlyInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+      <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="NoUndlyInstrumentPartySubIDs">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" type="xs:string"/>
+      <xs:element name="UndlyInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

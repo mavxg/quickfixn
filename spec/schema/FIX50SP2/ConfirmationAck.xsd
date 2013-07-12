@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConfirmationAck">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="ConfirmID" type="xs:string"/>
+        <xs:element name="TradeDate" type="xs:string"/>
+        <xs:element name="TransactTime" type="xs:string"/>
+        <xs:element name="AffirmStatus">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ConfirmRejReason" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="99"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MatchStatus" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

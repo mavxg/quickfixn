@@ -1,0 +1,72 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ConfirmationRequest">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="ConfirmReqID" type="xs:string"/>
+        <xs:element name="ConfirmType">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="NoOrders" minOccurs="0" type="NoOrders"/>
+        <xs:element name="AllocID" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecondaryAllocID" minOccurs="0" type="xs:string"/>
+        <xs:element name="IndividualAllocID" minOccurs="0" type="xs:string"/>
+        <xs:element name="TransactTime" type="xs:string"/>
+        <xs:element name="AllocAccount" minOccurs="0" type="xs:string"/>
+        <xs:element name="AllocAcctIDSource" minOccurs="0" type="xs:integer"/>
+        <xs:element name="AllocAccountType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+              <xs:enumeration value="8"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoOrders">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
+      <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
+      <xs:element name="SecondaryOrderID" minOccurs="0" type="xs:string"/>
+      <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
+      <xs:element name="ListID" minOccurs="0" type="xs:string"/>
+      <xs:element name="NoNested2PartyIDs" minOccurs="0" type="NoNested2PartyIDs"/>
+      <xs:element name="OrderQty" minOccurs="0" type="xs:float"/>
+      <xs:element name="OrderAvgPx" minOccurs="0" type="xs:float"/>
+      <xs:element name="OrderBookingQty" minOccurs="0" type="xs:float"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="NoNested2PartyIDs">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Nested2PartyID" minOccurs="0" type="xs:string"/>
+      <xs:element name="Nested2PartyIDSource" minOccurs="0" type="xs:string"/>
+      <xs:element name="Nested2PartyRole" minOccurs="0" type="xs:integer"/>
+      <xs:element name="NoNested2PartySubIDs" minOccurs="0" type="NoNested2PartySubIDs"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="NoNested2PartySubIDs">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Nested2PartySubID" minOccurs="0" type="xs:string"/>
+      <xs:element name="Nested2PartySubIDType" minOccurs="0" type="xs:integer"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

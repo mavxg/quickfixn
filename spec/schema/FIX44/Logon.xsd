@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Logon">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="EncryptMethod">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="HeartBtInt" type="xs:integer"/>
+        <xs:element name="RawDataLength" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="RawData" minOccurs="0" type="xs:string"/>
+        <xs:element name="ResetSeqNumFlag" minOccurs="0" type="xs:string"/>
+        <xs:element name="NextExpectedMsgSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="MaxMessageSize" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="NoMsgTypes" minOccurs="0" type="NoMsgTypes"/>
+        <xs:element name="TestMessageIndicator" minOccurs="0" type="xs:string"/>
+        <xs:element name="Username" minOccurs="0" type="xs:string"/>
+        <xs:element name="Password" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoMsgTypes">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="RefMsgType" minOccurs="0" type="xs:string"/>
+      <xs:element name="MsgDirection" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="R"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

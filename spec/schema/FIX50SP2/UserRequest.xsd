@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="UserRequest">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="UserRequestID" type="xs:string"/>
+        <xs:element name="UserRequestType">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Username" type="xs:string"/>
+        <xs:element name="Password" minOccurs="0" type="xs:string"/>
+        <xs:element name="NewPassword" minOccurs="0" type="xs:string"/>
+        <xs:element name="RawDataLength" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="RawData" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncryptedPasswordMethod" minOccurs="0" type="xs:integer"/>
+        <xs:element name="EncryptedPasswordLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncryptedPassword" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncryptedNewPasswordLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncryptedNewPassword" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,11 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Reject">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="RefSeqNum" type="xs:integer"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

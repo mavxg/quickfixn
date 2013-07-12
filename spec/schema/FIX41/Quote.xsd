@@ -1,0 +1,115 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Quote">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
+        <xs:element name="QuoteID" type="xs:string"/>
+        <xs:element name="Symbol" type="xs:string"/>
+        <xs:element name="SymbolSfx" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecurityID" minOccurs="0" type="xs:string"/>
+        <xs:element name="IDSource" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SecurityType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="BA"/>
+              <xs:enumeration value="CD"/>
+              <xs:enumeration value="CMO"/>
+              <xs:enumeration value="CORP"/>
+              <xs:enumeration value="CP"/>
+              <xs:enumeration value="CPP"/>
+              <xs:enumeration value="CS"/>
+              <xs:enumeration value="FHA"/>
+              <xs:enumeration value="FHL"/>
+              <xs:enumeration value="FN"/>
+              <xs:enumeration value="FOR"/>
+              <xs:enumeration value="FUT"/>
+              <xs:enumeration value="GN"/>
+              <xs:enumeration value="GOVT"/>
+              <xs:enumeration value="MF"/>
+              <xs:enumeration value="MIO"/>
+              <xs:enumeration value="MPO"/>
+              <xs:enumeration value="MPP"/>
+              <xs:enumeration value="MPT"/>
+              <xs:enumeration value="MUNI"/>
+              <xs:enumeration value="NONE"/>
+              <xs:enumeration value="OPT"/>
+              <xs:enumeration value="PS"/>
+              <xs:enumeration value="RP"/>
+              <xs:enumeration value="RVRP"/>
+              <xs:enumeration value="SL"/>
+              <xs:enumeration value="TD"/>
+              <xs:enumeration value="USTB"/>
+              <xs:enumeration value="WAR"/>
+              <xs:enumeration value="ZOO"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MaturityMonthYear" minOccurs="0" type="xs:string"/>
+        <xs:element name="MaturityDay" minOccurs="0" type="xs:string"/>
+        <xs:element name="PutOrCall" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
+        <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
+        <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
+        <xs:element name="BidPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="OfferPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="BidSize" minOccurs="0" type="xs:integer"/>
+        <xs:element name="OfferSize" minOccurs="0" type="xs:integer"/>
+        <xs:element name="ValidUntilTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="BidSpotRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="OfferSpotRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="BidForwardPoints" minOccurs="0" type="xs:float"/>
+        <xs:element name="OfferForwardPoints" minOccurs="0" type="xs:float"/>
+        <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
+        <xs:element name="FutSettDate" minOccurs="0" type="xs:string"/>
+        <xs:element name="OrdType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+              <xs:enumeration value="8"/>
+              <xs:enumeration value="9"/>
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="B"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="D"/>
+              <xs:enumeration value="E"/>
+              <xs:enumeration value="F"/>
+              <xs:enumeration value="G"/>
+              <xs:enumeration value="H"/>
+              <xs:enumeration value="P"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="FutSettDate2" minOccurs="0" type="xs:string"/>
+        <xs:element name="OrderQty2" minOccurs="0" type="xs:float"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

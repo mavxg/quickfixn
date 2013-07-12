@@ -1,0 +1,11 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SequenceReset">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="GapFillFlag" minOccurs="0" type="xs:string"/>
+        <xs:element name="NewSeqNo" type="xs:nonNegativeInteger"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

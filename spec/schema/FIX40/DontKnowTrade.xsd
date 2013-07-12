@@ -1,0 +1,40 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DontKnowTrade">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
+        <xs:element name="ExecID" minOccurs="0" type="xs:integer"/>
+        <xs:element name="DKReason">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="A"/>
+              <xs:enumeration value="B"/>
+              <xs:enumeration value="C"/>
+              <xs:enumeration value="D"/>
+              <xs:enumeration value="E"/>
+              <xs:enumeration value="Z"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="Symbol" type="xs:string"/>
+        <xs:element name="Side">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="OrderQty" type="xs:integer"/>
+        <xs:element name="LastShares" type="xs:integer"/>
+        <xs:element name="LastPx" type="xs:float"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

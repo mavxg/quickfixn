@@ -1,0 +1,54 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ApplicationMessageRequestAck">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="ApplResponseID" type="xs:string"/>
+        <xs:element name="ApplReqID" minOccurs="0" type="xs:string"/>
+        <xs:element name="ApplReqType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ApplResponseType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ApplTotalMessageCount" minOccurs="0" type="xs:integer"/>
+        <xs:element name="NoApplIDs" minOccurs="0" type="NoApplIDs"/>
+        <xs:element name="Text" minOccurs="0" type="xs:string"/>
+        <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+        <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoApplIDs">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="RefApplID" minOccurs="0" type="xs:string"/>
+      <xs:element name="ApplBegSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
+      <xs:element name="ApplEndSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
+      <xs:element name="RefApplLastSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
+      <xs:element name="ApplResponseError" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>

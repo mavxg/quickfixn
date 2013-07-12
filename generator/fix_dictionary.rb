@@ -73,7 +73,7 @@ class FIXDictionary
   def new_msg( msgel )
     name = msgel['name']
     header = {:fields=>[], :groups=>[]}
-    footer = header.clone
+    footer = {:fields=>[], :groups=>[]} #header.clone
     msg = { :name=>name, :msgtype=>msgel['msgtype'], :fields=>[], 
       :groups=>[], :header=>header, :footer=>footer }
     parse_element( headerel, msg[:header], true, false ) unless headerel.nil?

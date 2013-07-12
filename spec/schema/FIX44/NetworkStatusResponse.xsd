@@ -1,0 +1,41 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="NetworkStatusResponse">
+    <xs:complexType>
+      <!-- body -->
+      <xs:sequence>
+        <xs:element name="NetworkStatusResponseType">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="NetworkRequestID" minOccurs="0" type="xs:string"/>
+        <xs:element name="NetworkResponseID" minOccurs="0" type="xs:string"/>
+        <xs:element name="LastNetworkResponseID" minOccurs="0" type="xs:string"/>
+        <xs:element name="NoCompIDs" type="NoCompIDs"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NoCompIDs">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="RefCompID" minOccurs="0" type="xs:string"/>
+      <xs:element name="RefSubID" minOccurs="0" type="xs:string"/>
+      <xs:element name="LocationID" minOccurs="0" type="xs:string"/>
+      <xs:element name="DeskID" minOccurs="0" type="xs:string"/>
+      <xs:element name="StatusValue" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="StatusText" minOccurs="0" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+</xs:schema>
