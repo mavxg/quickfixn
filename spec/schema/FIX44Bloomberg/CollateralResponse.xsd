@@ -131,6 +131,24 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
+        <xs:element name="FixedIncomeFlag" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+              <xs:enumeration value="8"/>
+              <xs:enumeration value="9"/>
+              <xs:enumeration value="10"/>
+              <xs:enumeration value="11"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="FixedIncomeSubFlag" minOccurs="0" type="xs:integer"/>
         <xs:element name="CFICode" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityType" minOccurs="0">
           <xs:simpleType>
@@ -272,6 +290,8 @@
         <xs:element name="CPProgram" minOccurs="0" type="xs:integer"/>
         <xs:element name="CPRegType" minOccurs="0" type="xs:string"/>
         <xs:element name="NoEvents" minOccurs="0" type="NoEvents"/>
+        <xs:element name="AssumedCoupon" minOccurs="0" type="xs:float"/>
+        <xs:element name="PrepaymentSpeed" minOccurs="0" type="xs:string"/>
         <xs:element name="DatedDate" minOccurs="0" type="xs:string"/>
         <xs:element name="InterestAccrualDate" minOccurs="0" type="xs:string"/>
         <xs:element name="AgreementDesc" minOccurs="0" type="xs:string"/>
@@ -504,6 +524,15 @@
             <xs:enumeration value="36"/>
             <xs:enumeration value="37"/>
             <xs:enumeration value="38"/>
+            <xs:enumeration value="100"/>
+            <xs:enumeration value="101"/>
+            <xs:enumeration value="104"/>
+            <xs:enumeration value="105"/>
+            <xs:enumeration value="107"/>
+            <xs:enumeration value="109"/>
+            <xs:enumeration value="111"/>
+            <xs:enumeration value="114"/>
+            <xs:enumeration value="114"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -762,29 +791,87 @@
             <xs:enumeration value="PPC"/>
             <xs:enumeration value="MHP"/>
             <xs:enumeration value="HEP"/>
+            <xs:enumeration value="SHORT_COVER_FLAG"/>
+            <xs:enumeration value="BB_RETAIL_FEED_FLAG"/>
+            <xs:enumeration value="BB_GENERATE_TRADE_FEED"/>
+            <xs:enumeration value="IPO_TRADE"/>
+            <xs:enumeration value="SELL_ALL_FLAG"/>
+            <xs:enumeration value="NET_ASSET_VALUE_FLAG"/>
+            <xs:enumeration value="ADD_DEDUCT_COSTS"/>
+            <xs:enumeration value="TRANSACTION_CODE"/>
+            <xs:enumeration value="CFD_FLAG"/>
+            <xs:enumeration value="BB_CMF_HEALTH_CHECK"/>
+            <xs:enumeration value="RECAP_TRADE"/>
+            <xs:enumeration value="CORP_ACTION"/>
+            <xs:enumeration value="ATS_INFO"/>
+            <xs:enumeration value="ReofferIndicator"/>
+            <xs:enumeration value="SWAP_DESK_ID"/>
+            <xs:enumeration value="SWAPWIRE_ID"/>
+            <xs:enumeration value="MASTER_ACCOUNT"/>
+            <xs:enumeration value="HAS_MTGE_STIP"/>
+            <xs:enumeration value="MTGE_STIP_WAC"/>
+            <xs:enumeration value="MTGE_STIP_WAM"/>
+            <xs:enumeration value="MTGE_STIP_WALA"/>
+            <xs:enumeration value="MTGE_STIP_WAL"/>
+            <xs:enumeration value="MTGE_STIP_AOLS"/>
+            <xs:enumeration value="MTGE_STIP_WAOLTV"/>
+            <xs:enumeration value="MTGE_STIP_PROD_YEAR"/>
+            <xs:enumeration value="MTGE_STIP_NEW_PROD"/>
+            <xs:enumeration value="MTGE_STIP_CREDIT_SCORE"/>
+            <xs:enumeration value="MTGE_STIP_NUM_POOLS"/>
+            <xs:enumeration value="MTGE_STIP_NUM_UNIQ_POOLS"/>
+            <xs:enumeration value="MTGE_STIP_POOLS_PER_ACCOUNT"/>
+            <xs:enumeration value="MTGE_STIP_ORIG_FACE"/>
+            <xs:enumeration value="MTGE_STIP_CURR_FACE"/>
+            <xs:enumeration value="MTGE_STIP_VAR_AMOUNT"/>
+            <xs:enumeration value="MTGE_STIP_NO_VARIANCE"/>
+            <xs:enumeration value="MTGE_STIP_SPECIFIC_POOL"/>
+            <xs:enumeration value="MTGE_STIP_ONE_POOL_PER_MIL"/>
+            <xs:enumeration value="MTGE_STIP_OTHER"/>
+            <xs:enumeration value="DOLLAR_ROLL"/>
+            <xs:enumeration value="SPECIAL_PRICE_MEMO"/>
+            <xs:enumeration value="CASH_CODE"/>
+            <xs:enumeration value="LINK_TO_TICKET"/>
+            <xs:enumeration value="CASH_DELIVERY_ACCOUNT_STRATEGY"/>
+            <xs:enumeration value="MktSplitCcy1Rate"/>
+            <xs:enumeration value="MktSplitCcy2Rate"/>
+            <xs:enumeration value="MktSplitCcy1Points"/>
+            <xs:enumeration value="MktSplitCcy2Points"/>
+            <xs:enumeration value="SplitCcyPair1"/>
+            <xs:enumeration value="SplitCcyPair1Rate"/>
+            <xs:enumeration value="SplitCcyPair1Points"/>
+            <xs:enumeration value="SplitCcyPair1Spot"/>
+            <xs:enumeration value="SplitCcyPair2"/>
+            <xs:enumeration value="SplitCcyPair2Rate"/>
+            <xs:enumeration value="SplitCcyPair2Points"/>
+            <xs:enumeration value="SplitCcyPair2Spot"/>
+            <xs:enumeration value="SplitCcyPair1Trader"/>
+            <xs:enumeration value="SplitCcyPair2Trader"/>
+            <xs:enumeration value="TradeFlat"/>
+            <xs:enumeration value="UseStandardInst"/>
+            <xs:enumeration value="UseStandardInst"/>
+            <xs:enumeration value="USE_CASH_AT_SETTLEMENT_ONLY"/>
+            <xs:enumeration value="TRUE_POINTS"/>
+            <xs:enumeration value="DEAL_TYPE"/>
+            <xs:enumeration value="MSRB_SPECIAL_PRICE"/>
+            <xs:enumeration value="SPREAD_BASED_CALCULATIONS"/>
+            <xs:enumeration value="SWAP_ACTION"/>
+            <xs:enumeration value="BB_BYPASS_CUTS"/>
+            <xs:enumeration value="REPO_TRANSACTION_TYPE"/>
+            <xs:enumeration value="REPO_PRODUCT"/>
+            <xs:enumeration value="EARLY_REDEMPTION"/>
+            <xs:enumeration value="ADD_CPN_TO_FWD_PX"/>
+            <xs:enumeration value="EXCLUDE_CPN_INTEREST"/>
+            <xs:enumeration value="CPN_TO_BE_REINVESTED"/>
+            <xs:enumeration value="INDEX_PRODUCT"/>
+            <xs:enumeration value="INDEX_PRODUCT_SPREAD"/>
+            <xs:enumeration value="MAXSUBS"/>
+            <xs:enumeration value="BOND_RATE"/>
+            <xs:enumeration value="DayCnt"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="StipulationValue" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="CD"/>
-            <xs:enumeration value="XD"/>
-            <xs:enumeration value="CC"/>
-            <xs:enumeration value="XC"/>
-            <xs:enumeration value="CB"/>
-            <xs:enumeration value="XB"/>
-            <xs:enumeration value="CR"/>
-            <xs:enumeration value="XR"/>
-            <xs:enumeration value="CP"/>
-            <xs:enumeration value="XP"/>
-            <xs:enumeration value="CS"/>
-            <xs:enumeration value="SP"/>
-            <xs:enumeration value="TR"/>
-            <xs:enumeration value="GD"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
+      <xs:element name="StipulationValue" minOccurs="0" type="xs:string"/>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>

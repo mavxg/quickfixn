@@ -19,7 +19,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Symbol" type="xs:string"/>
+        <xs:element name="Symbol" minOccurs="0" type="xs:string"/>
         <xs:element name="SymbolSfx" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -74,6 +74,24 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
+        <xs:element name="FixedIncomeFlag" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="3"/>
+              <xs:enumeration value="4"/>
+              <xs:enumeration value="5"/>
+              <xs:enumeration value="6"/>
+              <xs:enumeration value="7"/>
+              <xs:enumeration value="8"/>
+              <xs:enumeration value="9"/>
+              <xs:enumeration value="10"/>
+              <xs:enumeration value="11"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="FixedIncomeSubFlag" minOccurs="0" type="xs:integer"/>
         <xs:element name="CFICode" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityType" minOccurs="0">
           <xs:simpleType>
@@ -215,6 +233,8 @@
         <xs:element name="CPProgram" minOccurs="0" type="xs:integer"/>
         <xs:element name="CPRegType" minOccurs="0" type="xs:string"/>
         <xs:element name="NoEvents" minOccurs="0" type="NoEvents"/>
+        <xs:element name="AssumedCoupon" minOccurs="0" type="xs:float"/>
+        <xs:element name="PrepaymentSpeed" minOccurs="0" type="xs:string"/>
         <xs:element name="DatedDate" minOccurs="0" type="xs:string"/>
         <xs:element name="InterestAccrualDate" minOccurs="0" type="xs:string"/>
         <xs:element name="NoUnderlyings" minOccurs="0" type="NoUnderlyings"/>

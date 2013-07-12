@@ -37,7 +37,7 @@ class Generator
     @fix42 = FIXDictionary.load spec('FIX42')
     @fix43 = FIXDictionary.load spec('FIX43')
     @fix44 = FIXDictionary.load spec('FIX44')
-    @fix44Bloomberg = FIXDictionary.load spec('FIX44')
+    @fix44Bloomberg = FIXDictionary.load spec('FIX44Bloomberg')
     @fix50 = FIXDictionary.load spec('FIX50')
     @fix50sp1 = FIXDictionary.load spec('FIX50SP1')
     @fix50sp2 = FIXDictionary.load spec('FIX50SP2')

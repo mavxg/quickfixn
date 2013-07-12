@@ -128,6 +128,15 @@
             <xs:enumeration value="36"/>
             <xs:enumeration value="37"/>
             <xs:enumeration value="38"/>
+            <xs:enumeration value="100"/>
+            <xs:enumeration value="101"/>
+            <xs:enumeration value="104"/>
+            <xs:enumeration value="105"/>
+            <xs:enumeration value="107"/>
+            <xs:enumeration value="109"/>
+            <xs:enumeration value="111"/>
+            <xs:enumeration value="114"/>
+            <xs:enumeration value="114"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -177,7 +186,15 @@
     <xs:sequence minOccurs="0" maxOccurs="unbounded">
       <xs:element name="NestedPartyID" minOccurs="0" type="xs:string"/>
       <xs:element name="NestedPartyIDSource" minOccurs="0" type="xs:string"/>
-      <xs:element name="NestedPartyRole" minOccurs="0" type="xs:integer"/>
+      <xs:element name="NestedPartyRole" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="100"/>
+            <xs:enumeration value="105"/>
+            <xs:enumeration value="106"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
       <xs:element name="NoNestedPartySubIDs" minOccurs="0" type="NoNestedPartySubIDs"/>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>

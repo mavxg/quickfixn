@@ -135,6 +135,15 @@
             <xs:enumeration value="36"/>
             <xs:enumeration value="37"/>
             <xs:enumeration value="38"/>
+            <xs:enumeration value="100"/>
+            <xs:enumeration value="101"/>
+            <xs:enumeration value="104"/>
+            <xs:enumeration value="105"/>
+            <xs:enumeration value="107"/>
+            <xs:enumeration value="109"/>
+            <xs:enumeration value="111"/>
+            <xs:enumeration value="114"/>
+            <xs:enumeration value="114"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
