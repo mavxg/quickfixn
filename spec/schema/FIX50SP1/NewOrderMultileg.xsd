@@ -2,7 +2,7 @@
   <xs:element name="NewOrderMultileg">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClOrdID" type="xs:string"/>
         <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClOrdLinkID" minOccurs="0" type="xs:string"/>
@@ -1106,7 +1106,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="RiskFreeRate" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

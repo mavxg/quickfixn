@@ -2,7 +2,7 @@
   <xs:element name="MarketDataIncrementalRefresh">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MDReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoMDEntries" type="NoMDEntries"/>
         <xs:element name="ApplQueueDepth" minOccurs="0" type="xs:integer"/>
@@ -16,7 +16,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMDEntries">

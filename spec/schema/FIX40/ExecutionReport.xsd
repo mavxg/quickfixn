@@ -2,7 +2,7 @@
   <xs:element name="ExecutionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" type="xs:string"/>
         <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
@@ -222,7 +222,7 @@
         <xs:element name="SettlCurrAmt" minOccurs="0" type="xs:float"/>
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMiscFees">

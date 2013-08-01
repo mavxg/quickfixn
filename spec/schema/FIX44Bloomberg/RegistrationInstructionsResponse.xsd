@@ -2,7 +2,7 @@
   <xs:element name="RegistrationInstructionsResponse">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="RegistID" type="xs:string"/>
         <xs:element name="RegistTransType">
           <xs:simpleType>
@@ -65,7 +65,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="RegistRejReasonText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

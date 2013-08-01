@@ -2,7 +2,7 @@
   <xs:element name="NewOrderList">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ListID" type="xs:string"/>
         <xs:element name="BidID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClientBidID" minOccurs="0" type="xs:string"/>
@@ -15,7 +15,7 @@
         <xs:element name="EncodedListExecInst" minOccurs="0" type="xs:string"/>
         <xs:element name="TotNoOrders" type="xs:integer"/>
         <xs:element name="NoOrders" type="NoOrders"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">

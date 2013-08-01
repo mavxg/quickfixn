@@ -2,7 +2,7 @@
   <xs:element name="Confirmation">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ConfirmID" type="xs:string"/>
         <xs:element name="ConfirmRefID" minOccurs="0" type="xs:string"/>
         <xs:element name="ConfirmReqID" minOccurs="0" type="xs:string"/>
@@ -528,7 +528,7 @@
         <xs:element name="SharedCommission" minOccurs="0" type="xs:float"/>
         <xs:element name="NoStipulations" minOccurs="0" type="NoStipulations"/>
         <xs:element name="NoMiscFees" minOccurs="0" type="NoMiscFees"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

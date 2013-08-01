@@ -2,7 +2,7 @@
   <xs:element name="TradeCaptureReportAck">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="FirmNo" minOccurs="0" type="xs:integer"/>
         <xs:element name="PricingNo" type="xs:integer"/>
         <xs:element name="UUID" type="xs:integer"/>
@@ -445,7 +445,7 @@
         </xs:element>
         <xs:element name="NoAllocs" minOccurs="0" type="NoAllocs"/>
         <xs:element name="NoTickets" minOccurs="0" type="NoTickets"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

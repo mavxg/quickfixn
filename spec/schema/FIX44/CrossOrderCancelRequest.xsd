@@ -2,7 +2,7 @@
   <xs:element name="CrossOrderCancelRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="CrossID" type="xs:string"/>
         <xs:element name="OrigCrossID" type="xs:string"/>
@@ -227,7 +227,7 @@
         <xs:element name="NoUnderlyings" minOccurs="0" type="NoUnderlyings"/>
         <xs:element name="NoLegs" minOccurs="0" type="NoLegs"/>
         <xs:element name="TransactTime" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSides">

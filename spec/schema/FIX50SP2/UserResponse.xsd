@@ -2,7 +2,7 @@
   <xs:element name="UserResponse">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="UserRequestID" type="xs:string"/>
         <xs:element name="Username" type="xs:string"/>
         <xs:element name="UserStatus" minOccurs="0">
@@ -20,7 +20,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="UserStatusText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

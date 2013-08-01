@@ -2,7 +2,7 @@
   <xs:element name="Logon">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="EncryptMethod">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -27,7 +27,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -2,7 +2,7 @@
   <xs:element name="MarketDataRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MDReqID" type="xs:string"/>
         <xs:element name="SubscriptionRequestType">
           <xs:simpleType>
@@ -85,7 +85,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoPartyIDs" minOccurs="0" type="NoPartyIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMDEntryTypes">

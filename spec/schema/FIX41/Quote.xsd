@@ -2,7 +2,7 @@
   <xs:element name="Quote">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" type="xs:string"/>
         <xs:element name="Symbol" type="xs:string"/>
@@ -109,7 +109,7 @@
         </xs:element>
         <xs:element name="FutSettDate2" minOccurs="0" type="xs:string"/>
         <xs:element name="OrderQty2" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

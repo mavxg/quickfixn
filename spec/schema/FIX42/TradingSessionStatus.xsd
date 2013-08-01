@@ -2,7 +2,7 @@
   <xs:element name="TradingSessionStatus">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="TradSesReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="TradingSessionID" type="xs:string"/>
         <xs:element name="TradSesMethod" minOccurs="0">
@@ -51,7 +51,7 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:integer"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

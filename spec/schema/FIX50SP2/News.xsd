@@ -2,7 +2,7 @@
   <xs:element name="News">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrigTime" minOccurs="0" type="xs:string"/>
         <xs:element name="Urgency" minOccurs="0">
           <xs:simpleType>
@@ -44,7 +44,7 @@
         <xs:element name="LanguageCode" minOccurs="0" type="xs:string"/>
         <xs:element name="MarketID" minOccurs="0" type="xs:string"/>
         <xs:element name="MarketSegmentID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoRoutingIDs">

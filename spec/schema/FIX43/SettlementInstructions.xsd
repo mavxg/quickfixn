@@ -2,7 +2,7 @@
   <xs:element name="SettlementInstructions">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SettlInstID" type="xs:string"/>
         <xs:element name="SettlInstTransType">
           <xs:simpleType>
@@ -184,7 +184,7 @@
         <xs:element name="CardIssNo" minOccurs="0" type="xs:string"/>
         <xs:element name="PaymentDate" minOccurs="0" type="xs:string"/>
         <xs:element name="PaymentRemitterID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

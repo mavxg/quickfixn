@@ -2,7 +2,7 @@
   <xs:element name="NetworkStatusResponse">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="NetworkStatusResponseType">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -15,7 +15,7 @@
         <xs:element name="NetworkResponseID" minOccurs="0" type="xs:string"/>
         <xs:element name="LastNetworkResponseID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoCompIDs" type="NoCompIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoCompIDs">

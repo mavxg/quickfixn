@@ -2,7 +2,7 @@
   <xs:element name="Advertisement">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="AdvId" type="xs:integer"/>
         <xs:element name="AdvTransType">
           <xs:simpleType>
@@ -45,7 +45,7 @@
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

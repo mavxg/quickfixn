@@ -2,7 +2,7 @@
   <xs:element name="TradeCaptureReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="FirmNo" minOccurs="0" type="xs:integer"/>
         <xs:element name="PricingNo" type="xs:integer"/>
         <xs:element name="UUID" type="xs:integer"/>
@@ -612,7 +612,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

@@ -2,7 +2,7 @@
   <xs:element name="SecurityDefinition">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityResponseID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityResponseType" minOccurs="0">
@@ -474,7 +474,7 @@
         <xs:element name="ApplSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplLastSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplResendFlag" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

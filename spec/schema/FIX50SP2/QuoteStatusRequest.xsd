@@ -2,7 +2,7 @@
   <xs:element name="QuoteStatusRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteStatusReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" minOccurs="0" type="xs:string"/>
         <xs:element name="Symbol" minOccurs="0" type="xs:string"/>
@@ -523,7 +523,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoTargetPartyIDs" minOccurs="0" type="NoTargetPartyIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

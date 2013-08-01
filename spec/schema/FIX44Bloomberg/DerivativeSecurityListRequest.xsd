@@ -2,7 +2,7 @@
   <xs:element name="DerivativeSecurityListRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" type="xs:string"/>
         <xs:element name="SecurityListRequestType">
           <xs:simpleType>
@@ -85,7 +85,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoUnderlyingSecurityAltID">

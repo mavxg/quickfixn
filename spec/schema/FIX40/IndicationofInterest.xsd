@@ -2,7 +2,7 @@
   <xs:element name="IndicationofInterest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="IOIid" type="xs:integer"/>
         <xs:element name="IOITransType">
           <xs:simpleType>
@@ -84,7 +84,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

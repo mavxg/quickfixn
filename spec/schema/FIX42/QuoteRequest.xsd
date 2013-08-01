@@ -2,10 +2,10 @@
   <xs:element name="QuoteRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" type="xs:string"/>
         <xs:element name="NoRelatedSym" type="NoRelatedSym"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoRelatedSym">

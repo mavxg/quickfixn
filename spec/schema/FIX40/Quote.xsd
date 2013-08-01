@@ -2,7 +2,7 @@
   <xs:element name="Quote">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" type="xs:string"/>
         <xs:element name="Symbol" type="xs:string"/>
@@ -26,7 +26,7 @@
         <xs:element name="BidSize" minOccurs="0" type="xs:integer"/>
         <xs:element name="OfferSize" minOccurs="0" type="xs:integer"/>
         <xs:element name="ValidUntilTime" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

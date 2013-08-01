@@ -2,7 +2,7 @@
   <xs:element name="NewOrderSingle">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClOrdID" type="xs:string"/>
         <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
         <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
@@ -286,7 +286,7 @@
         </xs:element>
         <xs:element name="MaxShow" minOccurs="0" type="xs:integer"/>
         <xs:element name="PegDifference" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

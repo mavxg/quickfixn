@@ -28,7 +28,7 @@ class SchemaGen
           #  gen_msg_fields msg[:header][:fields], xml
           #end
           xml.comment!("body")
-          xml.xs :sequence do
+          xml.xs :all do
             gen_msg_fields msg[:fields], xml
           end
           #xml.comment!("footer")

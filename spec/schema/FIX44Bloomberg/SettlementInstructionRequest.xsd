@@ -2,7 +2,7 @@
   <xs:element name="SettlementInstructionRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SettlInstReqID" type="xs:string"/>
         <xs:element name="TransactTime" type="xs:string"/>
         <xs:element name="NoPartyIDs" minOccurs="0" type="NoPartyIDs"/>
@@ -166,7 +166,7 @@
         </xs:element>
         <xs:element name="StandInstDbName" minOccurs="0" type="xs:string"/>
         <xs:element name="StandInstDbID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

@@ -2,7 +2,7 @@
   <xs:element name="OrderMassStatusRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MassStatusReqID" type="xs:string"/>
         <xs:element name="MassStatusReqType">
           <xs:simpleType>
@@ -603,7 +603,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoTargetPartyIDs" minOccurs="0" type="NoTargetPartyIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

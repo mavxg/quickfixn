@@ -2,7 +2,7 @@
   <xs:element name="QuoteResponse">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteRespID" type="xs:string"/>
         <xs:element name="QuoteID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteRespType">
@@ -604,7 +604,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoQuoteQualifiers">

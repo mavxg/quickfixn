@@ -2,7 +2,7 @@
   <xs:element name="MarketDefinitionUpdateReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MarketReportID" type="xs:string"/>
         <xs:element name="MarketReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="MarketUpdateAction" minOccurs="0">
@@ -115,7 +115,7 @@
         <xs:element name="ApplSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplLastSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplResendFlag" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoTickRules">

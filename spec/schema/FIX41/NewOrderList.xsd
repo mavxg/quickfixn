@@ -2,7 +2,7 @@
   <xs:element name="NewOrderList">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ListID" type="xs:string"/>
         <xs:element name="WaveNo" minOccurs="0" type="xs:string"/>
         <xs:element name="ListSeqNo" type="xs:integer"/>
@@ -288,7 +288,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="MaxShow" minOccurs="0" type="xs:integer"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

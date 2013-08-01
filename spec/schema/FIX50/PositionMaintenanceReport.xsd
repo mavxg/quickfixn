@@ -2,7 +2,7 @@
   <xs:element name="PositionMaintenanceReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="PosMaintRptID" type="xs:string"/>
         <xs:element name="PosTransType">
           <xs:simpleType>
@@ -365,7 +365,7 @@
         <xs:element name="ContraryInstructionIndicator" minOccurs="0" type="xs:string"/>
         <xs:element name="PriorSpreadIndicator" minOccurs="0" type="xs:string"/>
         <xs:element name="PosMaintRptRefID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

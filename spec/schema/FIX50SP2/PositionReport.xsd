@@ -2,7 +2,7 @@
   <xs:element name="PositionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="PosMaintRptID" type="xs:string"/>
         <xs:element name="PosReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="PosReqType" minOccurs="0">
@@ -591,7 +591,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="PriceDelta" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

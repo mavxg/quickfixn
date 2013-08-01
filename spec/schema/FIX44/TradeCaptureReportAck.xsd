@@ -2,7 +2,7 @@
   <xs:element name="TradeCaptureReportAck">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="TradeReportID" type="xs:string"/>
         <xs:element name="TradeReportTransType" minOccurs="0">
           <xs:simpleType>
@@ -420,7 +420,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoAllocs" minOccurs="0" type="NoAllocs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

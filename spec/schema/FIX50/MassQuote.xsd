@@ -2,7 +2,7 @@
   <xs:element name="MassQuote">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" type="xs:string"/>
         <xs:element name="QuoteType" minOccurs="0">
@@ -54,7 +54,7 @@
         <xs:element name="DefBidSize" minOccurs="0" type="xs:float"/>
         <xs:element name="DefOfferSize" minOccurs="0" type="xs:float"/>
         <xs:element name="NoQuoteSets" type="NoQuoteSets"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

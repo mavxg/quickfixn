@@ -2,7 +2,7 @@
   <xs:element name="OrderMassCancelRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClOrdID" type="xs:string"/>
         <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="MassCancelRequestType">
@@ -599,7 +599,7 @@
         <xs:element name="MarketID" minOccurs="0" type="xs:string"/>
         <xs:element name="MarketSegmentID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoTargetPartyIDs" minOccurs="0" type="NoTargetPartyIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

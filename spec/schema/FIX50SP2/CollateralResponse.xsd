@@ -2,7 +2,7 @@
   <xs:element name="CollateralResponse">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="CollRespID" type="xs:string"/>
         <xs:element name="CollAsgnID" minOccurs="0" type="xs:string"/>
         <xs:element name="CollReqID" minOccurs="0" type="xs:string"/>
@@ -647,7 +647,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="ClearingBusinessDate" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

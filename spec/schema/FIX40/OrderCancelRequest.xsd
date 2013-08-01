@@ -2,7 +2,7 @@
   <xs:element name="OrderCancelRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrigClOrdID" type="xs:string"/>
         <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClOrdID" type="xs:string"/>
@@ -47,7 +47,7 @@
         </xs:element>
         <xs:element name="OrderQty" type="xs:integer"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

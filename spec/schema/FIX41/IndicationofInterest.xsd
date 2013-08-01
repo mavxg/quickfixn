@@ -2,7 +2,7 @@
   <xs:element name="IndicationofInterest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="IOIid" type="xs:string"/>
         <xs:element name="IOITransType">
           <xs:simpleType>
@@ -121,7 +121,7 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="URLLink" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoIOIQualifiers">

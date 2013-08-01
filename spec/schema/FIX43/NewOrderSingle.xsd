@@ -2,7 +2,7 @@
   <xs:element name="NewOrderSingle">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClOrdID" type="xs:string"/>
         <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClOrdLinkID" minOccurs="0" type="xs:string"/>
@@ -568,7 +568,7 @@
         <xs:element name="AccruedInterestRate" minOccurs="0" type="xs:float"/>
         <xs:element name="AccruedInterestAmt" minOccurs="0" type="xs:float"/>
         <xs:element name="NetMoney" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

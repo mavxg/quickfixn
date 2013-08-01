@@ -2,7 +2,7 @@
   <xs:element name="RequestForPositionsAck">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="PosMaintRptID" type="xs:string"/>
         <xs:element name="PosReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="TotalNumPosReports" minOccurs="0" type="xs:integer"/>
@@ -548,7 +548,7 @@
         </xs:element>
         <xs:element name="SettlSessSubID" minOccurs="0" type="xs:string"/>
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

@@ -2,7 +2,7 @@
   <xs:element name="AllocationInstruction">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="AllocID" type="xs:string"/>
         <xs:element name="AllocTransType">
           <xs:simpleType>
@@ -492,7 +492,7 @@
         <xs:element name="TotNoAllocs" minOccurs="0" type="xs:integer"/>
         <xs:element name="LastFragment" minOccurs="0" type="xs:string"/>
         <xs:element name="NoAllocs" minOccurs="0" type="NoAllocs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">

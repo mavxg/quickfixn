@@ -2,7 +2,7 @@
   <xs:element name="Quote">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" type="xs:string"/>
         <xs:element name="QuoteType" minOccurs="0">
@@ -284,7 +284,7 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

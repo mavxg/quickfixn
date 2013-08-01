@@ -2,7 +2,7 @@
   <xs:element name="Allocation">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="AllocID" type="xs:string"/>
         <xs:element name="AllocTransType">
           <xs:simpleType>
@@ -138,7 +138,7 @@
         <xs:element name="NumDaysInterest" minOccurs="0" type="xs:integer"/>
         <xs:element name="AccruedInterestRate" minOccurs="0" type="xs:float"/>
         <xs:element name="NoAllocs" type="NoAllocs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">

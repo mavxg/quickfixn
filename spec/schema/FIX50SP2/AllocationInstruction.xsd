@@ -2,7 +2,7 @@
   <xs:element name="AllocationInstruction">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="AllocID" type="xs:string"/>
         <xs:element name="AllocTransType">
           <xs:simpleType>
@@ -961,7 +961,7 @@
         <xs:element name="MessageEventSource" minOccurs="0" type="xs:string"/>
         <xs:element name="RndPx" minOccurs="0" type="xs:float"/>
         <xs:element name="NoRateSources" minOccurs="0" type="NoRateSources"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">

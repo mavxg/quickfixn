@@ -2,7 +2,7 @@
   <xs:element name="ExecutionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" type="xs:string"/>
         <xs:element name="SecondaryOrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
@@ -1372,7 +1372,7 @@
         <xs:element name="DisplayMinIncr" minOccurs="0" type="xs:float"/>
         <xs:element name="RefreshQty" minOccurs="0" type="xs:float"/>
         <xs:element name="DisplayQty" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

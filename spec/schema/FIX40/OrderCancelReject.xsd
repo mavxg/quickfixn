@@ -2,7 +2,7 @@
   <xs:element name="OrderCancelReject">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" type="xs:string"/>
         <xs:element name="ClOrdID" type="xs:string"/>
         <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
@@ -17,7 +17,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

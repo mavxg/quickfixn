@@ -2,7 +2,7 @@
   <xs:element name="DerivativeSecurityListRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" type="xs:string"/>
         <xs:element name="SecurityListRequestType">
           <xs:simpleType>
@@ -203,7 +203,7 @@
         <xs:element name="DerivativeSecurityXMLLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="DerivativeSecurityXML" minOccurs="0" type="xs:string"/>
         <xs:element name="DerivativeSecurityXMLSchema" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoUnderlyingSecurityAltID">

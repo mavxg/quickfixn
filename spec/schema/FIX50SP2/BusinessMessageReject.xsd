@@ -2,7 +2,7 @@
   <xs:element name="BusinessMessageReject">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="RefSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="RefMsgType" type="xs:string"/>
         <xs:element name="BusinessRejectRefID" minOccurs="0" type="xs:string"/>
@@ -27,7 +27,7 @@
         <xs:element name="RefApplVerID" minOccurs="0" type="xs:string"/>
         <xs:element name="RefApplExtID" minOccurs="0" type="xs:integer"/>
         <xs:element name="RefCstmApplVerID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

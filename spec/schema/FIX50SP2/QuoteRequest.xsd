@@ -2,7 +2,7 @@
   <xs:element name="QuoteRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" type="xs:string"/>
         <xs:element name="RFQReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
@@ -65,7 +65,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoRelatedSym">

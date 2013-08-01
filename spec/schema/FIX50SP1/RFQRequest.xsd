@@ -2,7 +2,7 @@
   <xs:element name="RFQRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="RFQReqID" type="xs:string"/>
         <xs:element name="NoRelatedSym" type="NoRelatedSym"/>
         <xs:element name="SubscriptionRequestType" minOccurs="0">
@@ -16,7 +16,7 @@
         </xs:element>
         <xs:element name="PrivateQuote" minOccurs="0" type="xs:string"/>
         <xs:element name="NoPartyIDs" minOccurs="0" type="NoPartyIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoRelatedSym">

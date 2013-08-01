@@ -2,7 +2,7 @@
   <xs:element name="Logon">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="EncryptMethod">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -25,7 +25,7 @@
         <xs:element name="TestMessageIndicator" minOccurs="0" type="xs:string"/>
         <xs:element name="Username" minOccurs="0" type="xs:string"/>
         <xs:element name="Password" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMsgTypes">

@@ -2,7 +2,7 @@
   <xs:element name="SettlementInstructions">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SettlInstMsgID" type="xs:string"/>
         <xs:element name="SettlInstReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="SettlInstMode">
@@ -40,7 +40,7 @@
         <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="TransactTime" type="xs:string"/>
         <xs:element name="NoSettlInst" minOccurs="0" type="NoSettlInst"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSettlInst">

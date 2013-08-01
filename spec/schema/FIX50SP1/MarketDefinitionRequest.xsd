@@ -2,7 +2,7 @@
   <xs:element name="MarketDefinitionRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MarketReqID" type="xs:string"/>
         <xs:element name="SubscriptionRequestType">
           <xs:simpleType>
@@ -16,7 +16,7 @@
         <xs:element name="MarketID" minOccurs="0" type="xs:string"/>
         <xs:element name="MarketSegmentID" minOccurs="0" type="xs:string"/>
         <xs:element name="ParentMktSegmID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

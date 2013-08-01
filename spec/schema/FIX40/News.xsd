@@ -2,7 +2,7 @@
   <xs:element name="News">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrigTime" minOccurs="0" type="xs:string"/>
         <xs:element name="Urgency" minOccurs="0">
           <xs:simpleType>
@@ -17,7 +17,7 @@
         <xs:element name="LinesOfText" type="LinesOfText"/>
         <xs:element name="RawDataLength" minOccurs="0" type="xs:integer"/>
         <xs:element name="RawData" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="LinesOfText">

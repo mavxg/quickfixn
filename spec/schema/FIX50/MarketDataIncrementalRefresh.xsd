@@ -2,7 +2,7 @@
   <xs:element name="MarketDataIncrementalRefresh">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MDReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoMDEntries" type="NoMDEntries"/>
         <xs:element name="ApplQueueDepth" minOccurs="0" type="xs:integer"/>
@@ -28,7 +28,7 @@
         <xs:element name="MDFeedType" minOccurs="0" type="xs:string"/>
         <xs:element name="TradeDate" minOccurs="0" type="xs:string"/>
         <xs:element name="NoRoutingIDs" minOccurs="0" type="NoRoutingIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMDEntries">

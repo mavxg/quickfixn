@@ -2,14 +2,14 @@
   <xs:element name="QuoteCancel">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" type="xs:string"/>
         <xs:element name="QuoteCancelType" type="xs:integer"/>
         <xs:element name="QuoteResponseLevel" minOccurs="0" type="xs:integer"/>
         <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoQuoteEntries" type="NoQuoteEntries"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoQuoteEntries">

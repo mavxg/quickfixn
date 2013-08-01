@@ -2,7 +2,7 @@
   <xs:element name="AssignmentReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="AsgnRptID" type="xs:string"/>
         <xs:element name="TotNumAssignmentReports" minOccurs="0" type="xs:integer"/>
         <xs:element name="LastRptRequested" minOccurs="0">
@@ -332,7 +332,7 @@
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
         <xs:element name="PriorSettlPrice" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

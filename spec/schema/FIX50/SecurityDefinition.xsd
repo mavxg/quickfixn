@@ -2,7 +2,7 @@
   <xs:element name="SecurityDefinition">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityResponseID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityResponseType" minOccurs="0">
@@ -300,7 +300,7 @@
         <xs:element name="MinTradeVol" minOccurs="0" type="xs:float"/>
         <xs:element name="SecurityReportID" minOccurs="0" type="xs:integer"/>
         <xs:element name="ClearingBusinessDate" minOccurs="0" type="ClearingBusinessDate"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

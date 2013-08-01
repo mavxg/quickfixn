@@ -2,7 +2,7 @@
   <xs:element name="ApplicationMessageRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ApplReqID" type="xs:string"/>
         <xs:element name="ApplReqType">
           <xs:simpleType>
@@ -19,7 +19,7 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoApplIDs">

@@ -2,7 +2,7 @@
   <xs:element name="NewOrderList">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ListID" type="xs:string"/>
         <xs:element name="WaveNo" minOccurs="0" type="xs:string"/>
         <xs:element name="ListSeqNo" type="xs:integer"/>
@@ -204,7 +204,7 @@
         </xs:element>
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

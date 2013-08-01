@@ -2,11 +2,11 @@
   <xs:element name="ListStrikePrice">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ListID" type="xs:string"/>
         <xs:element name="TotNoStrikes" type="xs:integer"/>
         <xs:element name="NoStrikes" type="NoStrikes"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoStrikes">

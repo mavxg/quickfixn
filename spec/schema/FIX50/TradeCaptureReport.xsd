@@ -2,7 +2,7 @@
   <xs:element name="TradeCaptureReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="TradeReportID" minOccurs="0" type="xs:string"/>
         <xs:element name="TradeReportTransType" minOccurs="0">
           <xs:simpleType>
@@ -828,7 +828,7 @@
         <xs:element name="OrigSecondaryTradeID" minOccurs="0" type="xs:string"/>
         <xs:element name="TZTransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="ReportedPxDiff" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

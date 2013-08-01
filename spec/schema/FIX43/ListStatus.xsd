@@ -2,7 +2,7 @@
   <xs:element name="ListStatus">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ListID" type="xs:string"/>
         <xs:element name="ListStatusType">
           <xs:simpleType>
@@ -37,7 +37,7 @@
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="TotNoOrders" type="xs:integer"/>
         <xs:element name="NoOrders" type="NoOrders"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">

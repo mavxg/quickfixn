@@ -2,7 +2,7 @@
   <xs:element name="DerivativeSecurityList">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" type="xs:string"/>
         <xs:element name="SecurityResponseID" type="xs:string"/>
         <xs:element name="SecurityRequestResult">
@@ -53,7 +53,7 @@
         <xs:element name="EncodedUnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
         <xs:element name="TotalNumSecurities" minOccurs="0" type="xs:integer"/>
         <xs:element name="NoRelatedSym" minOccurs="0" type="NoRelatedSym"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoUnderlyingSecurityAltID">

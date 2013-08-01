@@ -2,14 +2,14 @@
   <xs:element name="TradingSessionListUpdateReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="TradSesReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoTradingSessions" type="NoTradingSessions"/>
         <xs:element name="ApplID" minOccurs="0" type="xs:string"/>
         <xs:element name="ApplSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplLastSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplResendFlag" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoTradingSessions">

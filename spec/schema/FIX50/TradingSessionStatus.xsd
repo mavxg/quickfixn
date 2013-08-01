@@ -2,7 +2,7 @@
   <xs:element name="TradingSessionStatus">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="TradSesReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="TradingSessionID" type="xs:string"/>
         <xs:element name="TradingSessionSubID" minOccurs="0" type="xs:string"/>
@@ -315,7 +315,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="MaturityTime" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

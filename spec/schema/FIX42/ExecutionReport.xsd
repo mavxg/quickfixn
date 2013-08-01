@@ -2,7 +2,7 @@
   <xs:element name="ExecutionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" type="xs:string"/>
         <xs:element name="SecondaryOrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
@@ -424,7 +424,7 @@
         <xs:element name="ClearingFirm" minOccurs="0" type="xs:string"/>
         <xs:element name="ClearingAccount" minOccurs="0" type="xs:string"/>
         <xs:element name="MultiLegReportingType" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoContraBrokers">

@@ -2,7 +2,7 @@
   <xs:element name="ExecutionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" type="xs:string"/>
         <xs:element name="SecondaryOrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
@@ -1030,7 +1030,7 @@
         <xs:element name="NoLegs" minOccurs="0" type="NoLegs"/>
         <xs:element name="CopyMsgIndicator" minOccurs="0" type="xs:string"/>
         <xs:element name="NoMiscFees" minOccurs="0" type="NoMiscFees"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

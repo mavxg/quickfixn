@@ -2,7 +2,7 @@
   <xs:element name="NewOrderSingle">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClOrdID" type="xs:string"/>
         <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
         <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
@@ -346,7 +346,7 @@
         <xs:element name="DiscretionOffset" minOccurs="0" type="xs:float"/>
         <xs:element name="ClearingFirm" minOccurs="0" type="xs:string"/>
         <xs:element name="ClearingAccount" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoAllocs">

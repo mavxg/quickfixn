@@ -2,7 +2,7 @@
   <xs:element name="Email">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="EmailThreadID" type="xs:string"/>
         <xs:element name="EmailType">
           <xs:simpleType>
@@ -24,7 +24,7 @@
         <xs:element name="LinesOfText" type="LinesOfText"/>
         <xs:element name="RawDataLength" minOccurs="0" type="xs:integer"/>
         <xs:element name="RawData" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoRoutingIDs">

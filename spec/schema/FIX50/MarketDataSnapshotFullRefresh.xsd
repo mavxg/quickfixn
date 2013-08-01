@@ -2,7 +2,7 @@
   <xs:element name="MarketDataSnapshotFullRefresh">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="MDReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="Symbol" minOccurs="0" type="xs:string"/>
         <xs:element name="SymbolSfx" minOccurs="0">
@@ -323,7 +323,7 @@
         <xs:element name="MDFeedType" minOccurs="0" type="xs:string"/>
         <xs:element name="TradeDate" minOccurs="0" type="xs:string"/>
         <xs:element name="NoRoutingIDs" minOccurs="0" type="NoRoutingIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

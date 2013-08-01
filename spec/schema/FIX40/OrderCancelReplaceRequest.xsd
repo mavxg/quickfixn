@@ -2,7 +2,7 @@
   <xs:element name="OrderCancelReplaceRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
         <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
@@ -180,7 +180,7 @@
         </xs:element>
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

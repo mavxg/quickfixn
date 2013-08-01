@@ -2,7 +2,7 @@
   <xs:element name="NetworkCounterpartySystemStatusRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="NetworkRequestType">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -15,7 +15,7 @@
         </xs:element>
         <xs:element name="NetworkRequestID" type="xs:string"/>
         <xs:element name="NoCompIDs" minOccurs="0" type="NoCompIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoCompIDs">

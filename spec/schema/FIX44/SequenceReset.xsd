@@ -2,10 +2,10 @@
   <xs:element name="SequenceReset">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="GapFillFlag" minOccurs="0" type="xs:string"/>
         <xs:element name="NewSeqNo" type="xs:nonNegativeInteger"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

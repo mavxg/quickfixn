@@ -2,7 +2,7 @@
   <xs:element name="SecurityStatusRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityStatusReqID" type="xs:string"/>
         <xs:element name="Symbol" minOccurs="0" type="xs:string"/>
         <xs:element name="SymbolSfx" minOccurs="0">
@@ -480,7 +480,7 @@
         </xs:element>
         <xs:element name="MarketID" minOccurs="0" type="xs:string"/>
         <xs:element name="MarketSegmentID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

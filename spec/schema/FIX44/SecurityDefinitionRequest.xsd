@@ -2,7 +2,7 @@
   <xs:element name="SecurityDefinitionRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" type="xs:string"/>
         <xs:element name="SecurityRequestType">
           <xs:simpleType>
@@ -247,7 +247,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">

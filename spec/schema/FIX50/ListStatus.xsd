@@ -2,7 +2,7 @@
   <xs:element name="ListStatus">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ListID" type="xs:string"/>
         <xs:element name="ListStatusType">
           <xs:simpleType>
@@ -45,7 +45,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoOrders" type="NoOrders"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">

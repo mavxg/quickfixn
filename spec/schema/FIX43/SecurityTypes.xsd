@@ -2,7 +2,7 @@
   <xs:element name="SecurityTypes">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SecurityReqID" type="xs:string"/>
         <xs:element name="SecurityResponseID" type="xs:string"/>
         <xs:element name="SecurityResponseType">
@@ -33,7 +33,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityTypes">

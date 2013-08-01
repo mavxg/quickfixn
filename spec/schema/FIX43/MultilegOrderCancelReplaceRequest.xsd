@@ -2,7 +2,7 @@
   <xs:element name="MultilegOrderCancelReplaceRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
         <xs:element name="OrigClOrdID" type="xs:string"/>
         <xs:element name="ClOrdID" type="xs:string"/>
@@ -490,7 +490,7 @@
         <xs:element name="Designation" minOccurs="0" type="xs:string"/>
         <xs:element name="MultiLegRptTypeReq" minOccurs="0" type="xs:integer"/>
         <xs:element name="NetMoney" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

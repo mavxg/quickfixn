@@ -2,7 +2,7 @@
   <xs:element name="RegistrationInstructions">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="RegistID" type="xs:string"/>
         <xs:element name="RegistTransType">
           <xs:simpleType>
@@ -78,7 +78,7 @@
         </xs:element>
         <xs:element name="NoRegistDtls" minOccurs="0" type="NoRegistDtls"/>
         <xs:element name="NoDistribInsts" minOccurs="0" type="NoDistribInsts"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

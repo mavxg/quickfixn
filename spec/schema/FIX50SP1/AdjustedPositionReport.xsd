@@ -2,7 +2,7 @@
   <xs:element name="AdjustedPositionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="PosMaintRptID" type="xs:string"/>
         <xs:element name="PosReqType" minOccurs="0">
           <xs:simpleType>
@@ -33,7 +33,7 @@
         <xs:element name="SettlPrice" minOccurs="0" type="xs:float"/>
         <xs:element name="PriorSettlPrice" minOccurs="0" type="xs:float"/>
         <xs:element name="PosMaintRptRefID" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

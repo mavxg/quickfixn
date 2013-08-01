@@ -2,7 +2,7 @@
   <xs:element name="Logon">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="EncryptMethod">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -29,7 +29,7 @@
         </xs:element>
         <xs:element name="MaxMessageSize" minOccurs="0" type="xs:integer"/>
         <xs:element name="NoMsgTypes" minOccurs="0" type="NoMsgTypes"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMsgTypes">

@@ -2,7 +2,7 @@
   <xs:element name="SettlementInstructions">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="SettlInstID" type="xs:string"/>
         <xs:element name="SettlInstTransType">
           <xs:simpleType>
@@ -134,7 +134,7 @@
         <xs:element name="CashSettlAgentAcctName" minOccurs="0" type="xs:string"/>
         <xs:element name="CashSettlAgentContactName" minOccurs="0" type="xs:string"/>
         <xs:element name="CashSettlAgentContactPhone" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

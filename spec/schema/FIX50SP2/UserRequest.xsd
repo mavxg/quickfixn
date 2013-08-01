@@ -2,7 +2,7 @@
   <xs:element name="UserRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="UserRequestID" type="xs:string"/>
         <xs:element name="UserRequestType">
           <xs:simpleType>
@@ -24,7 +24,7 @@
         <xs:element name="EncryptedPassword" minOccurs="0" type="xs:string"/>
         <xs:element name="EncryptedNewPasswordLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncryptedNewPassword" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

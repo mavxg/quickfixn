@@ -2,7 +2,7 @@
   <xs:element name="CollateralInquiry">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="CollInquiryID" minOccurs="0" type="xs:string"/>
         <xs:element name="NoCollInquiryQualifier" minOccurs="0" type="NoCollInquiryQualifier"/>
         <xs:element name="SubscriptionRequestType" minOccurs="0">
@@ -430,7 +430,7 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoCollInquiryQualifier">

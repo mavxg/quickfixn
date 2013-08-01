@@ -2,10 +2,10 @@
   <xs:element name="ResendRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="BeginSeqNo" type="xs:integer"/>
         <xs:element name="EndSeqNo" type="xs:integer"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

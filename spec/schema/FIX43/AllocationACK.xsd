@@ -2,7 +2,7 @@
   <xs:element name="AllocationACK">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="NoPartyIDs" minOccurs="0" type="NoPartyIDs"/>
         <xs:element name="AllocID" type="xs:string"/>
         <xs:element name="TradeDate" type="xs:string"/>
@@ -35,7 +35,7 @@
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
         <xs:element name="LegalConfirm" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

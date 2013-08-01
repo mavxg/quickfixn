@@ -2,7 +2,7 @@
   <xs:element name="Reject">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="RefSeqNum" type="xs:nonNegativeInteger"/>
         <xs:element name="RefTagID" minOccurs="0" type="xs:integer"/>
         <xs:element name="RefMsgType" minOccurs="0" type="xs:string"/>
@@ -34,7 +34,7 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
 </xs:schema>

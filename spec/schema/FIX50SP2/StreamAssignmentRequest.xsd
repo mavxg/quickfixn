@@ -2,7 +2,7 @@
   <xs:element name="StreamAssignmentRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="StreamAsgnReqID" type="xs:string"/>
         <xs:element name="StreamAsgnReqType">
           <xs:simpleType>
@@ -13,7 +13,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoAsgnReqs" minOccurs="0" type="NoAsgnReqs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoAsgnReqs">

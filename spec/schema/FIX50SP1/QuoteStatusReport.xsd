@@ -2,7 +2,7 @@
   <xs:element name="QuoteStatusReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="QuoteStatusReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteReqID" minOccurs="0" type="xs:string"/>
         <xs:element name="QuoteID" minOccurs="0" type="xs:string"/>
@@ -743,7 +743,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="MinQty" minOccurs="0" type="xs:float"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

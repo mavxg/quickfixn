@@ -2,7 +2,7 @@
   <xs:element name="SettlementObligationReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClearingBusinessDate" minOccurs="0" type="xs:string"/>
         <xs:element name="SettlementCycleNo" minOccurs="0" type="xs:integer"/>
         <xs:element name="SettlObligMsgID" type="xs:string"/>
@@ -23,7 +23,7 @@
         <xs:element name="ApplSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplLastSeqNum" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="ApplResendFlag" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSettlOblig">

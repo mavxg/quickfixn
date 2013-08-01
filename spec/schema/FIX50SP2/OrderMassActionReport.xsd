@@ -2,7 +2,7 @@
   <xs:element name="OrderMassActionReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
         <xs:element name="MassActionReportID" type="xs:string"/>
@@ -639,7 +639,7 @@
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
         <xs:element name="NoNotAffectedOrders" minOccurs="0" type="NoNotAffectedOrders"/>
         <xs:element name="NoTargetPartyIDs" minOccurs="0" type="NoTargetPartyIDs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoAffectedOrders">

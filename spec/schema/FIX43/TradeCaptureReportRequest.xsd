@@ -2,7 +2,7 @@
   <xs:element name="TradeCaptureReportRequest">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="TradeRequestID" type="xs:string"/>
         <xs:element name="TradeRequestType">
           <xs:simpleType>
@@ -222,7 +222,7 @@
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
         <xs:element name="TradeInputSource" minOccurs="0" type="xs:string"/>
         <xs:element name="TradeInputDevice" minOccurs="0" type="xs:string"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">

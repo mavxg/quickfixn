@@ -2,7 +2,7 @@
   <xs:element name="AllocationReport">
     <xs:complexType>
       <!-- body -->
-      <xs:sequence>
+      <xs:all>
         <xs:element name="AllocReportID" type="xs:string"/>
         <xs:element name="AllocID" minOccurs="0" type="xs:string"/>
         <xs:element name="AllocTransType">
@@ -545,7 +545,7 @@
         <xs:element name="TotNoAllocs" minOccurs="0" type="xs:integer"/>
         <xs:element name="LastFragment" minOccurs="0" type="xs:string"/>
         <xs:element name="NoAllocs" type="NoAllocs"/>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">
