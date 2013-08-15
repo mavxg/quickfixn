@@ -22,6 +22,8 @@ class SchemaGen
     xml = Builder::XmlMarkup.new(:indent=>2)
     xml.xs :schema, "xmlns:xs"=>"http://www.w3.org/2001/XMLSchema" do
       xml.xs :element, "name"=>msg[:name] do
+	xml.xs :attribute, "name"=>"beginString", 'type'=>'xs:string'
+	xml.xs :attribute, "name"=>"msgType", 'type'=>'xs:string'
         xml.xs :complexType do
           #xml.comment!("header")
           #xml.xs :sequence, 'minOccurs'=>"0" do
@@ -84,11 +86,15 @@ class SchemaGen
   end
 
   def self.msg_group g, xml
-     xml.xs :complexType, "name"=>g[:name] do
-       xml.xs :sequence, "minOccurs"=>"0", "maxOccurs"=>"unbounded" do
-         gen_msg_fields g[:fields], xml
-      end
-      xml.xs :attribute, "name"=>"count", 'type'=>'xs:nonNegativeInteger'
+     xml.xs :complexType, "name"=>g[:name]do
+       xml.xs :element, "name"=>g[:name].sub(/^No/,'').sub(/s$/,''), "minOccurs"=>"0", "maxOccurs"=>"unbounded" do
+         xml.xs :complexType do
+           xml.xs :sequence do
+             gen_msg_fields g[:fields], xml
+           end
+         end
+       end
+       xml.xs :attribute, "name"=>"count", 'type'=>'xs:nonNegativeInteger'
     end
     gen_msg_groups(g[:groups], xml)
   end
