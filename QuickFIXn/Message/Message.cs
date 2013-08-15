@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using QuickFix.Fields;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace QuickFix
 {
@@ -454,6 +455,13 @@ namespace QuickFix
             }
         }
 
+        public void Read(XmlReader r, DataDictionary.DataDictionary d, IMessageFactory msgFactory)
+        {
+            string bs = this.Header.GetString(Tags.BeginString);
+            string mt = this.Header.GetString(Tags.MsgType);
+            var msgMap = d.GetMapForMessage(mt);
+            base.Read(r, d, msgFactory, msgMap, mt, bs);
+        }
 
         [System.Obsolete("Use the version that takes an IMessageFactory instead")]
         protected int SetGroup(StringField grpNoFld, string msgstr, int pos, FieldMap fieldMap, DataDictionary.IGroupSpec dd,
@@ -749,6 +757,15 @@ namespace QuickFix
             this.Header.Clear();
             base.Clear();
             this.Trailer.Clear();
+        }
+
+        public override void Write(System.Xml.XmlWriter w, DataDictionary.DataDictionary d)
+        {
+            w.WriteStartElement(this.GetType().Name);
+            w.WriteAttributeString("beginString", this.Header.GetString(Tags.BeginString));
+            w.WriteAttributeString("msgType", this.Header.GetString(Tags.MsgType));
+            base.Write(w, d);
+            w.WriteEndElement();
         }
 
         public override string ToString()

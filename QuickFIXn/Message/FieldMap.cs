@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using QuickFix.Fields;
 using QuickFix.Fields.Converters;
+using System.Xml;
 
 namespace QuickFix
 {
@@ -647,6 +648,96 @@ namespace QuickFix
             }
 
             return sb.ToString();
+        }
+
+        public virtual void Write(XmlWriter w, DataDictionary.DataDictionary d)
+        {
+            Write(w, d, new int[0]);
+        }
+
+        public virtual void Write(XmlWriter w, DataDictionary.DataDictionary d, int[] preFields)
+        {
+            HashSet<int> groupCounterTags = new HashSet<int>(_groups.Keys);
+            DataDictionary.DDField fm;
+            foreach (int preField in preFields) {
+                if (IsSetField(preField)) {
+                    fm = d.FieldsByTag[preField];
+
+                    if (groupCounterTags.Contains(preField)) {
+                        List<Group> glist = _groups[preField];
+                        w.WriteStartElement(fm.Name);
+                        w.WriteAttributeString("count", GetField(preField));
+                        foreach (Group g in glist)
+                            g.Write(w, d);
+                        w.WriteEndElement();
+                    } else {
+                        w.WriteElementString(fm.Name, GetField(preField));
+                    }
+                }
+            }
+
+            foreach (Fields.IField field in _fields.Values) {
+                if (groupCounterTags.Contains(field.Tag))
+                    continue;
+                if (preFields.Contains(field.Tag))
+                    continue; //already did this one
+                fm = d.FieldsByTag[field.Tag];
+                w.WriteElementString(fm.Name, field.ToString());
+            }
+
+            //foreach (List<Group> groupList in _groups.Values)
+            foreach (int counterTag in _groups.Keys) {
+                if (preFields.Contains(counterTag))
+                    continue; //already did this one
+
+                List<Group> groupList = _groups[counterTag];
+                if (groupList.Count == 0)
+                    continue; //probably unnecessary, but it doesn't hurt to check
+                var ct = _fields[counterTag];
+                fm = d.FieldsByTag[ct.Tag];
+                w.WriteStartElement(fm.Name);
+                w.WriteAttributeString("count", ct.ToString());
+                //sb.Append(_fields[counterTag].toStringField());
+
+                foreach (Group group in groupList)
+                    group.Write(w, d);
+                w.WriteEndElement();
+            }
+        }
+
+        public virtual void Read(System.Xml.XmlReader r, DataDictionary.DataDictionary d
+            , IMessageFactory mf, DataDictionary.IFieldMapSpec mmap
+            , string msgType, string beginString)
+        {
+            while (r.Read()) {
+                r.MoveToContent();
+                if (r.IsStartElement()) {
+                    var ln = r.LocalName;
+                    var f = d.FieldsByName[ln];
+                    
+                    if (mmap.IsGroup(f.Tag)) {
+                        int c = int.Parse(r["count"]);
+                        r.ReadStartElement();
+                        var gmap = mmap.GetGroupSpec(f.Tag);
+                        for (int i = 0; i < c; i++) {
+                            Group g = null;
+                            if (mf != null)
+                                g = mf.Create(beginString, msgType, f.Tag); //Get First Group
+                            if (g == null)
+                                g = new Group(f.Tag, gmap.Delim);
+                            g.Read(r, d, mf, gmap, msgType, beginString);
+                            AddGroup(g);
+                        }
+                        r.ReadEndElement();
+                    } else {
+                        r.ReadStartElement();
+                        var sv = r.ReadString();
+                        var nsf = new QuickFix.Fields.StringField(f.Tag, sv);
+                        SetField(nsf);
+                        r.ReadEndElement();
+                    }
+                } else if (r.NodeType == XmlNodeType.EndElement) break;
+            }
         }
 
         /// <summary>

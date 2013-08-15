@@ -77,6 +77,34 @@ namespace QuickFix
                 return base.CalculateString(new StringBuilder(), _fieldOrder); // 802 shouldn't be in _fieldOrder
         }
 
+        public string Name(DataDictionary.DataDictionary d)
+        {
+            var f = d.FieldsByTag[Field];
+            var n = f.Name;
+            int s = n.StartsWith("No") ? 2 : 0;
+            return n.Substring(s, n.Length - (n.EndsWith("s") ? 1 : 0) - s);
+        }
+
+        public override void Write(System.Xml.XmlWriter w, DataDictionary.DataDictionary d)
+        {
+            w.WriteStartElement(Name(d));
+            if (_fieldOrder == null)
+                base.Write(w, d, new int[] { _delim });
+            else
+                base.Write(w, d, _fieldOrder);
+            w.WriteEndElement();
+        }
+
+        public override void Read(System.Xml.XmlReader r, DataDictionary.DataDictionary d
+            , IMessageFactory mf, DataDictionary.IFieldMapSpec gspec
+            , string msgType, string beginString)
+        {
+            r.MoveToContent();
+            r.ReadStartElement(Name(d));
+            base.Read(r, d, mf, gspec, msgType, beginString);
+            r.ReadEndElement();
+        }
+
         public override string ToString()
         {
             return CalculateString();
