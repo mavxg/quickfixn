@@ -1,5 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="SecurityDefinition">
+    <xs:attribute name="beginString" type="xs:string"/>
+    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -191,58 +193,70 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
-      <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="SecurityAltID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
+          <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoLegs">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="LegSymbol" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegSymbolSfx" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegSecurityID" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegSecurityIDSource" minOccurs="0" type="xs:string"/>
-      <xs:element name="NoLegSecurityAltID" minOccurs="0" type="NoLegSecurityAltID"/>
-      <xs:element name="LegProduct" minOccurs="0" type="xs:integer"/>
-      <xs:element name="LegCFICode" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegSecurityType" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegMaturityMonthYear" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegMaturityDate" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegCouponPaymentDate" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegIssueDate" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
-      <xs:element name="LegRepurchaseTerm" minOccurs="0" type="xs:integer"/>
-      <xs:element name="LegRepurchaseRate" minOccurs="0" type="xs:float"/>
-      <xs:element name="LegFactor" minOccurs="0" type="xs:float"/>
-      <xs:element name="LegCreditRating" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegInstrRegistry" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegCountryOfIssue" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegLocaleOfIssue" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegRedemptionDate" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegStrikePrice" minOccurs="0" type="xs:float"/>
-      <xs:element name="LegOptAttribute" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegContractMultiplier" minOccurs="0" type="xs:float"/>
-      <xs:element name="LegCouponRate" minOccurs="0" type="xs:float"/>
-      <xs:element name="LegSecurityExchange" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegIssuer" minOccurs="0" type="xs:string"/>
-      <xs:element name="EncodedLegIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
-      <xs:element name="EncodedLegIssuer" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegSecurityDesc" minOccurs="0" type="xs:string"/>
-      <xs:element name="EncodedLegSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
-      <xs:element name="EncodedLegSecurityDesc" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegRatioQty" minOccurs="0" type="xs:float"/>
-      <xs:element name="LegSide" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegCurrency" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="Leg" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="LegSymbol" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegSymbolSfx" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegSecurityID" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegSecurityIDSource" minOccurs="0" type="xs:string"/>
+          <xs:element name="NoLegSecurityAltID" minOccurs="0" type="NoLegSecurityAltID"/>
+          <xs:element name="LegProduct" minOccurs="0" type="xs:integer"/>
+          <xs:element name="LegCFICode" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegSecurityType" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegMaturityMonthYear" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegMaturityDate" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegCouponPaymentDate" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegIssueDate" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
+          <xs:element name="LegRepurchaseTerm" minOccurs="0" type="xs:integer"/>
+          <xs:element name="LegRepurchaseRate" minOccurs="0" type="xs:float"/>
+          <xs:element name="LegFactor" minOccurs="0" type="xs:float"/>
+          <xs:element name="LegCreditRating" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegInstrRegistry" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegCountryOfIssue" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegLocaleOfIssue" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegRedemptionDate" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegStrikePrice" minOccurs="0" type="xs:float"/>
+          <xs:element name="LegOptAttribute" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegContractMultiplier" minOccurs="0" type="xs:float"/>
+          <xs:element name="LegCouponRate" minOccurs="0" type="xs:float"/>
+          <xs:element name="LegSecurityExchange" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegIssuer" minOccurs="0" type="xs:string"/>
+          <xs:element name="EncodedLegIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+          <xs:element name="EncodedLegIssuer" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegSecurityDesc" minOccurs="0" type="xs:string"/>
+          <xs:element name="EncodedLegSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+          <xs:element name="EncodedLegSecurityDesc" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegRatioQty" minOccurs="0" type="xs:float"/>
+          <xs:element name="LegSide" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegCurrency" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoLegSecurityAltID">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="LegSecurityAltID" minOccurs="0" type="xs:string"/>
-      <xs:element name="LegSecurityAltIDSource" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="LegSecurityAltID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="LegSecurityAltID" minOccurs="0" type="xs:string"/>
+          <xs:element name="LegSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

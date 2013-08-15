@@ -1,5 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="SecurityListRequest">
+    <xs:attribute name="beginString" type="xs:string"/>
+    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -195,10 +197,14 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
-      <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="SecurityAltID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
+          <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

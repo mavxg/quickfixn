@@ -1,5 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="MarketDefinitionUpdateReport">
+    <xs:attribute name="beginString" type="xs:string"/>
+    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -119,99 +121,119 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoTickRules">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="StartTickPriceRange" minOccurs="0" type="xs:float"/>
-      <xs:element name="EndTickPriceRange" minOccurs="0" type="xs:float"/>
-      <xs:element name="TickIncrement" minOccurs="0" type="xs:float"/>
-      <xs:element name="TickRuleType" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:integer">
-            <xs:enumeration value="0"/>
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="2"/>
-            <xs:enumeration value="3"/>
-            <xs:enumeration value="4"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
+    <xs:element name="TickRule" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="StartTickPriceRange" minOccurs="0" type="xs:float"/>
+          <xs:element name="EndTickPriceRange" minOccurs="0" type="xs:float"/>
+          <xs:element name="TickIncrement" minOccurs="0" type="xs:float"/>
+          <xs:element name="TickRuleType" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:enumeration value="0"/>
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+                <xs:enumeration value="3"/>
+                <xs:enumeration value="4"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoLotTypeRules">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="LotType" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="2"/>
-            <xs:enumeration value="3"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="MinLotSize" minOccurs="0" type="xs:float"/>
-    </xs:sequence>
+    <xs:element name="LotTypeRule" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="LotType" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+                <xs:enumeration value="3"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="MinLotSize" minOccurs="0" type="xs:float"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoOrdTypeRules">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="OrdType" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="2"/>
-            <xs:enumeration value="3"/>
-            <xs:enumeration value="4"/>
-            <xs:enumeration value="5"/>
-            <xs:enumeration value="6"/>
-            <xs:enumeration value="7"/>
-            <xs:enumeration value="8"/>
-            <xs:enumeration value="9"/>
-            <xs:enumeration value="A"/>
-            <xs:enumeration value="B"/>
-            <xs:enumeration value="C"/>
-            <xs:enumeration value="D"/>
-            <xs:enumeration value="E"/>
-            <xs:enumeration value="F"/>
-            <xs:enumeration value="G"/>
-            <xs:enumeration value="H"/>
-            <xs:enumeration value="I"/>
-            <xs:enumeration value="J"/>
-            <xs:enumeration value="K"/>
-            <xs:enumeration value="L"/>
-            <xs:enumeration value="M"/>
-            <xs:enumeration value="P"/>
-            <xs:enumeration value="Q"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
+    <xs:element name="OrdTypeRule" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="OrdType" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+                <xs:enumeration value="3"/>
+                <xs:enumeration value="4"/>
+                <xs:enumeration value="5"/>
+                <xs:enumeration value="6"/>
+                <xs:enumeration value="7"/>
+                <xs:enumeration value="8"/>
+                <xs:enumeration value="9"/>
+                <xs:enumeration value="A"/>
+                <xs:enumeration value="B"/>
+                <xs:enumeration value="C"/>
+                <xs:enumeration value="D"/>
+                <xs:enumeration value="E"/>
+                <xs:enumeration value="F"/>
+                <xs:enumeration value="G"/>
+                <xs:enumeration value="H"/>
+                <xs:enumeration value="I"/>
+                <xs:enumeration value="J"/>
+                <xs:enumeration value="K"/>
+                <xs:enumeration value="L"/>
+                <xs:enumeration value="M"/>
+                <xs:enumeration value="P"/>
+                <xs:enumeration value="Q"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoTimeInForceRules">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="TimeInForce" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="0"/>
-            <xs:enumeration value="1"/>
-            <xs:enumeration value="2"/>
-            <xs:enumeration value="3"/>
-            <xs:enumeration value="4"/>
-            <xs:enumeration value="5"/>
-            <xs:enumeration value="6"/>
-            <xs:enumeration value="7"/>
-            <xs:enumeration value="8"/>
-            <xs:enumeration value="9"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
+    <xs:element name="TimeInForceRule" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="TimeInForce" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="0"/>
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+                <xs:enumeration value="3"/>
+                <xs:enumeration value="4"/>
+                <xs:enumeration value="5"/>
+                <xs:enumeration value="6"/>
+                <xs:enumeration value="7"/>
+                <xs:enumeration value="8"/>
+                <xs:enumeration value="9"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoExecInstRules">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="ExecInstValue" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="ExecInstRule" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="ExecInstValue" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

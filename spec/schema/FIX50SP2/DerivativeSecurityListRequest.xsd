@@ -1,5 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="DerivativeSecurityListRequest">
+    <xs:attribute name="beginString" type="xs:string"/>
+    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -217,66 +219,98 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoUnderlyingSecurityAltID">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
-      <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="UnderlyingSecurityAltID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
+          <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUnderlyingStips">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
-      <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="UnderlyingStip" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
+          <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUndlyInstrumentParties">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="UnderlyingInstrumentPartyID" minOccurs="0" type="xs:string"/>
-      <xs:element name="UnderlyingInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
-      <xs:element name="UnderlyingInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
-      <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
-    </xs:sequence>
+    <xs:element name="UndlyInstrumentPartie" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="UnderlyingInstrumentPartyID" minOccurs="0" type="xs:string"/>
+          <xs:element name="UnderlyingInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+          <xs:element name="UnderlyingInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+          <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUndlyInstrumentPartySubIDs">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="UnderlyingInstrumentPartySubID" minOccurs="0" type="xs:string"/>
-      <xs:element name="UnderlyingInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
-    </xs:sequence>
+    <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="UnderlyingInstrumentPartySubID" minOccurs="0" type="xs:string"/>
+          <xs:element name="UnderlyingInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoDerivativeSecurityAltID">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="DerivativeSecurityAltID" minOccurs="0" type="xs:string"/>
-      <xs:element name="DerivativeSecurityAltIDSource" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="DerivativeSecurityAltID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="DerivativeSecurityAltID" minOccurs="0" type="xs:string"/>
+          <xs:element name="DerivativeSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoDerivativeEvents">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="DerivativeEventType" minOccurs="0" type="xs:integer"/>
-      <xs:element name="DerivativeEventDate" minOccurs="0" type="xs:string"/>
-      <xs:element name="DerivativeEventTime" minOccurs="0" type="xs:string"/>
-      <xs:element name="DerivativeEventPx" minOccurs="0" type="xs:float"/>
-      <xs:element name="DerivativeEventText" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="DerivativeEvent" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="DerivativeEventType" minOccurs="0" type="xs:integer"/>
+          <xs:element name="DerivativeEventDate" minOccurs="0" type="xs:string"/>
+          <xs:element name="DerivativeEventTime" minOccurs="0" type="xs:string"/>
+          <xs:element name="DerivativeEventPx" minOccurs="0" type="xs:float"/>
+          <xs:element name="DerivativeEventText" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoDerivativeInstrumentParties">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="DerivativeInstrumentPartyID" minOccurs="0" type="xs:string"/>
-      <xs:element name="DerivativeInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
-      <xs:element name="DerivativeInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
-      <xs:element name="NoDerivativeInstrumentPartySubIDs" minOccurs="0" type="NoDerivativeInstrumentPartySubIDs"/>
-    </xs:sequence>
+    <xs:element name="DerivativeInstrumentPartie" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="DerivativeInstrumentPartyID" minOccurs="0" type="xs:string"/>
+          <xs:element name="DerivativeInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+          <xs:element name="DerivativeInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+          <xs:element name="NoDerivativeInstrumentPartySubIDs" minOccurs="0" type="NoDerivativeInstrumentPartySubIDs"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoDerivativeInstrumentPartySubIDs">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="DerivativeInstrumentPartySubID" minOccurs="0" type="xs:string"/>
-      <xs:element name="DerivativeInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
-    </xs:sequence>
+    <xs:element name="DerivativeInstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="DerivativeInstrumentPartySubID" minOccurs="0" type="xs:string"/>
+          <xs:element name="DerivativeInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

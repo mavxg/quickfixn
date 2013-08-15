@@ -1,5 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="NetworkCounterpartySystemStatusRequest">
+    <xs:attribute name="beginString" type="xs:string"/>
+    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -19,12 +21,16 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoCompIDs">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="RefCompID" minOccurs="0" type="xs:string"/>
-      <xs:element name="RefSubID" minOccurs="0" type="xs:string"/>
-      <xs:element name="LocationID" minOccurs="0" type="xs:string"/>
-      <xs:element name="DeskID" minOccurs="0" type="xs:string"/>
-    </xs:sequence>
+    <xs:element name="CompID" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="RefCompID" minOccurs="0" type="xs:string"/>
+          <xs:element name="RefSubID" minOccurs="0" type="xs:string"/>
+          <xs:element name="LocationID" minOccurs="0" type="xs:string"/>
+          <xs:element name="DeskID" minOccurs="0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

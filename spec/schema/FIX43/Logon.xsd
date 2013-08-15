@@ -1,5 +1,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Logon">
+    <xs:attribute name="beginString" type="xs:string"/>
+    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -29,17 +31,21 @@
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoMsgTypes">
-    <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="RefMsgType" minOccurs="0" type="xs:string"/>
-      <xs:element name="MsgDirection" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="S"/>
-            <xs:enumeration value="R"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
+    <xs:element name="MsgType" minOccurs="0" maxOccurs="unbounded">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="RefMsgType" minOccurs="0" type="xs:string"/>
+          <xs:element name="MsgDirection" minOccurs="0">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="S"/>
+                <xs:enumeration value="R"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>
