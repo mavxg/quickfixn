@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="OrderCancelReplaceRequest">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -336,27 +334,33 @@
         <xs:element name="ClearingFirm" minOccurs="0" type="xs:string"/>
         <xs:element name="ClearingAccount" minOccurs="0" type="xs:string"/>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoAllocs">
-    <xs:element name="Alloc" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="AllocAccount" minOccurs="0" type="xs:string"/>
-          <xs:element name="AllocShares" minOccurs="0" type="xs:float"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Alloc" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AllocAccount" minOccurs="0" type="xs:string"/>
+            <xs:element name="AllocShares" minOccurs="0" type="xs:float"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoTradingSessions">
-    <xs:element name="TradingSession" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="TradingSession" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Allocation">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -77,104 +75,116 @@
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="NoAllocs" type="NoAllocs"/>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">
-    <xs:element name="Order" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="ClOrdID" type="xs:string"/>
-          <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
-          <xs:element name="ListID" minOccurs="0" type="xs:string"/>
-          <xs:element name="WaveNo" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Order" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ClOrdID" type="xs:string"/>
+            <xs:element name="OrderID" minOccurs="0" type="xs:string"/>
+            <xs:element name="ListID" minOccurs="0" type="xs:string"/>
+            <xs:element name="WaveNo" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoExecs">
-    <xs:element name="Exec" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="ExecID" minOccurs="0" type="xs:integer"/>
-          <xs:element name="LastShares" minOccurs="0" type="xs:integer"/>
-          <xs:element name="LastPx" minOccurs="0" type="xs:float"/>
-          <xs:element name="LastMkt" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Exec" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ExecID" minOccurs="0" type="xs:integer"/>
+            <xs:element name="LastShares" minOccurs="0" type="xs:integer"/>
+            <xs:element name="LastPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="LastMkt" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoMiscFees">
-    <xs:element name="MiscFee" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="MiscFeeAmt" minOccurs="0" type="xs:float"/>
-          <xs:element name="MiscFeeCurr" minOccurs="0" type="xs:string"/>
-          <xs:element name="MiscFeeType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-                <xs:enumeration value="7"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="MiscFee" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MiscFeeAmt" minOccurs="0" type="xs:float"/>
+            <xs:element name="MiscFeeCurr" minOccurs="0" type="xs:string"/>
+            <xs:element name="MiscFeeType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                  <xs:enumeration value="7"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoAllocs">
-    <xs:element name="Alloc" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="AllocAccount" type="xs:string"/>
-          <xs:element name="AllocShares" type="xs:integer"/>
-          <xs:element name="ProcessCode" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="0"/>
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
-          <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
-          <xs:element name="Commission" minOccurs="0" type="xs:float"/>
-          <xs:element name="CommType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="NoDlvyInst" minOccurs="0" type="NoDlvyInst"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Alloc" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AllocAccount" type="xs:string"/>
+            <xs:element name="AllocShares" type="xs:integer"/>
+            <xs:element name="ProcessCode" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="0"/>
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
+            <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
+            <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+            <xs:element name="CommType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="NoDlvyInst" minOccurs="0" type="NoDlvyInst"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoDlvyInst">
-    <xs:element name="DlvyInst" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="BrokerOfCredit" minOccurs="0" type="xs:string"/>
-          <xs:element name="DlvyInst" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="DlvyInst" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="BrokerOfCredit" minOccurs="0" type="xs:string"/>
+            <xs:element name="DlvyInst" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

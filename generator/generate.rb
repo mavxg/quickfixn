@@ -7,6 +7,7 @@ require 'messages_gen'
 require 'proj_gen'
 require 'message_factory_gen'
 require 'schemas_gen'
+require 'schema_message_gen'
 
 class Generator  
   def self.generate
@@ -16,7 +17,22 @@ class Generator
     generator.generate_fields
     generator.generate_messages
     generator.generate_schemas
+    generator.generate_schema_messages
   end
+
+  def generate_schema_messages
+    msgs_path = @message_schema_path
+    #SchemaMessageGen.generate(@fix40.messages,  msgs_path, 'FIX40')
+    #SchemaMessageGen.generate(@fix41.messages,  msgs_path, 'FIX41')
+    #SchemaMessageGen.generate(@fix42.messages,  msgs_path, 'FIX42')
+    #SchemaMessageGen.generate(@fix43.messages,  msgs_path, 'FIX43')
+    #SchemaMessageGen.generate(@fix44.messages,  msgs_path, 'FIX44')
+    SchemaMessageGen.generate(@fix44Bloomberg.messages,  msgs_path, 'FIX44Bloomberg', 'FIX.4.4')
+    #SchemaMessageGen.generate(@fix50.messages,  msgs_path, 'FIX50')
+    #SchemaMessageGen.generate(@fix50sp1.messages,  msgs_path, 'FIX50SP1')
+    #SchemaMessageGen.generate(@fix50sp2.messages,  msgs_path, 'FIX50SP2')
+  end
+
 
   def generate_schemas
     msgs_path = @schema_path
@@ -43,6 +59,7 @@ class Generator
     @fix50sp2 = FIXDictionary.load spec('FIX50SP2')
     @src_path = File.join File.dirname(__FILE__), '..', 'QuickFIXn'
     @schema_path = File.join File.dirname(__FILE__), '..', "spec", "schema"
+    @message_schema_path = File.join File.dirname(__FILE__), '..', "spec", "message"
   end
 
   def spec fixver

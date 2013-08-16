@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="CollateralRequest">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -437,654 +435,692 @@
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoPartyIDs">
-    <xs:element name="PartyID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="PartyID" minOccurs="0" type="xs:string"/>
-          <xs:element name="PartyIDSource" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-                <xs:enumeration value="7"/>
-                <xs:enumeration value="8"/>
-                <xs:enumeration value="9"/>
-                <xs:enumeration value="A"/>
-                <xs:enumeration value="B"/>
-                <xs:enumeration value="C"/>
-                <xs:enumeration value="D"/>
-                <xs:enumeration value="E"/>
-                <xs:enumeration value="F"/>
-                <xs:enumeration value="G"/>
-                <xs:enumeration value="H"/>
-                <xs:enumeration value="I"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="PartyRole" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="10"/>
-                <xs:enumeration value="11"/>
-                <xs:enumeration value="12"/>
-                <xs:enumeration value="13"/>
-                <xs:enumeration value="14"/>
-                <xs:enumeration value="15"/>
-                <xs:enumeration value="16"/>
-                <xs:enumeration value="17"/>
-                <xs:enumeration value="18"/>
-                <xs:enumeration value="19"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="20"/>
-                <xs:enumeration value="21"/>
-                <xs:enumeration value="22"/>
-                <xs:enumeration value="24"/>
-                <xs:enumeration value="25"/>
-                <xs:enumeration value="26"/>
-                <xs:enumeration value="27"/>
-                <xs:enumeration value="28"/>
-                <xs:enumeration value="29"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="30"/>
-                <xs:enumeration value="31"/>
-                <xs:enumeration value="32"/>
-                <xs:enumeration value="33"/>
-                <xs:enumeration value="34"/>
-                <xs:enumeration value="35"/>
-                <xs:enumeration value="36"/>
-                <xs:enumeration value="37"/>
-                <xs:enumeration value="38"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-                <xs:enumeration value="7"/>
-                <xs:enumeration value="8"/>
-                <xs:enumeration value="9"/>
-                <xs:enumeration value="60"/>
-                <xs:enumeration value="41"/>
-                <xs:enumeration value="42"/>
-                <xs:enumeration value="43"/>
-                <xs:enumeration value="44"/>
-                <xs:enumeration value="45"/>
-                <xs:enumeration value="46"/>
-                <xs:enumeration value="47"/>
-                <xs:enumeration value="48"/>
-                <xs:enumeration value="49"/>
-                <xs:enumeration value="50"/>
-                <xs:enumeration value="51"/>
-                <xs:enumeration value="52"/>
-                <xs:enumeration value="53"/>
-                <xs:enumeration value="54"/>
-                <xs:enumeration value="55"/>
-                <xs:enumeration value="56"/>
-                <xs:enumeration value="57"/>
-                <xs:enumeration value="58"/>
-                <xs:enumeration value="59"/>
-                <xs:enumeration value="39"/>
-                <xs:enumeration value="40"/>
-                <xs:enumeration value="61"/>
-                <xs:enumeration value="62"/>
-                <xs:enumeration value="63"/>
-                <xs:enumeration value="64"/>
-                <xs:enumeration value="65"/>
-                <xs:enumeration value="66"/>
-                <xs:enumeration value="67"/>
-                <xs:enumeration value="68"/>
-                <xs:enumeration value="69"/>
-                <xs:enumeration value="70"/>
-                <xs:enumeration value="71"/>
-                <xs:enumeration value="72"/>
-                <xs:enumeration value="73"/>
-                <xs:enumeration value="74"/>
-                <xs:enumeration value="75"/>
-                <xs:enumeration value="76"/>
-                <xs:enumeration value="77"/>
-                <xs:enumeration value="78"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="NoPartySubIDs" minOccurs="0" type="NoPartySubIDs"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="PartyID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PartyID" minOccurs="0" type="xs:string"/>
+            <xs:element name="PartyIDSource" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                  <xs:enumeration value="7"/>
+                  <xs:enumeration value="8"/>
+                  <xs:enumeration value="9"/>
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="B"/>
+                  <xs:enumeration value="C"/>
+                  <xs:enumeration value="D"/>
+                  <xs:enumeration value="E"/>
+                  <xs:enumeration value="F"/>
+                  <xs:enumeration value="G"/>
+                  <xs:enumeration value="H"/>
+                  <xs:enumeration value="I"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="PartyRole" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="10"/>
+                  <xs:enumeration value="11"/>
+                  <xs:enumeration value="12"/>
+                  <xs:enumeration value="13"/>
+                  <xs:enumeration value="14"/>
+                  <xs:enumeration value="15"/>
+                  <xs:enumeration value="16"/>
+                  <xs:enumeration value="17"/>
+                  <xs:enumeration value="18"/>
+                  <xs:enumeration value="19"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="20"/>
+                  <xs:enumeration value="21"/>
+                  <xs:enumeration value="22"/>
+                  <xs:enumeration value="24"/>
+                  <xs:enumeration value="25"/>
+                  <xs:enumeration value="26"/>
+                  <xs:enumeration value="27"/>
+                  <xs:enumeration value="28"/>
+                  <xs:enumeration value="29"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="30"/>
+                  <xs:enumeration value="31"/>
+                  <xs:enumeration value="32"/>
+                  <xs:enumeration value="33"/>
+                  <xs:enumeration value="34"/>
+                  <xs:enumeration value="35"/>
+                  <xs:enumeration value="36"/>
+                  <xs:enumeration value="37"/>
+                  <xs:enumeration value="38"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                  <xs:enumeration value="7"/>
+                  <xs:enumeration value="8"/>
+                  <xs:enumeration value="9"/>
+                  <xs:enumeration value="60"/>
+                  <xs:enumeration value="41"/>
+                  <xs:enumeration value="42"/>
+                  <xs:enumeration value="43"/>
+                  <xs:enumeration value="44"/>
+                  <xs:enumeration value="45"/>
+                  <xs:enumeration value="46"/>
+                  <xs:enumeration value="47"/>
+                  <xs:enumeration value="48"/>
+                  <xs:enumeration value="49"/>
+                  <xs:enumeration value="50"/>
+                  <xs:enumeration value="51"/>
+                  <xs:enumeration value="52"/>
+                  <xs:enumeration value="53"/>
+                  <xs:enumeration value="54"/>
+                  <xs:enumeration value="55"/>
+                  <xs:enumeration value="56"/>
+                  <xs:enumeration value="57"/>
+                  <xs:enumeration value="58"/>
+                  <xs:enumeration value="59"/>
+                  <xs:enumeration value="39"/>
+                  <xs:enumeration value="40"/>
+                  <xs:enumeration value="61"/>
+                  <xs:enumeration value="62"/>
+                  <xs:enumeration value="63"/>
+                  <xs:enumeration value="64"/>
+                  <xs:enumeration value="65"/>
+                  <xs:enumeration value="66"/>
+                  <xs:enumeration value="67"/>
+                  <xs:enumeration value="68"/>
+                  <xs:enumeration value="69"/>
+                  <xs:enumeration value="70"/>
+                  <xs:enumeration value="71"/>
+                  <xs:enumeration value="72"/>
+                  <xs:enumeration value="73"/>
+                  <xs:enumeration value="74"/>
+                  <xs:enumeration value="75"/>
+                  <xs:enumeration value="76"/>
+                  <xs:enumeration value="77"/>
+                  <xs:enumeration value="78"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="NoPartySubIDs" minOccurs="0" type="NoPartySubIDs"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoPartySubIDs">
-    <xs:element name="PartySubID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="PartySubID" minOccurs="0" type="xs:string"/>
-          <xs:element name="PartySubIDType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="10"/>
-                <xs:enumeration value="11"/>
-                <xs:enumeration value="12"/>
-                <xs:enumeration value="13"/>
-                <xs:enumeration value="14"/>
-                <xs:enumeration value="15"/>
-                <xs:enumeration value="16"/>
-                <xs:enumeration value="17"/>
-                <xs:enumeration value="18"/>
-                <xs:enumeration value="19"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="20"/>
-                <xs:enumeration value="21"/>
-                <xs:enumeration value="22"/>
-                <xs:enumeration value="23"/>
-                <xs:enumeration value="24"/>
-                <xs:enumeration value="25"/>
-                <xs:enumeration value="26"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-                <xs:enumeration value="7"/>
-                <xs:enumeration value="8"/>
-                <xs:enumeration value="9"/>
-                <xs:enumeration value="27"/>
-                <xs:enumeration value="28"/>
-                <xs:enumeration value="29"/>
-                <xs:enumeration value="30"/>
-                <xs:enumeration value="31"/>
-                <xs:enumeration value="32"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="PartySubID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PartySubID" minOccurs="0" type="xs:string"/>
+            <xs:element name="PartySubIDType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="10"/>
+                  <xs:enumeration value="11"/>
+                  <xs:enumeration value="12"/>
+                  <xs:enumeration value="13"/>
+                  <xs:enumeration value="14"/>
+                  <xs:enumeration value="15"/>
+                  <xs:enumeration value="16"/>
+                  <xs:enumeration value="17"/>
+                  <xs:enumeration value="18"/>
+                  <xs:enumeration value="19"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="20"/>
+                  <xs:enumeration value="21"/>
+                  <xs:enumeration value="22"/>
+                  <xs:enumeration value="23"/>
+                  <xs:enumeration value="24"/>
+                  <xs:enumeration value="25"/>
+                  <xs:enumeration value="26"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                  <xs:enumeration value="7"/>
+                  <xs:enumeration value="8"/>
+                  <xs:enumeration value="9"/>
+                  <xs:enumeration value="27"/>
+                  <xs:enumeration value="28"/>
+                  <xs:enumeration value="29"/>
+                  <xs:enumeration value="30"/>
+                  <xs:enumeration value="31"/>
+                  <xs:enumeration value="32"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoExecs">
-    <xs:element name="Exec" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="ExecID" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Exec" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ExecID" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoTrades">
-    <xs:element name="Trade" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="TradeReportID" minOccurs="0" type="xs:string"/>
-          <xs:element name="SecondaryTradeReportID" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Trade" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TradeReportID" minOccurs="0" type="xs:string"/>
+            <xs:element name="SecondaryTradeReportID" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoSecurityAltID">
-    <xs:element name="SecurityAltID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
-          <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="SecurityAltID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
+            <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoEvents">
-    <xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="EventType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="99"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="EventDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="EventPx" minOccurs="0" type="xs:float"/>
-          <xs:element name="EventText" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EventType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="99"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="EventDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="EventPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="EventText" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoInstrumentParties">
-    <xs:element name="InstrumentPartie" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="InstrumentPartyID" minOccurs="0" type="xs:string"/>
-          <xs:element name="InstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
-          <xs:element name="InstrumentPartyRole" minOccurs="0" type="xs:integer"/>
-          <xs:element name="NoInstrumentPartySubIDs" minOccurs="0" type="NoInstrumentPartySubIDs"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="InstrumentPartie" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="InstrumentPartyID" minOccurs="0" type="xs:string"/>
+            <xs:element name="InstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+            <xs:element name="InstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+            <xs:element name="NoInstrumentPartySubIDs" minOccurs="0" type="NoInstrumentPartySubIDs"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoInstrumentPartySubIDs">
-    <xs:element name="InstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="InstrumentPartySubID" minOccurs="0" type="xs:string"/>
-          <xs:element name="InstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="InstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="InstrumentPartySubID" minOccurs="0" type="xs:string"/>
+            <xs:element name="InstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoLegs">
-    <xs:element name="Leg" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="LegSymbol" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSymbolSfx" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSecurityID" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSecurityIDSource" minOccurs="0" type="xs:string"/>
-          <xs:element name="NoLegSecurityAltID" minOccurs="0" type="NoLegSecurityAltID"/>
-          <xs:element name="LegProduct" minOccurs="0" type="xs:integer"/>
-          <xs:element name="LegCFICode" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSecurityType" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSecuritySubType" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegMaturityMonthYear" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegMaturityDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegCouponPaymentDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegIssueDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
-          <xs:element name="LegRepurchaseTerm" minOccurs="0" type="xs:integer"/>
-          <xs:element name="LegRepurchaseRate" minOccurs="0" type="xs:float"/>
-          <xs:element name="LegFactor" minOccurs="0" type="xs:float"/>
-          <xs:element name="LegCreditRating" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegInstrRegistry" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegCountryOfIssue" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegLocaleOfIssue" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegRedemptionDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegStrikePrice" minOccurs="0" type="xs:float"/>
-          <xs:element name="LegStrikeCurrency" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegOptAttribute" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegContractMultiplier" minOccurs="0" type="xs:float"/>
-          <xs:element name="LegCouponRate" minOccurs="0" type="xs:float"/>
-          <xs:element name="LegSecurityExchange" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegIssuer" minOccurs="0" type="xs:string"/>
-          <xs:element name="EncodedLegIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
-          <xs:element name="EncodedLegIssuer" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSecurityDesc" minOccurs="0" type="xs:string"/>
-          <xs:element name="EncodedLegSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
-          <xs:element name="EncodedLegSecurityDesc" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegRatioQty" minOccurs="0" type="xs:float"/>
-          <xs:element name="LegSide" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegCurrency" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegPool" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegDatedDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegContractSettlMonth" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegInterestAccrualDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegUnitOfMeasure" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegTimeUnit" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Leg" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LegSymbol" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSymbolSfx" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSecurityID" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSecurityIDSource" minOccurs="0" type="xs:string"/>
+            <xs:element name="NoLegSecurityAltID" minOccurs="0" type="NoLegSecurityAltID"/>
+            <xs:element name="LegProduct" minOccurs="0" type="xs:integer"/>
+            <xs:element name="LegCFICode" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSecurityType" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSecuritySubType" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegMaturityMonthYear" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegMaturityDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegCouponPaymentDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegIssueDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
+            <xs:element name="LegRepurchaseTerm" minOccurs="0" type="xs:integer"/>
+            <xs:element name="LegRepurchaseRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegFactor" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegCreditRating" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegInstrRegistry" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegCountryOfIssue" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegLocaleOfIssue" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegRedemptionDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegStrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegStrikeCurrency" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegOptAttribute" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegContractMultiplier" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegCouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegSecurityExchange" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegIssuer" minOccurs="0" type="xs:string"/>
+            <xs:element name="EncodedLegIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+            <xs:element name="EncodedLegIssuer" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSecurityDesc" minOccurs="0" type="xs:string"/>
+            <xs:element name="EncodedLegSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+            <xs:element name="EncodedLegSecurityDesc" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegRatioQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegSide" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegCurrency" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegPool" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegDatedDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegContractSettlMonth" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegInterestAccrualDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegUnitOfMeasure" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegTimeUnit" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoLegSecurityAltID">
-    <xs:element name="LegSecurityAltID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="LegSecurityAltID" minOccurs="0" type="xs:string"/>
-          <xs:element name="LegSecurityAltIDSource" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="LegSecurityAltID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LegSecurityAltID" minOccurs="0" type="xs:string"/>
+            <xs:element name="LegSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUnderlyings">
-    <xs:element name="Underlying" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UnderlyingSymbol" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSymbolSfx" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecurityID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecurityIDSource" minOccurs="0" type="xs:string"/>
-          <xs:element name="NoUnderlyingSecurityAltID" minOccurs="0" type="NoUnderlyingSecurityAltID"/>
-          <xs:element name="UnderlyingProduct" minOccurs="0" type="xs:integer"/>
-          <xs:element name="UnderlyingCFICode" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecurityType" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecuritySubType" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingMaturityMonthYear" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingMaturityDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingCouponPaymentDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingIssueDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
-          <xs:element name="UnderlyingRepurchaseTerm" minOccurs="0" type="xs:integer"/>
-          <xs:element name="UnderlyingRepurchaseRate" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingFactor" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingCreditRating" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingInstrRegistry" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingCountryOfIssue" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingLocaleOfIssue" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingRedemptionDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingStrikePrice" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingStrikeCurrency" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingOptAttribute" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingContractMultiplier" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingCouponRate" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingSecurityExchange" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingIssuer" minOccurs="0" type="xs:string"/>
-          <xs:element name="EncodedUnderlyingIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
-          <xs:element name="EncodedUnderlyingIssuer" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
-          <xs:element name="EncodedUnderlyingSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
-          <xs:element name="EncodedUnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingCPProgram" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingCPRegType" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingCurrency" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingQty" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingPx" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingDirtyPrice" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingEndPrice" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingStartValue" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingCurrentValue" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingEndValue" minOccurs="0" type="xs:float"/>
-          <xs:element name="NoUnderlyingStips" minOccurs="0" type="NoUnderlyingStips"/>
-          <xs:element name="UnderlyingAllocationPercent" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingSettlementType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="UnderlyingCashAmount" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingCashType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="FIXED"/>
-                <xs:enumeration value="DIFF"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="UnderlyingUnitOfMeasure" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingTimeUnit" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingCapValue" minOccurs="0" type="xs:float"/>
-          <xs:element name="NoUndlyInstrumentParties" minOccurs="0" type="NoUndlyInstrumentParties"/>
-          <xs:element name="UnderlyingSettlMethod" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingAdjustedQuantity" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingFXRate" minOccurs="0" type="xs:float"/>
-          <xs:element name="UnderlyingFXRateCalc" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="M"/>
-                <xs:enumeration value="D"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="CollAction" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="0"/>
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Underlying" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UnderlyingSymbol" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSymbolSfx" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecurityID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecurityIDSource" minOccurs="0" type="xs:string"/>
+            <xs:element name="NoUnderlyingSecurityAltID" minOccurs="0" type="NoUnderlyingSecurityAltID"/>
+            <xs:element name="UnderlyingProduct" minOccurs="0" type="xs:integer"/>
+            <xs:element name="UnderlyingCFICode" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecurityType" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecuritySubType" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingMaturityMonthYear" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingMaturityDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingCouponPaymentDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingIssueDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
+            <xs:element name="UnderlyingRepurchaseTerm" minOccurs="0" type="xs:integer"/>
+            <xs:element name="UnderlyingRepurchaseRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingFactor" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingCreditRating" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingInstrRegistry" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingCountryOfIssue" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingLocaleOfIssue" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingRedemptionDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingStrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingStrikeCurrency" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingOptAttribute" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingContractMultiplier" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingCouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingSecurityExchange" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingIssuer" minOccurs="0" type="xs:string"/>
+            <xs:element name="EncodedUnderlyingIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+            <xs:element name="EncodedUnderlyingIssuer" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
+            <xs:element name="EncodedUnderlyingSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
+            <xs:element name="EncodedUnderlyingSecurityDesc" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingCPProgram" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingCPRegType" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingCurrency" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingDirtyPrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingEndPrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingStartValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingCurrentValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingEndValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="NoUnderlyingStips" minOccurs="0" type="NoUnderlyingStips"/>
+            <xs:element name="UnderlyingAllocationPercent" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingSettlementType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="UnderlyingCashAmount" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingCashType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="FIXED"/>
+                  <xs:enumeration value="DIFF"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="UnderlyingUnitOfMeasure" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingTimeUnit" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingCapValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="NoUndlyInstrumentParties" minOccurs="0" type="NoUndlyInstrumentParties"/>
+            <xs:element name="UnderlyingSettlMethod" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingAdjustedQuantity" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingFXRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingFXRateCalc" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="M"/>
+                  <xs:enumeration value="D"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="CollAction" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="0"/>
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUnderlyingSecurityAltID">
-    <xs:element name="UnderlyingSecurityAltID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UnderlyingSecurityAltID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUnderlyingStips">
-    <xs:element name="UnderlyingStip" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UnderlyingStip" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUndlyInstrumentParties">
-    <xs:element name="UndlyInstrumentPartie" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UndlyInstrumentPartyID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UndlyInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
-          <xs:element name="UndlyInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
-          <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UndlyInstrumentPartie" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UndlyInstrumentPartyID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UndlyInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+            <xs:element name="UndlyInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+            <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUndlyInstrumentPartySubIDs">
-    <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UndlyInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UndlyInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoTrdRegTimestamps">
-    <xs:element name="TrdRegTimestamp" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="TrdRegTimestamp" minOccurs="0" type="xs:string"/>
-          <xs:element name="TrdRegTimestampType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="TrdRegTimestampOrigin" minOccurs="0" type="xs:string"/>
-          <xs:element name="DeskType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="A"/>
-                <xs:enumeration value="AR"/>
-                <xs:enumeration value="D"/>
-                <xs:enumeration value="IN"/>
-                <xs:enumeration value="IS"/>
-                <xs:enumeration value="O"/>
-                <xs:enumeration value="PF"/>
-                <xs:enumeration value="PR"/>
-                <xs:enumeration value="PT"/>
-                <xs:enumeration value="S"/>
-                <xs:enumeration value="T"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="DeskTypeSource" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="DeskOrderHandlingInst" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="ADD"/>
-                <xs:enumeration value="AON"/>
-                <xs:enumeration value="CNH"/>
-                <xs:enumeration value="DIR"/>
-                <xs:enumeration value="E.W"/>
-                <xs:enumeration value="FOK"/>
-                <xs:enumeration value="IO"/>
-                <xs:enumeration value="IOC"/>
-                <xs:enumeration value="LOO"/>
-                <xs:enumeration value="LOC"/>
-                <xs:enumeration value="MAO"/>
-                <xs:enumeration value="MAC"/>
-                <xs:enumeration value="MOO"/>
-                <xs:enumeration value="MOC"/>
-                <xs:enumeration value="MQT"/>
-                <xs:enumeration value="NH"/>
-                <xs:enumeration value="OVD"/>
-                <xs:enumeration value="PEG"/>
-                <xs:enumeration value="RSV"/>
-                <xs:enumeration value="S.W"/>
-                <xs:enumeration value="SCL"/>
-                <xs:enumeration value="TMO"/>
-                <xs:enumeration value="TS"/>
-                <xs:enumeration value="WRK"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="TrdRegTimestamp" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TrdRegTimestamp" minOccurs="0" type="xs:string"/>
+            <xs:element name="TrdRegTimestampType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="TrdRegTimestampOrigin" minOccurs="0" type="xs:string"/>
+            <xs:element name="DeskType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="AR"/>
+                  <xs:enumeration value="D"/>
+                  <xs:enumeration value="IN"/>
+                  <xs:enumeration value="IS"/>
+                  <xs:enumeration value="O"/>
+                  <xs:enumeration value="PF"/>
+                  <xs:enumeration value="PR"/>
+                  <xs:enumeration value="PT"/>
+                  <xs:enumeration value="S"/>
+                  <xs:enumeration value="T"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="DeskTypeSource" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="DeskOrderHandlingInst" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="ADD"/>
+                  <xs:enumeration value="AON"/>
+                  <xs:enumeration value="CNH"/>
+                  <xs:enumeration value="DIR"/>
+                  <xs:enumeration value="E.W"/>
+                  <xs:enumeration value="FOK"/>
+                  <xs:enumeration value="IO"/>
+                  <xs:enumeration value="IOC"/>
+                  <xs:enumeration value="LOO"/>
+                  <xs:enumeration value="LOC"/>
+                  <xs:enumeration value="MAO"/>
+                  <xs:enumeration value="MAC"/>
+                  <xs:enumeration value="MOO"/>
+                  <xs:enumeration value="MOC"/>
+                  <xs:enumeration value="MQT"/>
+                  <xs:enumeration value="NH"/>
+                  <xs:enumeration value="OVD"/>
+                  <xs:enumeration value="PEG"/>
+                  <xs:enumeration value="RSV"/>
+                  <xs:enumeration value="S.W"/>
+                  <xs:enumeration value="SCL"/>
+                  <xs:enumeration value="TMO"/>
+                  <xs:enumeration value="TS"/>
+                  <xs:enumeration value="WRK"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoMiscFees">
-    <xs:element name="MiscFee" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="MiscFeeAmt" minOccurs="0" type="xs:float"/>
-          <xs:element name="MiscFeeCurr" minOccurs="0" type="xs:string"/>
-          <xs:element name="MiscFeeType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="10"/>
-                <xs:enumeration value="11"/>
-                <xs:enumeration value="12"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-                <xs:enumeration value="7"/>
-                <xs:enumeration value="8"/>
-                <xs:enumeration value="9"/>
-                <xs:enumeration value="13"/>
-                <xs:enumeration value="14"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="MiscFeeBasis" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="0"/>
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="MiscFee" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MiscFeeAmt" minOccurs="0" type="xs:float"/>
+            <xs:element name="MiscFeeCurr" minOccurs="0" type="xs:string"/>
+            <xs:element name="MiscFeeType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="10"/>
+                  <xs:enumeration value="11"/>
+                  <xs:enumeration value="12"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                  <xs:enumeration value="7"/>
+                  <xs:enumeration value="8"/>
+                  <xs:enumeration value="9"/>
+                  <xs:enumeration value="13"/>
+                  <xs:enumeration value="14"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="MiscFeeBasis" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="0"/>
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoStipulations">
-    <xs:element name="Stipulation" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="StipulationType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="ABS"/>
-                <xs:enumeration value="AMT"/>
-                <xs:enumeration value="AUTOREINV"/>
-                <xs:enumeration value="BANKQUAL"/>
-                <xs:enumeration value="BGNCON"/>
-                <xs:enumeration value="COUPON"/>
-                <xs:enumeration value="CPP"/>
-                <xs:enumeration value="CPR"/>
-                <xs:enumeration value="CPY"/>
-                <xs:enumeration value="CURRENCY"/>
-                <xs:enumeration value="CUSTOMDATE"/>
-                <xs:enumeration value="GEOG"/>
-                <xs:enumeration value="HAIRCUT"/>
-                <xs:enumeration value="HEP"/>
-                <xs:enumeration value="INSURED"/>
-                <xs:enumeration value="ISSUE"/>
-                <xs:enumeration value="ISSUER"/>
-                <xs:enumeration value="ISSUESIZE"/>
-                <xs:enumeration value="LOOKBACK"/>
-                <xs:enumeration value="LOT"/>
-                <xs:enumeration value="LOTVAR"/>
-                <xs:enumeration value="MAT"/>
-                <xs:enumeration value="MATURITY"/>
-                <xs:enumeration value="MAXSUBS"/>
-                <xs:enumeration value="MHP"/>
-                <xs:enumeration value="MINDNOM"/>
-                <xs:enumeration value="MININCR"/>
-                <xs:enumeration value="MINQTY"/>
-                <xs:enumeration value="MPR"/>
-                <xs:enumeration value="PAYFREQ"/>
-                <xs:enumeration value="PIECES"/>
-                <xs:enumeration value="PMAX"/>
-                <xs:enumeration value="PPC"/>
-                <xs:enumeration value="PPL"/>
-                <xs:enumeration value="PPM"/>
-                <xs:enumeration value="PPT"/>
-                <xs:enumeration value="PRICE"/>
-                <xs:enumeration value="PRICEFREQ"/>
-                <xs:enumeration value="PROD"/>
-                <xs:enumeration value="PROTECT"/>
-                <xs:enumeration value="PSA"/>
-                <xs:enumeration value="PURPOSE"/>
-                <xs:enumeration value="PXSOURCE"/>
-                <xs:enumeration value="RATING"/>
-                <xs:enumeration value="REDEMPTION"/>
-                <xs:enumeration value="RESTRICTED"/>
-                <xs:enumeration value="SECTOR"/>
-                <xs:enumeration value="SECTYPE"/>
-                <xs:enumeration value="SMM"/>
-                <xs:enumeration value="STRUCT"/>
-                <xs:enumeration value="SUBSFREQ"/>
-                <xs:enumeration value="SUBSLEFT"/>
-                <xs:enumeration value="TEXT"/>
-                <xs:enumeration value="TRDVAR"/>
-                <xs:enumeration value="WAC"/>
-                <xs:enumeration value="WAL"/>
-                <xs:enumeration value="WALA"/>
-                <xs:enumeration value="WAM"/>
-                <xs:enumeration value="WHOLE"/>
-                <xs:enumeration value="YIELD"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="StipulationValue" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Stipulation" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="StipulationType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="ABS"/>
+                  <xs:enumeration value="AMT"/>
+                  <xs:enumeration value="AUTOREINV"/>
+                  <xs:enumeration value="BANKQUAL"/>
+                  <xs:enumeration value="BGNCON"/>
+                  <xs:enumeration value="COUPON"/>
+                  <xs:enumeration value="CPP"/>
+                  <xs:enumeration value="CPR"/>
+                  <xs:enumeration value="CPY"/>
+                  <xs:enumeration value="CURRENCY"/>
+                  <xs:enumeration value="CUSTOMDATE"/>
+                  <xs:enumeration value="GEOG"/>
+                  <xs:enumeration value="HAIRCUT"/>
+                  <xs:enumeration value="HEP"/>
+                  <xs:enumeration value="INSURED"/>
+                  <xs:enumeration value="ISSUE"/>
+                  <xs:enumeration value="ISSUER"/>
+                  <xs:enumeration value="ISSUESIZE"/>
+                  <xs:enumeration value="LOOKBACK"/>
+                  <xs:enumeration value="LOT"/>
+                  <xs:enumeration value="LOTVAR"/>
+                  <xs:enumeration value="MAT"/>
+                  <xs:enumeration value="MATURITY"/>
+                  <xs:enumeration value="MAXSUBS"/>
+                  <xs:enumeration value="MHP"/>
+                  <xs:enumeration value="MINDNOM"/>
+                  <xs:enumeration value="MININCR"/>
+                  <xs:enumeration value="MINQTY"/>
+                  <xs:enumeration value="MPR"/>
+                  <xs:enumeration value="PAYFREQ"/>
+                  <xs:enumeration value="PIECES"/>
+                  <xs:enumeration value="PMAX"/>
+                  <xs:enumeration value="PPC"/>
+                  <xs:enumeration value="PPL"/>
+                  <xs:enumeration value="PPM"/>
+                  <xs:enumeration value="PPT"/>
+                  <xs:enumeration value="PRICE"/>
+                  <xs:enumeration value="PRICEFREQ"/>
+                  <xs:enumeration value="PROD"/>
+                  <xs:enumeration value="PROTECT"/>
+                  <xs:enumeration value="PSA"/>
+                  <xs:enumeration value="PURPOSE"/>
+                  <xs:enumeration value="PXSOURCE"/>
+                  <xs:enumeration value="RATING"/>
+                  <xs:enumeration value="REDEMPTION"/>
+                  <xs:enumeration value="RESTRICTED"/>
+                  <xs:enumeration value="SECTOR"/>
+                  <xs:enumeration value="SECTYPE"/>
+                  <xs:enumeration value="SMM"/>
+                  <xs:enumeration value="STRUCT"/>
+                  <xs:enumeration value="SUBSFREQ"/>
+                  <xs:enumeration value="SUBSLEFT"/>
+                  <xs:enumeration value="TEXT"/>
+                  <xs:enumeration value="TRDVAR"/>
+                  <xs:enumeration value="WAC"/>
+                  <xs:enumeration value="WAL"/>
+                  <xs:enumeration value="WALA"/>
+                  <xs:enumeration value="WAM"/>
+                  <xs:enumeration value="WHOLE"/>
+                  <xs:enumeration value="YIELD"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="StipulationValue" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

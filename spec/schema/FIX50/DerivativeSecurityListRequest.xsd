@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="DerivativeSecurityListRequest">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -114,52 +112,62 @@
           </xs:simpleType>
         </xs:element>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoUnderlyingSecurityAltID">
-    <xs:element name="UnderlyingSecurityAltID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UnderlyingSecurityAltID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UnderlyingSecurityAltID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingSecurityAltIDSource" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUnderlyingStips">
-    <xs:element name="UnderlyingStip" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
-          <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UnderlyingStip" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UnderlyingStipType" minOccurs="0" type="xs:string"/>
+            <xs:element name="UnderlyingStipValue" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUndlyInstrumentParties">
-    <xs:element name="UndlyInstrumentPartie" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UndlyInstrumentPartyID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UndlyInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
-          <xs:element name="UndlyInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
-          <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UndlyInstrumentPartie" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UndlyInstrumentPartyID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UndlyInstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+            <xs:element name="UndlyInstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+            <xs:element name="NoUndlyInstrumentPartySubIDs" minOccurs="0" type="NoUndlyInstrumentPartySubIDs"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoUndlyInstrumentPartySubIDs">
-    <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" type="xs:string"/>
-          <xs:element name="UndlyInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="UndlyInstrumentPartySubID" minOccurs="0" type="xs:string"/>
+            <xs:element name="UndlyInstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="IndicationofInterest">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -152,57 +150,63 @@
           </xs:simpleType>
         </xs:element>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoIOIQualifiers">
-    <xs:element name="IOIQualifier" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="IOIQualifier" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="A"/>
-                <xs:enumeration value="C"/>
-                <xs:enumeration value="I"/>
-                <xs:enumeration value="L"/>
-                <xs:enumeration value="M"/>
-                <xs:enumeration value="O"/>
-                <xs:enumeration value="P"/>
-                <xs:enumeration value="Q"/>
-                <xs:enumeration value="R"/>
-                <xs:enumeration value="S"/>
-                <xs:enumeration value="T"/>
-                <xs:enumeration value="V"/>
-                <xs:enumeration value="W"/>
-                <xs:enumeration value="X"/>
-                <xs:enumeration value="Y"/>
-                <xs:enumeration value="Z"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="IOIQualifier" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="IOIQualifier" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="A"/>
+                  <xs:enumeration value="C"/>
+                  <xs:enumeration value="I"/>
+                  <xs:enumeration value="L"/>
+                  <xs:enumeration value="M"/>
+                  <xs:enumeration value="O"/>
+                  <xs:enumeration value="P"/>
+                  <xs:enumeration value="Q"/>
+                  <xs:enumeration value="R"/>
+                  <xs:enumeration value="S"/>
+                  <xs:enumeration value="T"/>
+                  <xs:enumeration value="V"/>
+                  <xs:enumeration value="W"/>
+                  <xs:enumeration value="X"/>
+                  <xs:enumeration value="Y"/>
+                  <xs:enumeration value="Z"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoRoutingIDs">
-    <xs:element name="RoutingID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="RoutingType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="RoutingID" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="RoutingID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RoutingType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="RoutingID" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

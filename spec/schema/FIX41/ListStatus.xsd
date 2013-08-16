@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="ListStatus">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -11,20 +9,24 @@
         <xs:element name="RptSeq" type="xs:integer"/>
         <xs:element name="NoOrders" type="NoOrders"/>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoOrders">
-    <xs:element name="Order" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="ClOrdID" type="xs:string"/>
-          <xs:element name="CumQty" type="xs:integer"/>
-          <xs:element name="LeavesQty" type="xs:integer"/>
-          <xs:element name="CxlQty" type="xs:integer"/>
-          <xs:element name="AvgPx" type="xs:float"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Order" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ClOrdID" type="xs:string"/>
+            <xs:element name="CumQty" type="xs:integer"/>
+            <xs:element name="LeavesQty" type="xs:integer"/>
+            <xs:element name="CxlQty" type="xs:integer"/>
+            <xs:element name="AvgPx" type="xs:float"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>

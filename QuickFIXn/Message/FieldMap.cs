@@ -666,7 +666,7 @@ namespace QuickFix
                     if (groupCounterTags.Contains(preField)) {
                         List<Group> glist = _groups[preField];
                         w.WriteStartElement(fm.Name);
-                        w.WriteAttributeString("count", GetField(preField));
+                        //w.WriteAttributeString("count", GetField(preField));
                         foreach (Group g in glist)
                             g.Write(w, d);
                         w.WriteEndElement();
@@ -696,7 +696,7 @@ namespace QuickFix
                 var ct = _fields[counterTag];
                 fm = d.FieldsByTag[ct.Tag];
                 w.WriteStartElement(fm.Name);
-                w.WriteAttributeString("count", ct.ToString());
+                //w.WriteAttributeString("count", ct.ToString());
                 //sb.Append(_fields[counterTag].toStringField());
 
                 foreach (Group group in groupList)
@@ -716,10 +716,11 @@ namespace QuickFix
                     var f = d.FieldsByName[ln];
                     
                     if (mmap.IsGroup(f.Tag)) {
-                        int c = int.Parse(r["count"]);
+                        //int c = int.Parse(r["count"]);
                         r.ReadStartElement();
                         var gmap = mmap.GetGroupSpec(f.Tag);
-                        for (int i = 0; i < c; i++) {
+                        bool loop = true;
+                        while (loop) {
                             Group g = null;
                             if (mf != null)
                                 g = mf.Create(beginString, msgType, f.Tag); //Get First Group
@@ -727,6 +728,8 @@ namespace QuickFix
                                 g = new Group(f.Tag, gmap.Delim);
                             g.Read(r, d, mf, gmap, msgType, beginString);
                             AddGroup(g);
+                            r.MoveToContent();
+                            loop = (r.NodeType == XmlNodeType.Element);
                         }
                         r.ReadEndElement();
                     } else {

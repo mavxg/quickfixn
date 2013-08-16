@@ -1,7 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="TradingSessionStatus">
-    <xs:attribute name="beginString" type="xs:string"/>
-    <xs:attribute name="msgType" type="xs:string"/>
     <xs:complexType>
       <!-- body -->
       <xs:all>
@@ -318,66 +316,76 @@
         </xs:element>
         <xs:element name="MaturityTime" minOccurs="0" type="xs:string"/>
       </xs:all>
+      <xs:attribute name="beginString" type="xs:string"/>
+      <xs:attribute name="msgType" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="NoSecurityAltID">
-    <xs:element name="SecurityAltID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
-          <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="SecurityAltID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SecurityAltID" minOccurs="0" type="xs:string"/>
+            <xs:element name="SecurityAltIDSource" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoEvents">
-    <xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="EventType" minOccurs="0">
-            <xs:simpleType>
-              <xs:restriction base="xs:integer">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-                <xs:enumeration value="3"/>
-                <xs:enumeration value="4"/>
-                <xs:enumeration value="99"/>
-                <xs:enumeration value="5"/>
-                <xs:enumeration value="6"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element name="EventDate" minOccurs="0" type="xs:string"/>
-          <xs:element name="EventPx" minOccurs="0" type="xs:float"/>
-          <xs:element name="EventText" minOccurs="0" type="xs:string"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EventType" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                  <xs:enumeration value="3"/>
+                  <xs:enumeration value="4"/>
+                  <xs:enumeration value="99"/>
+                  <xs:enumeration value="5"/>
+                  <xs:enumeration value="6"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="EventDate" minOccurs="0" type="xs:string"/>
+            <xs:element name="EventPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="EventText" minOccurs="0" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoInstrumentParties">
-    <xs:element name="InstrumentPartie" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="InstrumentPartyID" minOccurs="0" type="xs:string"/>
-          <xs:element name="InstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
-          <xs:element name="InstrumentPartyRole" minOccurs="0" type="xs:integer"/>
-          <xs:element name="NoInstrumentPartySubIDs" minOccurs="0" type="NoInstrumentPartySubIDs"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="InstrumentPartie" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="InstrumentPartyID" minOccurs="0" type="xs:string"/>
+            <xs:element name="InstrumentPartyIDSource" minOccurs="0" type="xs:string"/>
+            <xs:element name="InstrumentPartyRole" minOccurs="0" type="xs:integer"/>
+            <xs:element name="NoInstrumentPartySubIDs" minOccurs="0" type="NoInstrumentPartySubIDs"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
   <xs:complexType name="NoInstrumentPartySubIDs">
-    <xs:element name="InstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
-      <xs:complexType>
-        <xs:sequence>
-          <xs:element name="InstrumentPartySubID" minOccurs="0" type="xs:string"/>
-          <xs:element name="InstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
+    <xs:sequence>
+      <xs:element name="InstrumentPartySubID" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="InstrumentPartySubID" minOccurs="0" type="xs:string"/>
+            <xs:element name="InstrumentPartySubIDType" minOccurs="0" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger"/>
   </xs:complexType>
 </xs:schema>
