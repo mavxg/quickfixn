@@ -493,6 +493,7 @@ namespace QuickFix.DataDictionary
 				DDMap msg = new DDMap();
 				parseMsgEl(msgEl, msg);
 				String msgtype = msgEl.Attributes["msgtype"].Value;
+                msg.Name = msgEl.Attributes["name"].Value;
 				Messages.Add(msgtype, msg);
 			}
 		}
@@ -571,6 +572,7 @@ namespace QuickFix.DataDictionary
 				{
 					DDField fld = FieldsByName[childNode.Attributes["name"].Value];
 					DDGrp grp = new DDGrp();
+                    grp.Name = childNode.Attributes["name"].Value;
                     XmlAttribute req = childNode.Attributes["required"];
                     if (req != null && req.Value == "Y"
                         && (componentRequired == null || componentRequired.Value == true))

@@ -14,6 +14,8 @@ namespace QuickFix.DataDictionary
         public Dictionary<int, DDGrp> Groups = new Dictionary<int, DDGrp>();
         public HashSet<int> ReqFields = new HashSet<int>();
 
+        public String Name; //Message or Group name
+
         public void AddField(DDField fld)
         {
             Fields.Add(fld.Tag, fld);

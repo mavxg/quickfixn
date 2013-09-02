@@ -757,6 +757,7 @@ namespace QuickFix
                         case QuickFix.Fields.Tags.NoUnderlyings: return new QuickFix.FIX44.TradeCaptureReport.NoUnderlyingsGroup();
                         case QuickFix.Fields.Tags.NoPosAmt: return new QuickFix.FIX44.TradeCaptureReport.NoPosAmtGroup();
                         case QuickFix.Fields.Tags.NoLegs: return new QuickFix.FIX44.TradeCaptureReport.NoLegsGroup();
+                        case QuickFix.Fields.Tags.NoRegulatoryTradeIDs: return new QuickFix.FIX44.TradeCaptureReport.NoRegulatoryTradeIDsGroup();
                         case QuickFix.Fields.Tags.NoTrdRegTimestamps: return new QuickFix.FIX44.TradeCaptureReport.NoTrdRegTimestampsGroup();
                         case QuickFix.Fields.Tags.NoSides: return new QuickFix.FIX44.TradeCaptureReport.NoSidesGroup();
                     }
@@ -771,6 +772,7 @@ namespace QuickFix
                         case QuickFix.Fields.Tags.NoTrdRegTimestamps: return new QuickFix.FIX44.TradeCaptureReportAck.NoTrdRegTimestampsGroup();
                         case QuickFix.Fields.Tags.NoLegs: return new QuickFix.FIX44.TradeCaptureReportAck.NoLegsGroup();
                         case QuickFix.Fields.Tags.NoAllocs: return new QuickFix.FIX44.TradeCaptureReportAck.NoAllocsGroup();
+                        case QuickFix.Fields.Tags.NoTickets: return new QuickFix.FIX44.TradeCaptureReportAck.NoTicketsGroup();
                     }
                 }
 

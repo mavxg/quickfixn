@@ -75,7 +75,7 @@ class Generator
   def agg_fields
     field_names = (@fix40.fields.keys + @fix41.fields.keys +
         @fix42.fields.keys + @fix43.fields.keys +
-        @fix44.fields.keys + @fix50.fields.keys +
+        @fix44Bloomberg.fields.keys + @fix50.fields.keys +
         @fix50sp1.fields.keys + @fix50sp2.fields.keys).uniq
     field_names.map {|fn| get_field_def(fn) }
   end
@@ -86,7 +86,7 @@ class Generator
       @fix50sp2.fields[fld_name],
       @fix50sp1.fields[fld_name],
       @fix50.fields[fld_name],
-      @fix44.fields[fld_name],
+      @fix44Bloomberg.fields[fld_name],
       @fix43.fields[fld_name],
       @fix42.fields[fld_name],
       @fix41.fields[fld_name],
@@ -115,7 +115,7 @@ class Generator
     MessageGen.generate(@fix41.messages,  msgs_path, 'FIX41')
     MessageGen.generate(@fix42.messages,  msgs_path, 'FIX42')
     MessageGen.generate(@fix43.messages,  msgs_path, 'FIX43')
-    MessageGen.generate(@fix44.messages,  msgs_path, 'FIX44')
+    MessageGen.generate(@fix44Bloomberg.messages,  msgs_path, 'FIX44')
     MessageGen.generate(@fix50.messages,  msgs_path, 'FIX50')
     MessageGen.generate(@fix50sp1.messages,  msgs_path, 'FIX50SP1')
     MessageGen.generate(@fix50sp2.messages,  msgs_path, 'FIX50SP2')
@@ -130,7 +130,7 @@ class Generator
         {:version=>'FIX41', :messages=>@fix41.messages},
         {:version=>'FIX42', :messages=>@fix42.messages},
         {:version=>'FIX43', :messages=>@fix43.messages},
-        {:version=>'FIX44', :messages=>@fix44.messages},
+        {:version=>'FIX44', :messages=>@fix44Bloomberg.messages},
         {:version=>'FIX50', :messages=>@fix50.messages}
       ]
     )
@@ -142,7 +142,7 @@ class Generator
     MessageFactoryGen.generate(@fix41.messages,  msgs_path, 'FIX41')
     MessageFactoryGen.generate(@fix42.messages,  msgs_path, 'FIX42')
     MessageFactoryGen.generate(@fix43.messages,  msgs_path, 'FIX43')
-    MessageFactoryGen.generate(@fix44.messages,  msgs_path, 'FIX44')
+    MessageFactoryGen.generate(@fix44Bloomberg.messages,  msgs_path, 'FIX44')
     MessageFactoryGen.generate(@fix50.messages,  msgs_path, 'FIX50')
     MessageFactoryGen.generate(@fix50sp1.messages,  msgs_path, 'FIX50SP1')
     MessageFactoryGen.generate(@fix50sp2.messages,  msgs_path, 'FIX50SP2')

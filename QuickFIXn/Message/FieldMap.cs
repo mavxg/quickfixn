@@ -709,37 +709,42 @@ namespace QuickFix
             , IMessageFactory mf, DataDictionary.IFieldMapSpec mmap
             , string msgType, string beginString)
         {
-            while (r.Read()) {
-                r.MoveToContent();
-                if (r.IsStartElement()) {
-                    var ln = r.LocalName;
-                    var f = d.FieldsByName[ln];
-                    
-                    if (mmap.IsGroup(f.Tag)) {
-                        //int c = int.Parse(r["count"]);
-                        r.ReadStartElement();
-                        var gmap = mmap.GetGroupSpec(f.Tag);
-                        bool loop = true;
-                        while (loop) {
-                            Group g = null;
-                            if (mf != null)
-                                g = mf.Create(beginString, msgType, f.Tag); //Get First Group
-                            if (g == null)
-                                g = new Group(f.Tag, gmap.Delim);
-                            g.Read(r, d, mf, gmap, msgType, beginString);
-                            AddGroup(g);
-                            r.MoveToContent();
-                            loop = (r.NodeType == XmlNodeType.Element);
+            if (r.MoveToContent() == XmlNodeType.Element) {
+                using (var rr = r.ReadSubtree()) {
+                    rr.ReadStartElement();
+                    while (!rr.EOF && !(rr.NodeType == XmlNodeType.EndElement)) {
+                        if (rr.IsStartElement()) {
+                            var ln = rr.LocalName;
+                            var f = d.FieldsByName[ln];
+                            if (mmap.IsGroup(f.Tag)) {
+                                var gmap = mmap.GetGroupSpec(f.Tag);
+                                r.ReadStartElement();
+                                bool loop = true;
+                                while (loop) {
+                                    Group g = null;
+                                    if (mf != null)
+                                        g = mf.Create(beginString, msgType, f.Tag); //Get First Group
+                                    if (g == null)
+                                        g = new Group(f.Tag, gmap.Delim); //TODO this should look at the data dictionary for field order
+                                    g.Read(rr, d, mf, gmap, msgType, beginString);
+                                    AddGroup(g);
+                                    rr.MoveToContent();
+                                    loop = (rr.NodeType == XmlNodeType.Element);
+                                }
+
+                                r.ReadEndElement();
+                            } else {
+                                var sv = rr.ReadString();
+                                var nsf = new QuickFix.Fields.StringField(f.Tag, sv);
+                                SetField(nsf);
+                                rr.Read();
+                            }
+                        } else {
+                            rr.Read();
                         }
-                        r.ReadEndElement();
-                    } else {
-                        r.ReadStartElement();
-                        var sv = r.ReadString();
-                        var nsf = new QuickFix.Fields.StringField(f.Tag, sv);
-                        SetField(nsf);
-                        r.ReadEndElement();
                     }
-                } else if (r.NodeType == XmlNodeType.EndElement) break;
+                }
+                r.ReadEndElement();
             }
         }
 

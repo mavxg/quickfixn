@@ -18,14 +18,12 @@ namespace QuickFix
                     QuickFix.Fields.OrderID aOrderID,
                     QuickFix.Fields.ExecID aExecID,
                     QuickFix.Fields.DKReason aDKReason,
-                    QuickFix.Fields.Symbol aSymbol,
                     QuickFix.Fields.Side aSide
                 ) : this()
             {
                 this.OrderID = aOrderID;
                 this.ExecID = aExecID;
                 this.DKReason = aDKReason;
-                this.Symbol = aSymbol;
                 this.Side = aSide;
             }
 
@@ -338,6 +336,68 @@ namespace QuickFix
             public bool IsSetProduct() 
             { 
                 return IsSetField(Tags.Product);
+            }
+            public QuickFix.Fields.FixedIncomeFlag FixedIncomeFlag
+            { 
+                get 
+                {
+                    QuickFix.Fields.FixedIncomeFlag val = new QuickFix.Fields.FixedIncomeFlag();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.FixedIncomeFlag val) 
+            { 
+                this.FixedIncomeFlag = val;
+            }
+            
+            public QuickFix.Fields.FixedIncomeFlag Get(QuickFix.Fields.FixedIncomeFlag val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.FixedIncomeFlag val) 
+            { 
+                return IsSetFixedIncomeFlag();
+            }
+            
+            public bool IsSetFixedIncomeFlag() 
+            { 
+                return IsSetField(Tags.FixedIncomeFlag);
+            }
+            public QuickFix.Fields.FixedIncomeSubFlag FixedIncomeSubFlag
+            { 
+                get 
+                {
+                    QuickFix.Fields.FixedIncomeSubFlag val = new QuickFix.Fields.FixedIncomeSubFlag();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.FixedIncomeSubFlag val) 
+            { 
+                this.FixedIncomeSubFlag = val;
+            }
+            
+            public QuickFix.Fields.FixedIncomeSubFlag Get(QuickFix.Fields.FixedIncomeSubFlag val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.FixedIncomeSubFlag val) 
+            { 
+                return IsSetFixedIncomeSubFlag();
+            }
+            
+            public bool IsSetFixedIncomeSubFlag() 
+            { 
+                return IsSetField(Tags.FixedIncomeSubFlag);
             }
             public QuickFix.Fields.CFICode CFICode
             { 
@@ -1423,6 +1483,68 @@ namespace QuickFix
             public bool IsSetNoEvents() 
             { 
                 return IsSetField(Tags.NoEvents);
+            }
+            public QuickFix.Fields.AssumedCoupon AssumedCoupon
+            { 
+                get 
+                {
+                    QuickFix.Fields.AssumedCoupon val = new QuickFix.Fields.AssumedCoupon();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.AssumedCoupon val) 
+            { 
+                this.AssumedCoupon = val;
+            }
+            
+            public QuickFix.Fields.AssumedCoupon Get(QuickFix.Fields.AssumedCoupon val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.AssumedCoupon val) 
+            { 
+                return IsSetAssumedCoupon();
+            }
+            
+            public bool IsSetAssumedCoupon() 
+            { 
+                return IsSetField(Tags.AssumedCoupon);
+            }
+            public QuickFix.Fields.PrepaymentSpeed PrepaymentSpeed
+            { 
+                get 
+                {
+                    QuickFix.Fields.PrepaymentSpeed val = new QuickFix.Fields.PrepaymentSpeed();
+                    GetField(val);
+                    return val;
+                }
+                set { SetField(value); }
+            }
+            
+            public void Set(QuickFix.Fields.PrepaymentSpeed val) 
+            { 
+                this.PrepaymentSpeed = val;
+            }
+            
+            public QuickFix.Fields.PrepaymentSpeed Get(QuickFix.Fields.PrepaymentSpeed val) 
+            { 
+                GetField(val);
+                return val;
+            }
+            
+            public bool IsSet(QuickFix.Fields.PrepaymentSpeed val) 
+            { 
+                return IsSetPrepaymentSpeed();
+            }
+            
+            public bool IsSetPrepaymentSpeed() 
+            { 
+                return IsSetField(Tags.PrepaymentSpeed);
             }
             public QuickFix.Fields.DatedDate DatedDate
             { 

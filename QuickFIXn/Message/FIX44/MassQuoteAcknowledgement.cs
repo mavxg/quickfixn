@@ -2435,7 +2435,7 @@ namespace QuickFix
                 }
                 public class NoQuoteEntriesGroup : Group
                 {
-                    public static int[] fieldOrder = {Tags.QuoteEntryID, Tags.Symbol, Tags.SymbolSfx, Tags.SecurityID, Tags.SecurityIDSource, Tags.NoSecurityAltID, Tags.Product, Tags.CFICode, Tags.SecurityType, Tags.SecuritySubType, Tags.MaturityMonthYear, Tags.MaturityDate, Tags.PutOrCall, Tags.CouponPaymentDate, Tags.IssueDate, Tags.RepoCollateralSecurityType, Tags.RepurchaseTerm, Tags.RepurchaseRate, Tags.Factor, Tags.CreditRating, Tags.InstrRegistry, Tags.CountryOfIssue, Tags.StateOrProvinceOfIssue, Tags.LocaleOfIssue, Tags.RedemptionDate, Tags.StrikePrice, Tags.StrikeCurrency, Tags.OptAttribute, Tags.ContractMultiplier, Tags.CouponRate, Tags.SecurityExchange, Tags.Issuer, Tags.EncodedIssuerLen, Tags.EncodedIssuer, Tags.SecurityDesc, Tags.EncodedSecurityDescLen, Tags.EncodedSecurityDesc, Tags.Pool, Tags.ContractSettlMonth, Tags.CPProgram, Tags.CPRegType, Tags.NoEvents, Tags.DatedDate, Tags.InterestAccrualDate, Tags.NoLegs, Tags.BidPx, Tags.OfferPx, Tags.BidSize, Tags.OfferSize, Tags.ValidUntilTime, Tags.BidSpotRate, Tags.OfferSpotRate, Tags.BidForwardPoints, Tags.OfferForwardPoints, Tags.MidPx, Tags.BidYield, Tags.MidYield, Tags.OfferYield, Tags.TransactTime, Tags.TradingSessionID, Tags.TradingSessionSubID, Tags.SettlDate, Tags.OrdType, Tags.SettlDate2, Tags.OrderQty2, Tags.BidForwardPoints2, Tags.OfferForwardPoints2, Tags.Currency, Tags.QuoteEntryRejectReason, 0};
+                    public static int[] fieldOrder = {Tags.QuoteEntryID, Tags.Symbol, Tags.SymbolSfx, Tags.SecurityID, Tags.SecurityIDSource, Tags.NoSecurityAltID, Tags.Product, Tags.FixedIncomeFlag, Tags.FixedIncomeSubFlag, Tags.CFICode, Tags.SecurityType, Tags.SecuritySubType, Tags.MaturityMonthYear, Tags.MaturityDate, Tags.PutOrCall, Tags.CouponPaymentDate, Tags.IssueDate, Tags.RepoCollateralSecurityType, Tags.RepurchaseTerm, Tags.RepurchaseRate, Tags.Factor, Tags.CreditRating, Tags.InstrRegistry, Tags.CountryOfIssue, Tags.StateOrProvinceOfIssue, Tags.LocaleOfIssue, Tags.RedemptionDate, Tags.StrikePrice, Tags.StrikeCurrency, Tags.OptAttribute, Tags.ContractMultiplier, Tags.CouponRate, Tags.SecurityExchange, Tags.Issuer, Tags.EncodedIssuerLen, Tags.EncodedIssuer, Tags.SecurityDesc, Tags.EncodedSecurityDescLen, Tags.EncodedSecurityDesc, Tags.Pool, Tags.ContractSettlMonth, Tags.CPProgram, Tags.CPRegType, Tags.NoEvents, Tags.AssumedCoupon, Tags.PrepaymentSpeed, Tags.DatedDate, Tags.InterestAccrualDate, Tags.NoLegs, Tags.BidPx, Tags.OfferPx, Tags.BidSize, Tags.OfferSize, Tags.ValidUntilTime, Tags.BidSpotRate, Tags.OfferSpotRate, Tags.BidForwardPoints, Tags.OfferForwardPoints, Tags.MidPx, Tags.BidYield, Tags.MidYield, Tags.OfferYield, Tags.TransactTime, Tags.TradingSessionID, Tags.TradingSessionSubID, Tags.SettlDate, Tags.OrdType, Tags.SettlDate2, Tags.OrderQty2, Tags.BidForwardPoints2, Tags.OfferForwardPoints2, Tags.Currency, Tags.QuoteEntryRejectReason, 0};
                 
                     public NoQuoteEntriesGroup() 
                       :base( Tags.NoQuoteEntries, Tags.QuoteEntryID, fieldOrder)
@@ -2665,6 +2665,68 @@ namespace QuickFix
                     public bool IsSetProduct() 
                     { 
                         return IsSetField(Tags.Product);
+                    }
+                    public QuickFix.Fields.FixedIncomeFlag FixedIncomeFlag
+                    { 
+                        get 
+                        {
+                            QuickFix.Fields.FixedIncomeFlag val = new QuickFix.Fields.FixedIncomeFlag();
+                            GetField(val);
+                            return val;
+                        }
+                        set { SetField(value); }
+                    }
+                    
+                    public void Set(QuickFix.Fields.FixedIncomeFlag val) 
+                    { 
+                        this.FixedIncomeFlag = val;
+                    }
+                    
+                    public QuickFix.Fields.FixedIncomeFlag Get(QuickFix.Fields.FixedIncomeFlag val) 
+                    { 
+                        GetField(val);
+                        return val;
+                    }
+                    
+                    public bool IsSet(QuickFix.Fields.FixedIncomeFlag val) 
+                    { 
+                        return IsSetFixedIncomeFlag();
+                    }
+                    
+                    public bool IsSetFixedIncomeFlag() 
+                    { 
+                        return IsSetField(Tags.FixedIncomeFlag);
+                    }
+                    public QuickFix.Fields.FixedIncomeSubFlag FixedIncomeSubFlag
+                    { 
+                        get 
+                        {
+                            QuickFix.Fields.FixedIncomeSubFlag val = new QuickFix.Fields.FixedIncomeSubFlag();
+                            GetField(val);
+                            return val;
+                        }
+                        set { SetField(value); }
+                    }
+                    
+                    public void Set(QuickFix.Fields.FixedIncomeSubFlag val) 
+                    { 
+                        this.FixedIncomeSubFlag = val;
+                    }
+                    
+                    public QuickFix.Fields.FixedIncomeSubFlag Get(QuickFix.Fields.FixedIncomeSubFlag val) 
+                    { 
+                        GetField(val);
+                        return val;
+                    }
+                    
+                    public bool IsSet(QuickFix.Fields.FixedIncomeSubFlag val) 
+                    { 
+                        return IsSetFixedIncomeSubFlag();
+                    }
+                    
+                    public bool IsSetFixedIncomeSubFlag() 
+                    { 
+                        return IsSetField(Tags.FixedIncomeSubFlag);
                     }
                     public QuickFix.Fields.CFICode CFICode
                     { 
@@ -3750,6 +3812,68 @@ namespace QuickFix
                     public bool IsSetNoEvents() 
                     { 
                         return IsSetField(Tags.NoEvents);
+                    }
+                    public QuickFix.Fields.AssumedCoupon AssumedCoupon
+                    { 
+                        get 
+                        {
+                            QuickFix.Fields.AssumedCoupon val = new QuickFix.Fields.AssumedCoupon();
+                            GetField(val);
+                            return val;
+                        }
+                        set { SetField(value); }
+                    }
+                    
+                    public void Set(QuickFix.Fields.AssumedCoupon val) 
+                    { 
+                        this.AssumedCoupon = val;
+                    }
+                    
+                    public QuickFix.Fields.AssumedCoupon Get(QuickFix.Fields.AssumedCoupon val) 
+                    { 
+                        GetField(val);
+                        return val;
+                    }
+                    
+                    public bool IsSet(QuickFix.Fields.AssumedCoupon val) 
+                    { 
+                        return IsSetAssumedCoupon();
+                    }
+                    
+                    public bool IsSetAssumedCoupon() 
+                    { 
+                        return IsSetField(Tags.AssumedCoupon);
+                    }
+                    public QuickFix.Fields.PrepaymentSpeed PrepaymentSpeed
+                    { 
+                        get 
+                        {
+                            QuickFix.Fields.PrepaymentSpeed val = new QuickFix.Fields.PrepaymentSpeed();
+                            GetField(val);
+                            return val;
+                        }
+                        set { SetField(value); }
+                    }
+                    
+                    public void Set(QuickFix.Fields.PrepaymentSpeed val) 
+                    { 
+                        this.PrepaymentSpeed = val;
+                    }
+                    
+                    public QuickFix.Fields.PrepaymentSpeed Get(QuickFix.Fields.PrepaymentSpeed val) 
+                    { 
+                        GetField(val);
+                        return val;
+                    }
+                    
+                    public bool IsSet(QuickFix.Fields.PrepaymentSpeed val) 
+                    { 
+                        return IsSetPrepaymentSpeed();
+                    }
+                    
+                    public bool IsSetPrepaymentSpeed() 
+                    { 
+                        return IsSetField(Tags.PrepaymentSpeed);
                     }
                     public QuickFix.Fields.DatedDate DatedDate
                     { 

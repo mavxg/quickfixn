@@ -95,15 +95,15 @@ namespace QuickFix
             w.WriteEndElement();
         }
 
-        public override void Read(System.Xml.XmlReader r, DataDictionary.DataDictionary d
-            , IMessageFactory mf, DataDictionary.IFieldMapSpec gspec
-            , string msgType, string beginString)
-        {
-            r.MoveToContent();
-            r.ReadStartElement(Name(d));
-            base.Read(r, d, mf, gspec, msgType, beginString);
-            r.ReadEndElement();
-        }
+        //public override void Read(System.Xml.XmlReader r, DataDictionary.DataDictionary d
+        //    , IMessageFactory mf, DataDictionary.IFieldMapSpec gspec
+        //    , string msgType, string beginString)
+        //{
+        //    r.MoveToContent();
+        //    r.ReadStartElement(Name(d));
+        //    base.Read(r, d, mf, gspec, msgType, beginString);
+        //    r.ReadEndElement();
+        //}
 
         public override string ToString()
         {

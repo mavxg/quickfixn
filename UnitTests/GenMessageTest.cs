@@ -65,13 +65,18 @@ namespace UnitTests
         public void TCRReqFieldsCTORTest()
         {
             QuickFix.FIX44.TradeCaptureReport tcr = new QuickFix.FIX44.TradeCaptureReport(
+                new PricingNo(4155),
+                new UUID(0),
                 new TradeReportID("dude1"),
-                new PreviouslyReported(true),
-                new Symbol("AAPL"),
-                new LastQty(new Decimal(100.1)),
-                new LastPx(new Decimal(100.2)),
+                new TradeReportTransType(1),
+                new ExecType('F'),
+                //new PreviouslyReported(true),
+                //new Symbol("AAPL"),
+                //new LastPx(new Decimal(100.2)),
                 new TradeDate("2010-12-12"),
-                new TransactTime(new DateTime(2010, 12, 15, 10, 55, 32, 455)));
+                new TransactTime(new DateTime(2010, 12, 15, 10, 55, 32, 455)),
+                new LastQty(new Decimal(100.1)));
+            tcr.Symbol = new Symbol("AAPL");
             Assert.That(tcr.Symbol.getValue(), Is.EqualTo("AAPL"));
             Assert.That(tcr.TradeReportID.getValue(), Is.EqualTo("dude1"));
             MsgType msgType = new MsgType();
@@ -83,13 +88,19 @@ namespace UnitTests
         public void TCRisSetTest()
         {
             QuickFix.FIX44.TradeCaptureReport tcr = new QuickFix.FIX44.TradeCaptureReport(
+                new PricingNo(4155),
+                new UUID(0),
                 new TradeReportID("dude1"),
-                new PreviouslyReported(true),
-                new Symbol("AAPL"),
-                new LastQty(new Decimal(100.1)),
-                new LastPx(new Decimal(100.2)),
+                new TradeReportTransType(1),
+                new ExecType('F'),
+                //new PreviouslyReported(true),
+                //new Symbol("AAPL"),
+                //new LastPx(new Decimal(100.2)),
                 new TradeDate("2010-12-12"),
-                new TransactTime(new DateTime(2010, 12, 15, 10, 55, 32, 455)));
+                new TransactTime(new DateTime(2010, 12, 15, 10, 55, 32, 455)),
+                new LastQty(new Decimal(100.1)));
+            tcr.Symbol = new Symbol("AAPL");
+            tcr.LastPx = new LastPx(new Decimal(100.2));
             LastPx lastPx = new LastPx();
             Assert.That(tcr.IsSet(lastPx), Is.True);
             AvgPx avgPx = new AvgPx(new Decimal(10.5));
