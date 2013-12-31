@@ -8125,7 +8125,7 @@ namespace QuickFix.Fields
         public const int DELIVER_TO_TRADER = 105;
         public const int SWAP_DEALER_DCM = 107;
         public const int CLEARING_HOUSE_ID = 109;
-        public const int DELIVERY_PRIME_BROKER = 111;
+        public const int DELIVERY_PRIME BROKER = 111;
         public const int REMAIN_COUNTERPARTY = 114;
         public const int STEP_OUT_COUNTERPARTY = 114;
     }
