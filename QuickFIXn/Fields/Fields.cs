@@ -7039,6 +7039,19 @@ namespace QuickFix.Fields
         public const string MARKETPLACE_ASSIGNED_IDENTIFIER = "M";
         public const string CLEARING_HOUSE_CLEARING_ORGANIZATION = "H";
         public const string OPTIONS_PRICE_REPORTING_AUTHORITY = "J";
+        public const string UNKNOWN = "0";
+        public const string EuroClear_CEDEL_Common_Code = "101";
+        public const string JAPAN = "102";
+        public const string SEDOL1 = "103";
+        public const string FX_Ticker = "104";
+        public const string Mortgage_Synthetic_Ticker = "105";
+        public const string Reserved_106 = "106";
+        public const string Money_Market_Ticker = "107";
+        public const string Equity_Ticker = "108";
+        public const string Reserved_109 = "109";
+        public const string Mortgage_pool_number = "110";
+        public const string BLOOMBERG_UNIQUE_IDENTIFIER = "111";
+        public const string Red_Pair = "200";
     }
 
 
@@ -8125,7 +8138,7 @@ namespace QuickFix.Fields
         public const int DELIVER_TO_TRADER = 105;
         public const int SWAP_DEALER_DCM = 107;
         public const int CLEARING_HOUSE_ID = 109;
-        public const int DELIVERY_PRIME_BROKER = 111;
+        public const int DELIVERY_PRIME BROKER = 111;
         public const int REMAIN_COUNTERPARTY = 114;
         public const int STEP_OUT_COUNTERPARTY = 114;
     }

@@ -293,6 +293,19 @@
                   <xs:enumeration value="H"/>
                   <xs:enumeration value="I"/>
                   <xs:enumeration value="J"/>
+                  <xs:enumeration value="0"/>
+                  <xs:enumeration value="101"/>
+                  <xs:enumeration value="102"/>
+                  <xs:enumeration value="103"/>
+                  <xs:enumeration value="104"/>
+                  <xs:enumeration value="105"/>
+                  <xs:enumeration value="106"/>
+                  <xs:enumeration value="107"/>
+                  <xs:enumeration value="108"/>
+                  <xs:enumeration value="109"/>
+                  <xs:enumeration value="110"/>
+                  <xs:enumeration value="111"/>
+                  <xs:enumeration value="200"/>
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>

@@ -4144,6 +4144,19 @@
       <value enum="H" description="CLEARING_HOUSE_CLEARING_ORGANIZATION" />
       <value enum="I" description="ISDA_FPML_PRODUCT_SPECIFICATION" />
       <value enum="J" description="OPTIONS_PRICE_REPORTING_AUTHORITY" />
+      <value enum="0" description="UNKNOWN" />
+      <value enum="101" description="EuroClear_CEDEL_Common_Code" />
+      <value enum="102" description="JAPAN" />
+      <value enum="103" description="SEDOL1" />
+      <value enum="104" description="FX_Ticker" />
+      <value enum="105" description="Mortgage_Synthetic_Ticker" />
+      <value enum="106" description="Reserved_106" />
+      <value enum="107" description="Money_Market_Ticker" />
+      <value enum="108" description="Equity_Ticker" />
+      <value enum="109" description="Reserved_109" />
+      <value enum="110" description="Mortgage_pool_number" />
+      <value enum="111" description="BLOOMBERG_UNIQUE_IDENTIFIER" />
+      <value enum="200" description="Red_Pair" />
     </field>
     <field number="23" name="IOIid" type="STRING" />
     <field number="25" name="IOIQltyInd" type="CHAR">
