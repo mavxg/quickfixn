@@ -149,8 +149,8 @@
         <xs:element name="IssueDate" minOccurs="0" type="xs:string"/>
         <xs:element name="RepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
         <xs:element name="RepurchaseTerm" minOccurs="0" type="xs:integer"/>
-        <xs:element name="RepurchaseRate" minOccurs="0" type="xs:float"/>
-        <xs:element name="Factor" minOccurs="0" type="xs:float"/>
+        <xs:element name="RepurchaseRate" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="Factor" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CreditRating" minOccurs="0" type="xs:string"/>
         <xs:element name="InstrRegistry" minOccurs="0">
           <xs:simpleType>
@@ -164,10 +164,10 @@
         <xs:element name="StateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
         <xs:element name="LocaleOfIssue" minOccurs="0" type="xs:string"/>
         <xs:element name="RedemptionDate" minOccurs="0" type="xs:string"/>
-        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
-        <xs:element name="ContractMultiplier" minOccurs="0" type="xs:float"/>
-        <xs:element name="CouponRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="ContractMultiplier" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="CouponRate" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
@@ -222,7 +222,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="ValidUntilTime" minOccurs="0" type="xs:string"/>
         <xs:element name="IOIQltyInd" minOccurs="0">
@@ -242,7 +242,7 @@
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="URLLink" minOccurs="0" type="xs:string"/>
         <xs:element name="NoRoutingIDs" minOccurs="0" type="NoRoutingIDs"/>
-        <xs:element name="Spread" minOccurs="0" type="xs:float"/>
+        <xs:element name="Spread" minOccurs="0" type="xs:decimal"/>
         <xs:element name="BenchmarkCurveCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="BenchmarkCurveName" minOccurs="0" type="xs:string"/>
         <xs:element name="BenchmarkCurvePoint" minOccurs="0" type="xs:string"/>

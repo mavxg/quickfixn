@@ -186,8 +186,8 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="MinQty" minOccurs="0" type="xs:float"/>
-        <xs:element name="MaxFloor" minOccurs="0" type="xs:float"/>
+        <xs:element name="MinQty" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="MaxFloor" minOccurs="0" type="xs:decimal"/>
         <xs:element name="ExDestination" minOccurs="0" type="xs:string"/>
         <xs:element name="NoTradingSessions" minOccurs="0" type="NoTradingSessions"/>
         <xs:element name="Symbol" minOccurs="0" type="xs:string"/>
@@ -380,19 +380,19 @@
         <xs:element name="IssueDate" minOccurs="0" type="xs:string"/>
         <xs:element name="RepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
         <xs:element name="RepurchaseTerm" minOccurs="0" type="xs:integer"/>
-        <xs:element name="RepurchaseRate" minOccurs="0" type="xs:float"/>
-        <xs:element name="Factor" minOccurs="0" type="xs:float"/>
+        <xs:element name="RepurchaseRate" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="Factor" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CreditRating" minOccurs="0" type="xs:string"/>
         <xs:element name="InstrRegistry" minOccurs="0" type="xs:string"/>
         <xs:element name="CountryOfIssue" minOccurs="0" type="xs:string"/>
         <xs:element name="StateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
         <xs:element name="LocaleOfIssue" minOccurs="0" type="xs:string"/>
         <xs:element name="RedemptionDate" minOccurs="0" type="xs:string"/>
-        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="StrikeCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
-        <xs:element name="ContractMultiplier" minOccurs="0" type="xs:float"/>
-        <xs:element name="CouponRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="ContractMultiplier" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="CouponRate" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
@@ -425,9 +425,9 @@
         </xs:element>
         <xs:element name="SettleOnOpenFlag" minOccurs="0" type="xs:string"/>
         <xs:element name="InstrmtAssignmentMethod" minOccurs="0" type="xs:string"/>
-        <xs:element name="StrikeMultiplier" minOccurs="0" type="xs:float"/>
-        <xs:element name="StrikeValue" minOccurs="0" type="xs:float"/>
-        <xs:element name="MinPriceIncrement" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikeMultiplier" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="StrikeValue" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="MinPriceIncrement" minOccurs="0" type="xs:decimal"/>
         <xs:element name="PositionLimit" minOccurs="0" type="xs:integer"/>
         <xs:element name="NTPositionLimit" minOccurs="0" type="xs:integer"/>
         <xs:element name="NoInstrumentParties" minOccurs="0" type="NoInstrumentParties"/>
@@ -465,14 +465,14 @@
         </xs:element>
         <xs:element name="MaturityTime" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityGroup" minOccurs="0" type="xs:string"/>
-        <xs:element name="MinPriceIncrementAmount" minOccurs="0" type="xs:float"/>
-        <xs:element name="UnitOfMeasureQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="MinPriceIncrementAmount" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="UnitOfMeasureQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SecurityXMLLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="SecurityXML" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityXMLSchema" minOccurs="0" type="xs:string"/>
         <xs:element name="ProductComplex" minOccurs="0" type="xs:string"/>
         <xs:element name="PriceUnitOfMeasure" minOccurs="0" type="xs:string"/>
-        <xs:element name="PriceUnitOfMeasureQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="PriceUnitOfMeasureQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SettlMethod" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -490,7 +490,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="OptPayoutAmount" minOccurs="0" type="xs:float"/>
+        <xs:element name="OptPayoutAmount" minOccurs="0" type="xs:decimal"/>
         <xs:element name="PriceQuoteMethod" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -509,8 +509,8 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="CapPrice" minOccurs="0" type="xs:float"/>
-        <xs:element name="FloorPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="CapPrice" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="FloorPrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="PutOrCall" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -571,10 +571,10 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="NotionalPercentageOutstanding" minOccurs="0" type="xs:float"/>
-        <xs:element name="OriginalNotionalPercentageOutstanding" minOccurs="0" type="xs:float"/>
-        <xs:element name="AttachmentPoint" minOccurs="0" type="xs:float"/>
-        <xs:element name="DetachmentPoint" minOccurs="0" type="xs:float"/>
+        <xs:element name="NotionalPercentageOutstanding" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="OriginalNotionalPercentageOutstanding" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="AttachmentPoint" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="DetachmentPoint" minOccurs="0" type="xs:decimal"/>
         <xs:element name="StrikePriceDeterminationMethod" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -596,7 +596,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="StrikePriceBoundaryPrecision" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePriceBoundaryPrecision" minOccurs="0" type="xs:decimal"/>
         <xs:element name="UnderlyingPriceDeterminationMethod" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -643,7 +643,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="MarginRatio" minOccurs="0" type="xs:float"/>
+        <xs:element name="MarginRatio" minOccurs="0" type="xs:decimal"/>
         <xs:element name="NoUnderlyings" minOccurs="0" type="NoUnderlyings"/>
         <xs:element name="Side">
           <xs:simpleType>
@@ -677,9 +677,9 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="OrderQty" minOccurs="0" type="xs:float"/>
-        <xs:element name="CashOrderQty" minOccurs="0" type="xs:float"/>
-        <xs:element name="OrderPercent" minOccurs="0" type="xs:float"/>
+        <xs:element name="OrderQty" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="CashOrderQty" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="OrderPercent" minOccurs="0" type="xs:decimal"/>
         <xs:element name="RoundingDirection" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -689,7 +689,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="RoundingModulus" minOccurs="0" type="xs:float"/>
+        <xs:element name="RoundingModulus" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OrdType">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -744,9 +744,9 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
-        <xs:element name="StopPx" minOccurs="0" type="xs:float"/>
-        <xs:element name="Spread" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="StopPx" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="Spread" minOccurs="0" type="xs:decimal"/>
         <xs:element name="BenchmarkCurveCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="BenchmarkCurveName" minOccurs="0">
           <xs:simpleType>
@@ -767,7 +767,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="BenchmarkCurvePoint" minOccurs="0" type="xs:string"/>
-        <xs:element name="BenchmarkPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="BenchmarkPrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="BenchmarkPriceType" minOccurs="0" type="xs:integer"/>
         <xs:element name="BenchmarkSecurityID" minOccurs="0" type="xs:string"/>
         <xs:element name="BenchmarkSecurityIDSource" minOccurs="0" type="xs:string"/>
@@ -811,12 +811,12 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Yield" minOccurs="0" type="xs:float"/>
+        <xs:element name="Yield" minOccurs="0" type="xs:decimal"/>
         <xs:element name="YieldCalcDate" minOccurs="0" type="xs:string"/>
         <xs:element name="YieldRedemptionDate" minOccurs="0" type="xs:string"/>
-        <xs:element name="YieldRedemptionPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="YieldRedemptionPrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="YieldRedemptionPriceType" minOccurs="0" type="xs:integer"/>
-        <xs:element name="PegOffsetValue" minOccurs="0" type="xs:float"/>
+        <xs:element name="PegOffsetValue" minOccurs="0" type="xs:decimal"/>
         <xs:element name="PegMoveType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -894,7 +894,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="DiscretionOffsetValue" minOccurs="0" type="xs:float"/>
+        <xs:element name="DiscretionOffsetValue" minOccurs="0" type="xs:decimal"/>
         <xs:element name="DiscretionMoveType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -950,7 +950,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="TargetStrategyParameters" minOccurs="0" type="xs:string"/>
-        <xs:element name="ParticipationRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="ParticipationRate" minOccurs="0" type="xs:decimal"/>
         <xs:element name="ComplianceID" minOccurs="0" type="xs:string"/>
         <xs:element name="SolicitedFlag" minOccurs="0">
           <xs:simpleType>
@@ -989,7 +989,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+        <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CommType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1076,8 +1076,8 @@
         <xs:element name="EncodedTextLen" minOccurs="0" type="xs:nonNegativeInteger"/>
         <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>
         <xs:element name="SettlDate2" minOccurs="0" type="xs:string"/>
-        <xs:element name="OrderQty2" minOccurs="0" type="xs:float"/>
-        <xs:element name="Price2" minOccurs="0" type="xs:float"/>
+        <xs:element name="OrderQty2" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="Price2" minOccurs="0" type="xs:decimal"/>
         <xs:element name="PositionEffect" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1098,7 +1098,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="MaxShow" minOccurs="0" type="xs:float"/>
+        <xs:element name="MaxShow" minOccurs="0" type="xs:decimal"/>
         <xs:element name="LocateReqd" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1172,9 +1172,9 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="NoTrdRegTimestamps" minOccurs="0" type="NoTrdRegTimestamps"/>
-        <xs:element name="MatchIncrement" minOccurs="0" type="xs:float"/>
+        <xs:element name="MatchIncrement" minOccurs="0" type="xs:decimal"/>
         <xs:element name="MaxPriceLevels" minOccurs="0" type="xs:integer"/>
-        <xs:element name="SecondaryDisplayQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="SecondaryDisplayQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="DisplayWhen" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1193,11 +1193,11 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="DisplayLowQty" minOccurs="0" type="xs:float"/>
-        <xs:element name="DisplayHighQty" minOccurs="0" type="xs:float"/>
-        <xs:element name="DisplayMinIncr" minOccurs="0" type="xs:float"/>
-        <xs:element name="RefreshQty" minOccurs="0" type="xs:float"/>
-        <xs:element name="DisplayQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="DisplayLowQty" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="DisplayHighQty" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="DisplayMinIncr" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="RefreshQty" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="DisplayQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="PriceProtectionScope" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1227,7 +1227,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="TriggerPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="TriggerPrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="TriggerSymbol" minOccurs="0" type="xs:string"/>
         <xs:element name="TriggerSecurityID" minOccurs="0" type="xs:string"/>
         <xs:element name="TriggerSecurityIDSource" minOccurs="0" type="xs:string"/>
@@ -1262,7 +1262,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="TriggerNewPrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="TriggerNewPrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="TriggerOrderType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -1271,7 +1271,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="TriggerNewQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="TriggerNewQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="TriggerTradingSessionID" minOccurs="0" type="xs:string"/>
         <xs:element name="TriggerTradingSessionSubID" minOccurs="0" type="xs:string"/>
         <xs:element name="PreTradeAnonymity" minOccurs="0" type="xs:string"/>
@@ -1479,7 +1479,7 @@
             <xs:element name="AllocSettlCurrency" minOccurs="0" type="xs:string"/>
             <xs:element name="IndividualAllocID" minOccurs="0" type="xs:string"/>
             <xs:element name="NoNestedPartyIDs" minOccurs="0" type="NoNestedPartyIDs"/>
-            <xs:element name="AllocQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="AllocQty" minOccurs="0" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -1595,7 +1595,7 @@
               </xs:simpleType>
             </xs:element>
             <xs:element name="EventDate" minOccurs="0" type="xs:string"/>
-            <xs:element name="EventPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="EventPx" minOccurs="0" type="xs:decimal"/>
             <xs:element name="EventText" minOccurs="0" type="xs:string"/>
             <xs:element name="EventTime" minOccurs="0" type="xs:string"/>
           </xs:sequence>
@@ -1652,8 +1652,8 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="ComplexOptPayoutAmount" minOccurs="0" type="xs:float"/>
-            <xs:element name="ComplexEventPrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="ComplexOptPayoutAmount" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="ComplexEventPrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="ComplexEventPriceBoundaryMethod" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">
@@ -1665,7 +1665,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="ComplexEventPriceBoundaryPrecision" minOccurs="0" type="xs:float"/>
+            <xs:element name="ComplexEventPriceBoundaryPrecision" minOccurs="0" type="xs:decimal"/>
             <xs:element name="ComplexEventPriceTimeType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">
@@ -1737,19 +1737,19 @@
             <xs:element name="UnderlyingIssueDate" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
             <xs:element name="UnderlyingRepurchaseTerm" minOccurs="0" type="xs:integer"/>
-            <xs:element name="UnderlyingRepurchaseRate" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingFactor" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingRepurchaseRate" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingFactor" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingCreditRating" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingInstrRegistry" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingCountryOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingLocaleOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingRedemptionDate" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingStrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingStrikePrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingStrikeCurrency" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingOptAttribute" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingContractMultiplier" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingCouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingContractMultiplier" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingCouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingSecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingIssuer" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedUnderlyingIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
@@ -1760,15 +1760,15 @@
             <xs:element name="UnderlyingCPProgram" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingCPRegType" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingCurrency" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingQty" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingPx" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingDirtyPrice" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingEndPrice" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingStartValue" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingCurrentValue" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingEndValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingQty" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingPx" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingDirtyPrice" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingEndPrice" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingStartValue" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingCurrentValue" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingEndValue" minOccurs="0" type="xs:decimal"/>
             <xs:element name="NoUnderlyingStips" minOccurs="0" type="NoUnderlyingStips"/>
-            <xs:element name="UnderlyingAllocationPercent" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingAllocationPercent" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingSettlementType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">
@@ -1778,7 +1778,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="UnderlyingCashAmount" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingCashAmount" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingCashType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -1789,11 +1789,11 @@
             </xs:element>
             <xs:element name="UnderlyingUnitOfMeasure" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingTimeUnit" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingCapValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingCapValue" minOccurs="0" type="xs:decimal"/>
             <xs:element name="NoUndlyInstrumentParties" minOccurs="0" type="NoUndlyInstrumentParties"/>
             <xs:element name="UnderlyingSettlMethod" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingAdjustedQuantity" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingFXRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingAdjustedQuantity" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingFXRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingFXRateCalc" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -1805,17 +1805,17 @@
             <xs:element name="UnderlyingMaturityTime" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingPutOrCall" minOccurs="0" type="xs:integer"/>
             <xs:element name="UnderlyingExerciseStyle" minOccurs="0" type="xs:integer"/>
-            <xs:element name="UnderlyingUnitOfMeasureQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingUnitOfMeasureQty" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingPriceUnitOfMeasure" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingPriceUnitOfMeasureQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingPriceUnitOfMeasureQty" minOccurs="0" type="xs:decimal"/>
             <xs:element name="UnderlyingContractMultiplierUnit" minOccurs="0" type="xs:integer"/>
             <xs:element name="UnderlyingFlowScheduleType" minOccurs="0" type="xs:integer"/>
             <xs:element name="UnderlyingRestructuringType" minOccurs="0" type="xs:string"/>
             <xs:element name="UnderlyingSeniority" minOccurs="0" type="xs:string"/>
-            <xs:element name="UnderlyingNotionalPercentageOutstanding" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingOriginalNotionalPercentageOutstanding" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingAttachmentPoint" minOccurs="0" type="xs:float"/>
-            <xs:element name="UnderlyingDetachmentPoint" minOccurs="0" type="xs:float"/>
+            <xs:element name="UnderlyingNotionalPercentageOutstanding" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingOriginalNotionalPercentageOutstanding" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingAttachmentPoint" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="UnderlyingDetachmentPoint" minOccurs="0" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>

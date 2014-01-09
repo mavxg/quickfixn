@@ -421,7 +421,7 @@
           <xs:sequence>
             <xs:element name="AllocAccount" minOccurs="0" type="xs:string"/>
             <xs:element name="AllocAcctIDSource" minOccurs="0" type="xs:integer"/>
-            <xs:element name="AllocPrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="AllocPrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="IndividualAllocID" minOccurs="0" type="xs:string"/>
             <xs:element name="IndividualAllocRejCode" minOccurs="0" type="xs:integer"/>
             <xs:element name="AllocText" minOccurs="0" type="xs:string"/>
@@ -437,7 +437,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="AllocQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="AllocQty" minOccurs="0" type="xs:decimal"/>
             <xs:element name="NoNestedPartyIDs" minOccurs="0" type="NoNestedPartyIDs"/>
             <xs:element name="AllocPositionEffect" minOccurs="0">
               <xs:simpleType>

@@ -45,7 +45,7 @@
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
         <xs:element name="Shares" type="xs:integer"/>
-        <xs:element name="AvgPx" type="xs:float"/>
+        <xs:element name="AvgPx" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="AvgPrxPrecision" minOccurs="0" type="xs:integer"/>
         <xs:element name="TradeDate" type="xs:string"/>
@@ -67,9 +67,9 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="FutSettDate" minOccurs="0" type="xs:string"/>
-        <xs:element name="NetMoney" minOccurs="0" type="xs:float"/>
+        <xs:element name="NetMoney" minOccurs="0" type="xs:decimal"/>
         <xs:element name="NoMiscFees" minOccurs="0" type="NoMiscFees"/>
-        <xs:element name="SettlCurrAmt" minOccurs="0" type="xs:float"/>
+        <xs:element name="SettlCurrAmt" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="OpenClose" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
@@ -101,7 +101,7 @@
           <xs:sequence>
             <xs:element name="ExecID" minOccurs="0" type="xs:integer"/>
             <xs:element name="LastShares" minOccurs="0" type="xs:integer"/>
-            <xs:element name="LastPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="LastPx" minOccurs="0" type="xs:decimal"/>
             <xs:element name="LastMkt" minOccurs="0" type="xs:string"/>
           </xs:sequence>
         </xs:complexType>
@@ -114,7 +114,7 @@
       <xs:element name="MiscFee" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="MiscFeeAmt" minOccurs="0" type="xs:float"/>
+            <xs:element name="MiscFeeAmt" minOccurs="0" type="xs:decimal"/>
             <xs:element name="MiscFeeCurr" minOccurs="0" type="xs:string"/>
             <xs:element name="MiscFeeType" minOccurs="0">
               <xs:simpleType>
@@ -157,7 +157,7 @@
             </xs:element>
             <xs:element name="ExecBroker" minOccurs="0" type="xs:string"/>
             <xs:element name="ClientID" minOccurs="0" type="xs:string"/>
-            <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+            <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
             <xs:element name="CommType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:string">

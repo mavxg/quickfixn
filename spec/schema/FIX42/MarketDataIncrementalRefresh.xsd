@@ -115,10 +115,10 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
-            <xs:element name="ContractMultiplier" minOccurs="0" type="xs:float"/>
-            <xs:element name="CouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="ContractMultiplier" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="CouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedIssuerLen" minOccurs="0" type="xs:integer"/>
@@ -144,9 +144,9 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="MDEntryPx" minOccurs="0" type="xs:float"/>
+            <xs:element name="MDEntryPx" minOccurs="0" type="xs:decimal"/>
             <xs:element name="Currency" minOccurs="0" type="xs:string"/>
-            <xs:element name="MDEntrySize" minOccurs="0" type="xs:float"/>
+            <xs:element name="MDEntrySize" minOccurs="0" type="xs:decimal"/>
             <xs:element name="MDEntryDate" minOccurs="0" type="xs:string"/>
             <xs:element name="MDEntryTime" minOccurs="0" type="xs:string"/>
             <xs:element name="TickDirection" minOccurs="0">
@@ -223,7 +223,7 @@
             </xs:element>
             <xs:element name="ExpireDate" minOccurs="0" type="xs:string"/>
             <xs:element name="ExpireTime" minOccurs="0" type="xs:string"/>
-            <xs:element name="MinQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="MinQty" minOccurs="0" type="xs:decimal"/>
             <xs:element name="ExecInst" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -266,7 +266,7 @@
             <xs:element name="MDEntrySeller" minOccurs="0" type="xs:string"/>
             <xs:element name="NumberOfOrders" minOccurs="0" type="xs:integer"/>
             <xs:element name="MDEntryPositionNo" minOccurs="0" type="xs:integer"/>
-            <xs:element name="TotalVolumeTraded" minOccurs="0" type="xs:float"/>
+            <xs:element name="TotalVolumeTraded" minOccurs="0" type="xs:decimal"/>
             <xs:element name="Text" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedTextLen" minOccurs="0" type="xs:integer"/>
             <xs:element name="EncodedText" minOccurs="0" type="xs:string"/>

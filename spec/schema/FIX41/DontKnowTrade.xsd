@@ -79,7 +79,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
@@ -99,9 +99,9 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="OrderQty" minOccurs="0" type="xs:integer"/>
-        <xs:element name="CashOrderQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="CashOrderQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="LastShares" minOccurs="0" type="xs:integer"/>
-        <xs:element name="LastPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="LastPx" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
       </xs:all>
       <xs:attribute name="beginString" type="xs:string"/>

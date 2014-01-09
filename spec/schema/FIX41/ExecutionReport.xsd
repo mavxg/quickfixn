@@ -153,7 +153,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
@@ -197,9 +197,9 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
-        <xs:element name="StopPx" minOccurs="0" type="xs:float"/>
-        <xs:element name="PegDifference" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="StopPx" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="PegDifference" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="TimeInForce" minOccurs="0">
           <xs:simpleType>
@@ -277,9 +277,9 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="LastShares" type="xs:integer"/>
-        <xs:element name="LastPx" type="xs:float"/>
-        <xs:element name="LastSpotRate" minOccurs="0" type="xs:float"/>
-        <xs:element name="LastForwardPoints" minOccurs="0" type="xs:float"/>
+        <xs:element name="LastPx" type="xs:decimal"/>
+        <xs:element name="LastSpotRate" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="LastForwardPoints" minOccurs="0" type="xs:decimal"/>
         <xs:element name="LastMkt" minOccurs="0" type="xs:string"/>
         <xs:element name="LastCapacity" minOccurs="0">
           <xs:simpleType>
@@ -293,7 +293,7 @@
         </xs:element>
         <xs:element name="LeavesQty" type="xs:integer"/>
         <xs:element name="CumQty" type="xs:integer"/>
-        <xs:element name="AvgPx" type="xs:float"/>
+        <xs:element name="AvgPx" type="xs:decimal"/>
         <xs:element name="TradeDate" minOccurs="0" type="xs:string"/>
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="ReportToExch" minOccurs="0">
@@ -304,7 +304,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+        <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CommType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -314,7 +314,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="SettlCurrAmt" minOccurs="0" type="xs:float"/>
+        <xs:element name="SettlCurrAmt" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
       </xs:all>

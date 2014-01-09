@@ -21,8 +21,8 @@
         </xs:element>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
-        <xs:element name="BidPx" type="xs:float"/>
-        <xs:element name="OfferPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="BidPx" type="xs:decimal"/>
+        <xs:element name="OfferPx" minOccurs="0" type="xs:decimal"/>
         <xs:element name="BidSize" minOccurs="0" type="xs:integer"/>
         <xs:element name="OfferSize" minOccurs="0" type="xs:integer"/>
         <xs:element name="ValidUntilTime" minOccurs="0" type="xs:string"/>

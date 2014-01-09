@@ -22,7 +22,7 @@
             <xs:element name="CumQty" type="xs:integer"/>
             <xs:element name="LeavesQty" type="xs:integer"/>
             <xs:element name="CxlQty" type="xs:integer"/>
-            <xs:element name="AvgPx" type="xs:float"/>
+            <xs:element name="AvgPx" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>

@@ -134,7 +134,7 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
@@ -154,7 +154,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="OrderQty" minOccurs="0" type="xs:integer"/>
-        <xs:element name="CashOrderQty" minOccurs="0" type="xs:float"/>
+        <xs:element name="CashOrderQty" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OrdType">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -179,9 +179,9 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
-        <xs:element name="StopPx" minOccurs="0" type="xs:float"/>
-        <xs:element name="PegDifference" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="StopPx" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="PegDifference" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="TimeInForce" minOccurs="0">
           <xs:simpleType>
@@ -197,7 +197,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="ExpireTime" minOccurs="0" type="xs:string"/>
-        <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+        <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CommType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -246,7 +246,7 @@
         <xs:element name="SettlCurrency" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
         <xs:element name="FutSettDate2" minOccurs="0" type="xs:string"/>
-        <xs:element name="OrderQty2" minOccurs="0" type="xs:float"/>
+        <xs:element name="OrderQty2" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OpenClose" minOccurs="0" type="xs:string"/>
         <xs:element name="CoveredOrUncovered" minOccurs="0">
           <xs:simpleType>

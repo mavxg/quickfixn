@@ -127,8 +127,8 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
-        <xs:element name="StopPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="StopPx" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="TimeInForce" minOccurs="0">
           <xs:simpleType>
@@ -144,7 +144,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="ExpireTime" minOccurs="0" type="xs:string"/>
-        <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+        <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CommType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">

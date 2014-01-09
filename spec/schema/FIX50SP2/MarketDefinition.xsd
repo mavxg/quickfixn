@@ -23,9 +23,9 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="LowLimitPrice" minOccurs="0" type="xs:float"/>
-        <xs:element name="HighLimitPrice" minOccurs="0" type="xs:float"/>
-        <xs:element name="TradingReferencePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="LowLimitPrice" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="HighLimitPrice" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="TradingReferencePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="ExpirationCycle" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -35,9 +35,9 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="MinTradeVol" minOccurs="0" type="xs:float"/>
-        <xs:element name="MaxTradeVol" minOccurs="0" type="xs:float"/>
-        <xs:element name="MaxPriceVariation" minOccurs="0" type="xs:float"/>
+        <xs:element name="MinTradeVol" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="MaxTradeVol" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="MaxPriceVariation" minOccurs="0" type="xs:decimal"/>
         <xs:element name="ImpliedMarketIndicator" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -49,7 +49,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="TradingCurrency" minOccurs="0" type="xs:string"/>
-        <xs:element name="RoundLot" minOccurs="0" type="xs:float"/>
+        <xs:element name="RoundLot" minOccurs="0" type="xs:decimal"/>
         <xs:element name="MultilegModel" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -116,9 +116,9 @@
       <xs:element name="TickRule" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="StartTickPriceRange" minOccurs="0" type="xs:float"/>
-            <xs:element name="EndTickPriceRange" minOccurs="0" type="xs:float"/>
-            <xs:element name="TickIncrement" minOccurs="0" type="xs:float"/>
+            <xs:element name="StartTickPriceRange" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="EndTickPriceRange" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="TickIncrement" minOccurs="0" type="xs:decimal"/>
             <xs:element name="TickRuleType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">
@@ -151,7 +151,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="MinLotSize" minOccurs="0" type="xs:float"/>
+            <xs:element name="MinLotSize" minOccurs="0" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>

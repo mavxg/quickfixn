@@ -164,8 +164,8 @@
             <xs:element name="IssueDate" minOccurs="0" type="xs:string"/>
             <xs:element name="RepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
             <xs:element name="RepurchaseTerm" minOccurs="0" type="xs:integer"/>
-            <xs:element name="RepurchaseRate" minOccurs="0" type="xs:float"/>
-            <xs:element name="Factor" minOccurs="0" type="xs:float"/>
+            <xs:element name="RepurchaseRate" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="Factor" minOccurs="0" type="xs:decimal"/>
             <xs:element name="CreditRating" minOccurs="0" type="xs:string"/>
             <xs:element name="InstrRegistry" minOccurs="0">
               <xs:simpleType>
@@ -179,10 +179,10 @@
             <xs:element name="StateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="LocaleOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="RedemptionDate" minOccurs="0" type="xs:string"/>
-            <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
-            <xs:element name="ContractMultiplier" minOccurs="0" type="xs:float"/>
-            <xs:element name="CouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="ContractMultiplier" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="CouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
@@ -192,8 +192,8 @@
             <xs:element name="EncodedSecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="Currency" minOccurs="0" type="xs:string"/>
             <xs:element name="NoLegs" minOccurs="0" type="NoLegs"/>
-            <xs:element name="RoundLot" minOccurs="0" type="xs:float"/>
-            <xs:element name="MinTradeVol" minOccurs="0" type="xs:float"/>
+            <xs:element name="RoundLot" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="MinTradeVol" minOccurs="0" type="xs:decimal"/>
             <xs:element name="TradingSessionID" minOccurs="0" type="xs:string"/>
             <xs:element name="TradingSessionSubID" minOccurs="0" type="xs:string"/>
             <xs:element name="Text" minOccurs="0" type="xs:string"/>
@@ -237,18 +237,18 @@
             <xs:element name="LegIssueDate" minOccurs="0" type="xs:string"/>
             <xs:element name="LegRepoCollateralSecurityType" minOccurs="0" type="xs:integer"/>
             <xs:element name="LegRepurchaseTerm" minOccurs="0" type="xs:integer"/>
-            <xs:element name="LegRepurchaseRate" minOccurs="0" type="xs:float"/>
-            <xs:element name="LegFactor" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegRepurchaseRate" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="LegFactor" minOccurs="0" type="xs:decimal"/>
             <xs:element name="LegCreditRating" minOccurs="0" type="xs:string"/>
             <xs:element name="LegInstrRegistry" minOccurs="0" type="xs:string"/>
             <xs:element name="LegCountryOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="LegStateOrProvinceOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="LegLocaleOfIssue" minOccurs="0" type="xs:string"/>
             <xs:element name="LegRedemptionDate" minOccurs="0" type="xs:string"/>
-            <xs:element name="LegStrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegStrikePrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="LegOptAttribute" minOccurs="0" type="xs:string"/>
-            <xs:element name="LegContractMultiplier" minOccurs="0" type="xs:float"/>
-            <xs:element name="LegCouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegContractMultiplier" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="LegCouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="LegSecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="LegIssuer" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedLegIssuerLen" minOccurs="0" type="xs:nonNegativeInteger"/>
@@ -256,7 +256,7 @@
             <xs:element name="LegSecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedLegSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
             <xs:element name="EncodedLegSecurityDesc" minOccurs="0" type="xs:string"/>
-            <xs:element name="LegRatioQty" minOccurs="0" type="xs:float"/>
+            <xs:element name="LegRatioQty" minOccurs="0" type="xs:decimal"/>
             <xs:element name="LegSide" minOccurs="0" type="xs:string"/>
             <xs:element name="LegCurrency" minOccurs="0" type="xs:string"/>
           </xs:sequence>

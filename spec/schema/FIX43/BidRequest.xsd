@@ -26,8 +26,8 @@
         </xs:element>
         <xs:element name="NumTickets" minOccurs="0" type="xs:integer"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
-        <xs:element name="SideValue1" minOccurs="0" type="xs:float"/>
-        <xs:element name="SideValue2" minOccurs="0" type="xs:float"/>
+        <xs:element name="SideValue1" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="SideValue2" minOccurs="0" type="xs:decimal"/>
         <xs:element name="NoBidDescriptors" minOccurs="0" type="NoBidDescriptors"/>
         <xs:element name="NoBidComponents" minOccurs="0" type="NoBidComponents"/>
         <xs:element name="LiquidityIndType" minOccurs="0">
@@ -40,10 +40,10 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="WtAverageLiquidity" minOccurs="0" type="xs:float"/>
+        <xs:element name="WtAverageLiquidity" minOccurs="0" type="xs:decimal"/>
         <xs:element name="ExchangeForPhysical" minOccurs="0" type="xs:string"/>
-        <xs:element name="OutMainCntryUIndex" minOccurs="0" type="xs:float"/>
-        <xs:element name="CrossPercent" minOccurs="0" type="xs:float"/>
+        <xs:element name="OutMainCntryUIndex" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="CrossPercent" minOccurs="0" type="xs:decimal"/>
         <xs:element name="ProgRptReqs" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -117,14 +117,14 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="LiquidityValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="LiquidityValue" minOccurs="0" type="xs:decimal"/>
             <xs:element name="LiquidityNumSecurities" minOccurs="0" type="xs:integer"/>
-            <xs:element name="LiquidityPctLow" minOccurs="0" type="xs:float"/>
-            <xs:element name="LiquidityPctHigh" minOccurs="0" type="xs:float"/>
-            <xs:element name="EFPTrackingError" minOccurs="0" type="xs:float"/>
-            <xs:element name="FairValue" minOccurs="0" type="xs:float"/>
-            <xs:element name="OutsideIndexPct" minOccurs="0" type="xs:float"/>
-            <xs:element name="ValueOfFutures" minOccurs="0" type="xs:float"/>
+            <xs:element name="LiquidityPctLow" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="LiquidityPctHigh" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="EFPTrackingError" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="FairValue" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="OutsideIndexPct" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="ValueOfFutures" minOccurs="0" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>

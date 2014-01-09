@@ -294,7 +294,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="RiskLimitAmount" minOccurs="0" type="xs:float"/>
+            <xs:element name="RiskLimitAmount" minOccurs="0" type="xs:decimal"/>
             <xs:element name="RiskLimitCurrency" minOccurs="0" type="xs:string"/>
             <xs:element name="RiskLimitPlatform" minOccurs="0" type="xs:string"/>
             <xs:element name="NoRiskInstruments" minOccurs="0" type="NoRiskInstruments"/>
@@ -335,13 +335,13 @@
             <xs:element name="RiskSeniority" minOccurs="0" type="xs:string"/>
             <xs:element name="RiskPutOrCall" minOccurs="0" type="xs:integer"/>
             <xs:element name="RiskFlexibleIndicator" minOccurs="0" type="xs:string"/>
-            <xs:element name="RiskCouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="RiskCouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="RiskSecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="RiskSecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="RiskEncodedSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
             <xs:element name="RiskEncodedSecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="RiskInstrumentSettlType" minOccurs="0" type="xs:string"/>
-            <xs:element name="RiskInstrumentMultiplier" minOccurs="0" type="xs:float"/>
+            <xs:element name="RiskInstrumentMultiplier" minOccurs="0" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -366,7 +366,7 @@
       <xs:element name="RiskWarningLevel" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="RiskWarningLevelPercent" minOccurs="0" type="xs:float"/>
+            <xs:element name="RiskWarningLevelPercent" minOccurs="0" type="xs:decimal"/>
             <xs:element name="RiskWarningLevelName" minOccurs="0" type="xs:string"/>
           </xs:sequence>
         </xs:complexType>
@@ -467,7 +467,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="RelationshipRiskLimitType" minOccurs="0" type="xs:integer"/>
-            <xs:element name="RelationshipRiskLimitAmount" minOccurs="0" type="xs:float"/>
+            <xs:element name="RelationshipRiskLimitAmount" minOccurs="0" type="xs:decimal"/>
             <xs:element name="RelationshipRiskLimitCurrency" minOccurs="0" type="xs:string"/>
             <xs:element name="RelationshipRiskLimitPlatform" minOccurs="0" type="xs:string"/>
             <xs:element name="NoRelationshipRiskInstruments" minOccurs="0" type="NoRelationshipRiskInstruments"/>
@@ -501,13 +501,13 @@
             <xs:element name="RelationshipRiskSeniority" minOccurs="0" type="xs:string"/>
             <xs:element name="RelationshipRiskPutOrCall" minOccurs="0" type="xs:integer"/>
             <xs:element name="RelationshipRiskFlexibleIndicator" minOccurs="0" type="xs:string"/>
-            <xs:element name="RelationshipRiskCouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="RelationshipRiskCouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="RelationshipRiskSecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="RelationshipRiskSecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="RelationshipRiskEncodedSecurityDescLen" minOccurs="0" type="xs:nonNegativeInteger"/>
             <xs:element name="RelationshipRiskEncodedSecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="RelationshipRiskInstrumentSettlType" minOccurs="0" type="xs:string"/>
-            <xs:element name="RelationshipRiskInstrumentMultiplier" minOccurs="0" type="xs:float"/>
+            <xs:element name="RelationshipRiskInstrumentMultiplier" minOccurs="0" type="xs:decimal"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -532,7 +532,7 @@
       <xs:element name="RelationshipRiskWarningLevel" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="RelationshipRiskWarningLevelPercent" minOccurs="0" type="xs:float"/>
+            <xs:element name="RelationshipRiskWarningLevelPercent" minOccurs="0" type="xs:decimal"/>
             <xs:element name="RelationshipRiskWarningLevelName" minOccurs="0" type="xs:string"/>
           </xs:sequence>
         </xs:complexType>

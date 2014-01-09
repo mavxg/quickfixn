@@ -50,7 +50,7 @@
           <xs:sequence>
             <xs:element name="ClOrdID" type="xs:string"/>
             <xs:element name="SecondaryClOrdID" minOccurs="0" type="xs:string"/>
-            <xs:element name="CumQty" type="xs:float"/>
+            <xs:element name="CumQty" type="xs:decimal"/>
             <xs:element name="OrdStatus">
               <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -73,9 +73,9 @@
               </xs:simpleType>
             </xs:element>
             <xs:element name="WorkingIndicator" minOccurs="0" type="xs:string"/>
-            <xs:element name="LeavesQty" type="xs:float"/>
-            <xs:element name="CxlQty" type="xs:float"/>
-            <xs:element name="AvgPx" type="xs:float"/>
+            <xs:element name="LeavesQty" type="xs:decimal"/>
+            <xs:element name="CxlQty" type="xs:decimal"/>
+            <xs:element name="AvgPx" type="xs:decimal"/>
             <xs:element name="OrdRejReason" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">

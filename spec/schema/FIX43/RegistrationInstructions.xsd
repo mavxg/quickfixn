@@ -145,7 +145,7 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="DistribPaymentMethod" minOccurs="0" type="xs:integer"/>
-            <xs:element name="DistribPercentage" minOccurs="0" type="xs:float"/>
+            <xs:element name="DistribPercentage" minOccurs="0" type="xs:decimal"/>
             <xs:element name="CashDistribCurr" minOccurs="0" type="xs:string"/>
             <xs:element name="CashDistribAgentName" minOccurs="0" type="xs:string"/>
             <xs:element name="CashDistribAgentCode" minOccurs="0" type="xs:string"/>

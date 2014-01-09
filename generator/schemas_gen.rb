@@ -44,12 +44,12 @@ class SchemaGen
   end
 
   TYPES = {
-    'AMT' => 'xs:float',
-    'QTY' => 'xs:float',
-    'PRICE' => 'xs:float',
-    'FLOAT' => 'xs:float',
-    'PRICEOFFSET' => 'xs:float',
-    'PERCENTAGE' => 'xs:float',
+    'AMT' => 'xs:decimal',
+    'QTY' => 'xs:decimal',
+    'PRICE' => 'xs:decimal',
+    'FLOAT' => 'xs:decimal',
+    'PRICEOFFSET' => 'xs:decimal',
+    'PERCENTAGE' => 'xs:decimal',
     'INT' => 'xs:integer',
     'SEQNUM' => 'xs:nonNegativeInteger',
     'LENGTH' => 'xs:nonNegativeInteger',

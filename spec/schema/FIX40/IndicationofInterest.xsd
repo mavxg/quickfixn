@@ -43,7 +43,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="IOIShares" type="xs:string"/>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="ValidUntilTime" minOccurs="0" type="xs:string"/>
         <xs:element name="IOIQltyInd" minOccurs="0">

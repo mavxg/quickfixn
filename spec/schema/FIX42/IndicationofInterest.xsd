@@ -79,10 +79,10 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+        <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
         <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
-        <xs:element name="ContractMultiplier" minOccurs="0" type="xs:float"/>
-        <xs:element name="CouponRate" minOccurs="0" type="xs:float"/>
+        <xs:element name="ContractMultiplier" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="CouponRate" minOccurs="0" type="xs:decimal"/>
         <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="EncodedIssuerLen" minOccurs="0" type="xs:integer"/>
@@ -106,7 +106,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="IOIShares" type="xs:string"/>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="ValidUntilTime" minOccurs="0" type="xs:string"/>
         <xs:element name="IOIQltyInd" minOccurs="0">
@@ -133,7 +133,7 @@
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="URLLink" minOccurs="0" type="xs:string"/>
         <xs:element name="NoRoutingIDs" minOccurs="0" type="NoRoutingIDs"/>
-        <xs:element name="SpreadToBenchmark" minOccurs="0" type="xs:float"/>
+        <xs:element name="SpreadToBenchmark" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Benchmark" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">

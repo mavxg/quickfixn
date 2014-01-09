@@ -20,7 +20,7 @@
         </xs:element>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
-        <xs:element name="PrevClosePx" minOccurs="0" type="xs:float"/>
+        <xs:element name="PrevClosePx" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Side" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">

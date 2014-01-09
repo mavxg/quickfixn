@@ -103,7 +103,7 @@
         </xs:element>
         <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
         <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
-        <xs:element name="PrevClosePx" minOccurs="0" type="xs:float"/>
+        <xs:element name="PrevClosePx" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Side">
           <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -146,8 +146,8 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
-        <xs:element name="StopPx" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
+        <xs:element name="StopPx" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="IOIid" minOccurs="0" type="xs:integer"/>
         <xs:element name="QuoteID" minOccurs="0" type="xs:string"/>
@@ -165,7 +165,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="ExpireTime" minOccurs="0" type="xs:string"/>
-        <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+        <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
         <xs:element name="CommType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">

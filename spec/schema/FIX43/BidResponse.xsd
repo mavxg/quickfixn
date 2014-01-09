@@ -16,7 +16,7 @@
       <xs:element name="BidComponent" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="Commission" minOccurs="0" type="xs:float"/>
+            <xs:element name="Commission" minOccurs="0" type="xs:decimal"/>
             <xs:element name="CommType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:string">
@@ -51,7 +51,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="Price" minOccurs="0" type="xs:float"/>
+            <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
             <xs:element name="PriceType" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">
@@ -66,7 +66,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="FairValue" minOccurs="0" type="xs:float"/>
+            <xs:element name="FairValue" minOccurs="0" type="xs:decimal"/>
             <xs:element name="NetGrossInd" minOccurs="0">
               <xs:simpleType>
                 <xs:restriction base="xs:integer">

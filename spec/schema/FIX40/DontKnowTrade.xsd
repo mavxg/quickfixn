@@ -32,7 +32,7 @@
         </xs:element>
         <xs:element name="OrderQty" type="xs:integer"/>
         <xs:element name="LastShares" type="xs:integer"/>
-        <xs:element name="LastPx" type="xs:float"/>
+        <xs:element name="LastPx" type="xs:decimal"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
       </xs:all>
       <xs:attribute name="beginString" type="xs:string"/>

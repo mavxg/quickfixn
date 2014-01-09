@@ -81,10 +81,10 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="StrikePrice" minOccurs="0" type="xs:float"/>
+            <xs:element name="StrikePrice" minOccurs="0" type="xs:decimal"/>
             <xs:element name="OptAttribute" minOccurs="0" type="xs:string"/>
-            <xs:element name="ContractMultiplier" minOccurs="0" type="xs:float"/>
-            <xs:element name="CouponRate" minOccurs="0" type="xs:float"/>
+            <xs:element name="ContractMultiplier" minOccurs="0" type="xs:decimal"/>
+            <xs:element name="CouponRate" minOccurs="0" type="xs:decimal"/>
             <xs:element name="SecurityExchange" minOccurs="0" type="xs:string"/>
             <xs:element name="Issuer" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedIssuerLen" minOccurs="0" type="xs:integer"/>
@@ -92,7 +92,7 @@
             <xs:element name="SecurityDesc" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedSecurityDescLen" minOccurs="0" type="xs:integer"/>
             <xs:element name="EncodedSecurityDesc" minOccurs="0" type="xs:string"/>
-            <xs:element name="PrevClosePx" minOccurs="0" type="xs:float"/>
+            <xs:element name="PrevClosePx" minOccurs="0" type="xs:decimal"/>
             <xs:element name="ClOrdID" minOccurs="0" type="xs:string"/>
             <xs:element name="Side" minOccurs="0">
               <xs:simpleType>
@@ -109,7 +109,7 @@
                 </xs:restriction>
               </xs:simpleType>
             </xs:element>
-            <xs:element name="Price" type="xs:float"/>
+            <xs:element name="Price" type="xs:decimal"/>
             <xs:element name="Currency" minOccurs="0" type="xs:string"/>
             <xs:element name="Text" minOccurs="0" type="xs:string"/>
             <xs:element name="EncodedTextLen" minOccurs="0" type="xs:integer"/>

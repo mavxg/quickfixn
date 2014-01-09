@@ -41,7 +41,7 @@
           </xs:simpleType>
         </xs:element>
         <xs:element name="Shares" type="xs:integer"/>
-        <xs:element name="Price" minOccurs="0" type="xs:float"/>
+        <xs:element name="Price" minOccurs="0" type="xs:decimal"/>
         <xs:element name="Currency" minOccurs="0" type="xs:string"/>
         <xs:element name="TransactTime" minOccurs="0" type="xs:string"/>
         <xs:element name="Text" minOccurs="0" type="xs:string"/>
