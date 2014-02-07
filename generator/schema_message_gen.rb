@@ -1,5 +1,4 @@
 
-
 class SchemaMessageGen
   def self.generate messages, dir, fixver, beginstring
     destdir = File.join(dir, fixver)
@@ -79,12 +78,12 @@ HERE
   end
 
   TYPES = {
-    'AMT' => 'double?',
-    'QTY' => 'double?',
-    'PRICE' => 'double?',
-    'FLOAT' => 'double?',
-    'PRICEOFFSET' => 'double?',
-    'PERCENTAGE' => 'double?',
+    'AMT' => 'decimal?',
+    'QTY' => 'decimal?',
+    'PRICE' => 'decimal?',
+    'FLOAT' => 'decimal?',
+    'PRICEOFFSET' => 'decimal?',
+    'PERCENTAGE' => 'decimal?',
     'INT' => 'int?',
     'SEQNUM' => 'uint?',
     'LENGTH' => 'uint?',
